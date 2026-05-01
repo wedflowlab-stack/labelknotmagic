@@ -159,8 +159,22 @@
     background-color: color-mix(in oklab, var(--sage) 35%, transparent);
   }
 
+  .btn-quiet,
+  .btn-sand,
+  .btn-ghost {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+    font-family: var(--font-sans);
+    font-size: 10px;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    font-weight: 400;
+    transition: color 0.3s, background-color 0.3s, border-color 0.3s;
+  }
+
   .btn-quiet {
-    @apply inline-flex items-center gap-3 px-7 py-4 cover-line transition-colors;
+    padding: 1rem 1.75rem;
     background: var(--everest);
     color: var(--milk);
     border: 1px solid var(--everest);
@@ -171,7 +185,7 @@
   }
 
   .btn-sand {
-    @apply inline-flex items-center gap-3 px-8 py-5 cover-line transition-colors;
+    padding: 1.25rem 2rem;
     background: var(--sand);
     color: var(--everest);
     border: 1px solid var(--sand);
@@ -182,7 +196,7 @@
   }
 
   .btn-ghost {
-    @apply inline-flex items-center gap-3 px-6 py-3 cover-line transition-colors;
+    padding: 0.75rem 1.5rem;
     border: 1px solid currentColor;
   }
   .btn-ghost:hover {
