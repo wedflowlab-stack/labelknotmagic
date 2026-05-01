@@ -30,12 +30,12 @@ export function Hero() {
         </div>
 
         {/* Masthead */}
-        <div className="px-6 md:px-12 mt-[30vh] md:mt-10 fade-up text-center flex flex-col items-center">
+        <div className="px-6 md:px-12 mt-[10vh] md:mt-10 fade-up text-center flex flex-col items-center">
           {/* Emblem — interlocking knot */}
           <img
             src={emblem}
             alt="Label Knot emblem"
-            className="w-[60vw] max-w-[320px] md:w-[260px] lg:w-[300px] mb-4 md:mb-6 select-none pointer-events-none"
+            className="w-[40vw] max-w-[320px] md:w-[260px] lg:w-[300px] mb-4 md:mb-6 select-none pointer-events-none"
             draggable={false}
           />
 
