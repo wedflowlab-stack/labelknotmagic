@@ -29,7 +29,7 @@ export function Hero() {
         </div>
 
         {/* Masthead */}
-        <div className="px-6 md:px-12 mt-[22vh] md:mt-10 fade-up text-center flex flex-col items-center">
+        <div className="px-6 md:px-12 mt-6 md:mt-10 fade-up text-center flex flex-col items-center">
           {/* Emblem — interlocking knot */}
           <svg
             viewBox="0 0 240 60"
@@ -55,7 +55,7 @@ export function Hero() {
           <h1
             className="font-brand font-normal uppercase leading-[0.95]
                        tracking-[0.18em] md:tracking-[0.22em]
-                       text-[12.5vw] md:text-[8.5vw] lg:text-[6.8vw] whitespace-nowrap px-[2.5vw]"
+                       text-[10vw] md:text-[8.5vw] lg:text-[6.8vw] whitespace-nowrap px-[5vw]"
           >
             Label&nbsp;Knot
           </h1>
