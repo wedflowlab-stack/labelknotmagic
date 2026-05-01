@@ -29,14 +29,37 @@ export function Hero() {
         </div>
 
         {/* Masthead */}
-        <div className="px-6 md:px-12 mt-6 md:mt-10 fade-up text-center">
+        <div className="px-6 md:px-12 mt-6 md:mt-10 fade-up text-center flex flex-col items-center">
+          {/* Emblem — interlocking knot */}
+          <svg
+            viewBox="0 0 240 60"
+            className="w-[44vw] max-w-[260px] md:w-[220px] mb-4 md:mb-6"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="1.6"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            aria-hidden="true"
+          >
+            {/* left flowing tail */}
+            <path d="M2 30 C 40 30, 70 12, 95 30" />
+            {/* right flowing tail */}
+            <path d="M238 30 C 200 30, 170 48, 145 30" />
+            {/* left knot loop */}
+            <path d="M95 30 C 95 14, 120 14, 120 30 C 120 46, 145 46, 145 30 C 145 14, 120 14, 120 30 C 120 46, 95 46, 95 30 Z" />
+            {/* end dots */}
+            <circle cx="2" cy="30" r="1.4" fill="currentColor" stroke="none" />
+            <circle cx="238" cy="30" r="1.4" fill="currentColor" stroke="none" />
+          </svg>
+
           <h1
-            className="font-display font-medium uppercase tracking-[0.04em] leading-[0.88]
-                       text-[15vw] md:text-[13vw] lg:text-[11vw] whitespace-nowrap"
+            className="font-brand font-normal uppercase leading-[0.95]
+                       tracking-[0.18em] md:tracking-[0.22em]
+                       text-[13vw] md:text-[10vw] lg:text-[8vw] whitespace-nowrap"
           >
             Label&nbsp;Knot
           </h1>
-          <p className="mt-4 md:mt-5 font-display italic text-base md:text-xl tracking-wide opacity-90">
+          <p className="mt-5 md:mt-6 font-display italic text-base md:text-xl tracking-wide opacity-90">
             Where stories become timeless art
           </p>
         </div>
