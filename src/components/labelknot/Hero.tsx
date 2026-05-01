@@ -55,9 +55,9 @@ export function Hero() {
         <div className="flex-1" />
 
         {/* Cover lines — short, editorial, magazine-rhythm */}
-        <div className="px-6 md:px-12 pb-10 md:pb-14 grid md:grid-cols-12 gap-8 items-end">
-          {/* Left: short editorial phrases (Vogue cover rhythm) */}
-          <div className="md:col-span-6 fade-up space-y-5">
+        <div className="px-6 md:px-12 pb-10 md:pb-14 fade-up">
+          {/* Editorial row: N°01 left · N°02 right (mirrored) */}
+          <div className="grid grid-cols-2 gap-6 md:gap-8 items-start">
             <div>
               <p className="cover-line opacity-80 mb-2">N° 01</p>
               <p className="font-display italic text-2xl md:text-3xl leading-tight">
@@ -66,7 +66,7 @@ export function Hero() {
                 <span className="not-italic uppercase tracking-[0.04em]">Quiet Vows</span>
               </p>
             </div>
-            <div>
+            <div className="text-right">
               <p className="cover-line opacity-80 mb-2">N° 02</p>
               <p className="font-display italic text-2xl md:text-3xl leading-tight">
                 Rare Frames,
@@ -76,20 +76,14 @@ export function Hero() {
             </div>
           </div>
 
-          {/* Right: locations + trust marker */}
-          <div className="md:col-span-6 md:text-right space-y-4 fade-up">
+          {/* Centered: Premium Wedding House + locations */}
+          <div className="mt-8 md:mt-10 text-center space-y-3">
             <p className="cover-line opacity-80">Premium Wedding House</p>
             <p className="font-display text-xl md:text-2xl leading-snug tracking-wide">
               India · Kerala · Bangalore
               <br />
-              Delhi · Dubai · Worldwide
+              Dubai · Worldwide
             </p>
-            <div className="pt-2 md:flex md:justify-end">
-              <a href="#philosophy" className="cover-line inline-flex items-center gap-3 group">
-                <span className="inline-block h-px w-10 bg-current transition-all group-hover:w-16" />
-                <span>Enter</span>
-              </a>
-            </div>
           </div>
         </div>
       </div>
