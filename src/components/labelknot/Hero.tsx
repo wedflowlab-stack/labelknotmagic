@@ -77,12 +77,13 @@ export function Hero() {
           </div>
 
           {/* Centered: Premium Wedding House + locations */}
-          <div className="mt-8 md:mt-10 text-center space-y-3">
+          <div className="mt-[calc(2rem+2vh)] md:mt-10 text-center space-y-3">
             <p className="cover-line opacity-80">Premium Wedding House</p>
-            <p className="font-display text-xl md:text-2xl leading-snug tracking-wide">
-              India · Kerala · Bangalore
-              <br />
-              Dubai · Worldwide
+            <p className="font-display text-base md:text-2xl leading-snug tracking-wide whitespace-nowrap">
+              India · Kerala · Bangalore · Dubai
+            </p>
+            <p className="font-display text-base md:text-2xl leading-snug tracking-wide">
+              Available Worldwide
             </p>
           </div>
         </div>
