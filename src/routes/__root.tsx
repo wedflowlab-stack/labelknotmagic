@@ -31,6 +31,15 @@ export const Route = createRootRoute({
       { name: "viewport", content: "width=device-width, initial-scale=1" },
       { title: "Label Knot" },
       { name: "author", content: "Label Knot Studio" },
+      { property: "og:title", content: "Label Knot" },
+      { name: "twitter:title", content: "Label Knot" },
+      { name: "description", content: "Creates high-end, editorial wedding websites designed to convert clients psychologically." },
+      { property: "og:description", content: "Creates high-end, editorial wedding websites designed to convert clients psychologically." },
+      { name: "twitter:description", content: "Creates high-end, editorial wedding websites designed to convert clients psychologically." },
+      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/c7bcff68-d9eb-4811-a43b-a3f0909bd486/id-preview-292dd04b--a710edf8-78d1-41e0-864e-c34f0b78d57f.lovable.app-1777662530457.png" },
+      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/c7bcff68-d9eb-4811-a43b-a3f0909bd486/id-preview-292dd04b--a710edf8-78d1-41e0-864e-c34f0b78d57f.lovable.app-1777662530457.png" },
+      { name: "twitter:card", content: "summary_large_image" },
+      { property: "og:type", content: "website" },
     ],
     links: [
       {
