@@ -1,4 +1,5 @@
 import { HERO_IMAGE } from "@/lib/labelknot-images";
+import emblem from "@/assets/labelknot-emblem.png";
 
 export function Hero() {
   return (
@@ -31,26 +32,12 @@ export function Hero() {
         {/* Masthead */}
         <div className="px-6 md:px-12 mt-[30vh] md:mt-10 fade-up text-center flex flex-col items-center">
           {/* Emblem — interlocking knot */}
-          <svg
-            viewBox="0 0 240 60"
-            className="w-[44vw] max-w-[260px] md:w-[220px] mb-4 md:mb-6"
-            fill="none"
-            stroke="currentColor"
-            strokeWidth="1.6"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            aria-hidden="true"
-          >
-            {/* left flowing tail */}
-            <path d="M2 30 C 40 30, 70 12, 95 30" />
-            {/* right flowing tail */}
-            <path d="M238 30 C 200 30, 170 48, 145 30" />
-            {/* left knot loop */}
-            <path d="M95 30 C 95 14, 120 14, 120 30 C 120 46, 145 46, 145 30 C 145 14, 120 14, 120 30 C 120 46, 95 46, 95 30 Z" />
-            {/* end dots */}
-            <circle cx="2" cy="30" r="1.4" fill="currentColor" stroke="none" />
-            <circle cx="238" cy="30" r="1.4" fill="currentColor" stroke="none" />
-          </svg>
+          <img
+            src={emblem}
+            alt="Label Knot emblem"
+            className="w-[60vw] max-w-[320px] md:w-[260px] lg:w-[300px] mb-4 md:mb-6 select-none pointer-events-none"
+            draggable={false}
+          />
 
           <h1
             className="font-brand font-normal uppercase leading-[0.95]
