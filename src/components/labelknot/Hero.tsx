@@ -29,7 +29,7 @@ export function Hero() {
         </div>
 
         {/* Masthead */}
-        <div className="px-6 md:px-12 mt-[19vh] md:mt-10 fade-up text-center flex flex-col items-center">
+        <div className="px-6 md:px-12 mt-[22vh] md:mt-10 fade-up text-center flex flex-col items-center">
           {/* Emblem — interlocking knot */}
           <svg
             viewBox="0 0 240 60"
