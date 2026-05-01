@@ -29,13 +29,16 @@ export function Hero() {
         </div>
 
         {/* Masthead */}
-        <div className="px-6 md:px-12 mt-6 md:mt-10 fade-up">
+        <div className="px-6 md:px-12 mt-6 md:mt-10 fade-up text-center">
           <h1
-            className="font-display font-medium uppercase tracking-[0.06em] leading-[0.85]
-                       text-[18vw] md:text-[14vw] lg:text-[11.5vw]"
+            className="font-display font-medium uppercase tracking-[0.04em] leading-[0.88]
+                       text-[15vw] md:text-[13vw] lg:text-[11vw] whitespace-nowrap"
           >
             Label&nbsp;Knot
           </h1>
+          <p className="mt-4 md:mt-5 font-display italic text-base md:text-xl tracking-wide opacity-90">
+            Where stories become timeless art
+          </p>
         </div>
 
         {/* Spacer */}
