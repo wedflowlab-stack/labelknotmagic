@@ -66,7 +66,7 @@ export function Hero() {
                 <span className="not-italic uppercase tracking-[0.04em]">Quiet Vows</span>
               </p>
             </div>
-            <div className="text-right -mt-10 md:-mt-8">
+            <div className="text-right -mt-[calc(2.5rem+3vh)] md:-mt-[calc(2rem+3vh)]">
               <p className="cover-line opacity-80 mb-2">N° 02</p>
               <p className="font-display italic text-2xl md:text-3xl leading-tight">
                 Rare Frames,
