@@ -57,8 +57,6 @@ function buildCells(): Cell[] {
   });
   return cells;
 }
-  return cells;
-}
 
 function getPosition(i: number): string {
   const m = i % 9;
