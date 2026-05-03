@@ -60,7 +60,7 @@ export function Hero() {
           <div className="grid grid-cols-2 gap-6 md:gap-8 items-start">
             <div>
               <p className="cover-line opacity-80 mb-2">N° 01</p>
-              <p className="font-display italic text-2xl md:text-3xl leading-tight">
+              <p className="font-display italic text-xl md:text-3xl leading-tight">
                 Subtle Luxury,
                 <br />
                 <span className="not-italic uppercase tracking-[0.04em]">Quiet Vows</span>
@@ -68,7 +68,7 @@ export function Hero() {
             </div>
             <div className="text-right -mt-[calc(2.5rem+3vh)] md:-mt-[calc(2rem+3vh)]">
               <p className="cover-line opacity-80 mb-2">N° 02</p>
-              <p className="font-display italic text-2xl md:text-3xl leading-tight">
+              <p className="font-display italic text-xl md:text-3xl leading-tight">
                 Rare Frames,
                 <br />
                 <span className="not-italic uppercase tracking-[0.04em]">Fine Moments</span>
@@ -79,10 +79,10 @@ export function Hero() {
           {/* Centered: Premium Wedding House + locations */}
           <div className="mt-[calc(2rem+2vh)] md:mt-10 text-center space-y-3">
             <p className="cover-line opacity-80">Premium Wedding House</p>
-            <p className="font-display text-base md:text-2xl leading-snug tracking-wide whitespace-nowrap">
+            <p className="font-display text-sm md:text-2xl leading-snug tracking-wide whitespace-nowrap">
               India · Kerala · Bangalore · Dubai
             </p>
-            <p className="font-display text-base md:text-2xl leading-snug tracking-wide">
+            <p className="font-display text-sm md:text-2xl leading-snug tracking-wide">
               Available Worldwide
             </p>
           </div>
