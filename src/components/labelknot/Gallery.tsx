@@ -86,15 +86,46 @@ export function Gallery() {
       <div className="grid grid-cols-3 gap-[2px]">
         {cells.map((c, i) =>
           c.kind === "img" ? (
-            <figure key={i} className="relative overflow-hidden group bg-[var(--milk)] aspect-[4/5]">
-              <img
-                src={c.src}
-                alt={`Label Knot frame ${i + 1}`}
-                loading={i < 6 ? "eager" : "lazy"}
-                style={{ objectPosition: getPosition(i) }}
-                className="w-full h-full object-cover transition-transform duration-[1200ms] ease-out group-hover:scale-[1.04]"
-              />
-            </figure>
+            i === 9 ? (
+              <div key={i} className="relative overflow-hidden aspect-[4/5]">
+                <figure className="hidden lg:block w-full h-full">
+                  <img
+                    src={c.src}
+                    alt={`Label Knot frame ${i + 1}`}
+                    loading="lazy"
+                    style={{ objectPosition: "center 30%" }}
+                    className="w-full h-full object-cover"
+                  />
+                </figure>
+                <div
+                  className="flex lg:hidden w-full h-full items-center justify-center px-[8%]"
+                  style={{ backgroundColor: "var(--sand)" }}
+                >
+                  <p
+                    style={{
+                      fontFamily: "'Pinyon Script', cursive",
+                      fontSize: "clamp(1.6rem, 5.2vw, 2.5rem)",
+                      lineHeight: 1.35,
+                      color: "var(--everest)",
+                      textAlign: "center",
+                      opacity: 0.88,
+                    }}
+                  >
+                    Love That Lives On
+                  </p>
+                </div>
+              </div>
+            ) : (
+              <figure key={i} className="relative overflow-hidden group bg-[var(--milk)] aspect-[4/5]">
+                <img
+                  src={c.src}
+                  alt={`Label Knot frame ${i + 1}`}
+                  loading={i < 6 ? "eager" : "lazy"}
+                  style={{ objectPosition: getPosition(i) }}
+                  className="w-full h-full object-cover transition-transform duration-[1200ms] ease-out group-hover:scale-[1.04]"
+                />
+              </figure>
+            )
           ) : (
             <div
               key={i}
