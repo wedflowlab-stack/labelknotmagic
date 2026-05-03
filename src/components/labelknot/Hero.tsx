@@ -40,7 +40,8 @@ export function Hero() {
           />
 
           <h1
-            className="font-brand font-normal uppercase leading-[0.95]
+            style={{ fontWeight: 300 }}
+            className="font-brand font-light uppercase leading-[0.95]
                        tracking-[0.18em] md:tracking-[0.22em]
                        text-[11.5vw] md:text-[8.5vw] lg:text-[6.8vw] whitespace-nowrap px-[3.8vw]"
           >
