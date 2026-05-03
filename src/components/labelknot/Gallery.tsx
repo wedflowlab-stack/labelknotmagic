@@ -1,5 +1,14 @@
 import { GALLERY_POOL } from "@/lib/labelknot-images";
 
+const EXTRA_POOL = [
+  "https://res.cloudinary.com/dtembvivw/image/upload/v1777536011/SnapInsta.to_469287513_18065688406704263_8090720898632866003_n_kxqejw.jpg",
+  "https://res.cloudinary.com/dtembvivw/image/upload/v1777536010/SnapInsta.to_651004156_18097043860235068_2790687977078960437_n_glglwk.jpg",
+  "https://res.cloudinary.com/dtembvivw/image/upload/v1777536009/SnapInsta.to_655760929_18101574105235068_5895388860891538706_n_qwxdca.jpg",
+  "https://res.cloudinary.com/dtembvivw/image/upload/v1777536010/SnapInsta.to_469278126_18065687737704263_4891117197391283596_n_yauoex.jpg",
+  "https://res.cloudinary.com/dtembvivw/image/upload/v1777536009/Aarushi_Chirag_..._Couple_-_aarushimall_chiragbansal19_Muah_-_dollyouup_bys_Bride_Saree_-_ek_4_uwbrf0.jpg",
+  "https://res.cloudinary.com/dtembvivw/image/upload/v1777536010/SnapInsta.to_469183908_18065687623704263_3856023466478099866_n_jfbzwh.jpg",
+];
+
 // Tonally arranged 30 cells: 15 unique images repeated, with 5 sand interstitials
 // at balanced positions (rows: 2, 4, 6, 8, 9 — not clustered).
 type Cell =
