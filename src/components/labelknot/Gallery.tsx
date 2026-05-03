@@ -46,6 +46,17 @@ function buildCells(): Cell[] {
   INTERSTITIALS.forEach(({ at, line }) => {
     cells[at] = { kind: "text", line };
   });
+  const EXTRA_ORDER = [
+    EXTRA_POOL[0], GALLERY_POOL[3],  EXTRA_POOL[1],
+    GALLERY_POOL[7], EXTRA_POOL[2],  GALLERY_POOL[11],
+    EXTRA_POOL[3], GALLERY_POOL[1],  EXTRA_POOL[4],
+    GALLERY_POOL[9], EXTRA_POOL[5],  GALLERY_POOL[5],
+  ];
+  EXTRA_ORDER.forEach((src) => {
+    cells.push({ kind: "img" as const, src, idx: -1 });
+  });
+  return cells;
+}
   return cells;
 }
 
