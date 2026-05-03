@@ -103,8 +103,8 @@ export function Gallery() {
             >
               <p
                 style={{
-                  fontFamily: "'Great Vibes', cursive",
-                  fontSize: "clamp(1.35rem, 4.5vw, 2.1rem)",
+                  fontFamily: "'Pinyon Script', cursive",
+                  fontSize: "clamp(1.6rem, 5.2vw, 2.5rem)",
                   lineHeight: 1.35,
                   color: "var(--everest)",
                   textAlign: "center",
