@@ -105,33 +105,24 @@ export function Gallery() {
         {cells.map((c, i) =>
           c.kind === "img" ? (
             i === 9 ? (
-              <div key={i} className="relative overflow-hidden aspect-[4/5]">
-                <figure className="hidden lg:block w-full h-full">
-                  <img
-                    src={c.src}
-                    alt={`Label Knot frame ${i + 1}`}
-                    loading="lazy"
-                    style={{ objectPosition: "center 30%" }}
-                    className="w-full h-full object-cover"
-                  />
-                </figure>
-                <div
-                  className="flex lg:hidden w-full h-full items-center justify-center px-[8%]"
-                  style={{ backgroundColor: "var(--sand)" }}
+              <div
+                key={i}
+                className="aspect-[4/5] flex items-center justify-center"
+                style={{ backgroundColor: "var(--sand)" }}
+              >
+                <p
+                  style={{
+                    fontFamily: "'Pinyon Script', cursive",
+                    fontSize: "clamp(1.6rem, 5.2vw, 2.5rem)",
+                    lineHeight: 1.35,
+                    color: "var(--everest)",
+                    textAlign: "center",
+                    padding: "0 8%",
+                    opacity: 0.88,
+                  }}
                 >
-                  <p
-                    style={{
-                      fontFamily: "'Pinyon Script', cursive",
-                      fontSize: "clamp(1.6rem, 5.2vw, 2.5rem)",
-                      lineHeight: 1.35,
-                      color: "var(--everest)",
-                      textAlign: "center",
-                      opacity: 0.88,
-                    }}
-                  >
-                    Love That Lives On
-                  </p>
-                </div>
+                  Love That Lives On
+                </p>
               </div>
             ) : (
               <figure key={i} className="relative overflow-hidden group bg-[var(--milk)] aspect-[4/5]">
