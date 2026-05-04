@@ -15,7 +15,7 @@ export function Philosophy() {
           01 — Label Knot
         </p>
 
-        <div className="grid grid-cols-12 gap-6 md:gap-10">
+        <div className="grid grid-cols-12 gap-6 md:gap-10 items-start">
           {/* Large offset image — left */}
           <div className="col-span-12 md:col-span-5 md:row-span-2">
             <figure>
@@ -107,7 +107,7 @@ export function Philosophy() {
           </div>
 
           {/* Square — right middle */}
-          <div className="col-span-6 md:col-span-4 md:col-start-6 md:mt-4">
+          <div className="col-span-6 md:col-span-4 md:col-start-6 md:mt-0 self-start">
             <figure>
               <img
                 src={GALLERY_POOL[5]}
@@ -124,7 +124,7 @@ export function Philosophy() {
           </div>
 
           {/* Portrait — right end */}
-          <div className="col-span-6 md:col-span-3 md:mt-4">
+          <div className="col-span-6 md:col-span-3 md:mt-0 self-start">
             <figure>
               <img
                 src={GALLERY_POOL[6]}
@@ -142,7 +142,7 @@ export function Philosophy() {
         </div>
 
         {/* Urgency seed block */}
-        <div className="mt-24 md:mt-32 mx-auto max-w-xl">
+        <div className="mt-10 md:mt-14 mx-auto max-w-xl">
           {/* Top rule — sand */}
           <div
             className="rule-thin mb-10 mx-auto"
