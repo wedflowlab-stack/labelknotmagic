@@ -8,7 +8,10 @@ export function Philosophy() {
       style={{ backgroundColor: "var(--milk)" }}
     >
       <div className="mx-auto max-w-[1400px] px-6 md:px-12">
-        <p className="eyebrow mb-16 md:mb-24" style={{ color: "var(--sage)" }}>
+        <p
+          className="eyebrow font-display mb-16 md:mb-24"
+          style={{ color: "var(--everest)", textAlign: "center", fontSize: "16px" }}
+        >
           01 — Label Knot
         </p>
 
@@ -21,28 +24,36 @@ export function Philosophy() {
                 alt="The bride, the moment before"
                 className="w-full aspect-[4/5] object-cover"
               />
-              <figcaption className="cover-line mt-3 opacity-70" style={{ color: "var(--sage)" }}>
+              <figcaption
+                className="cover-line font-display mt-3"
+                style={{ color: "var(--everest)" }}
+              >
                 Pl. 01 — The minute before she walks
               </figcaption>
             </figure>
           </div>
 
           {/* Copy block — right top */}
-          <div className="col-span-12 md:col-span-7 md:pt-12 md:pl-8 lg:pl-16">
+          <div className="col-span-12 md:col-span-7 md:pt-12 md:px-4">
             <h2
               className="editorial-headline text-4xl md:text-6xl lg:text-7xl tracking-widest uppercase"
-              style={{ color: "var(--everest)", lineHeight: 1.06 }}
+              style={{ color: "var(--everest)", lineHeight: 1.06, textAlign: "center" }}
             >
               After the last dance,
               <br />
               <em className="font-display italic normal-case tracking-normal">what remains?</em>
             </h2>
 
-            <div className="mt-10 max-w-xl">
+            <div className="mt-10 max-w-xl mx-auto">
               {/* Opening — large italic */}
               <p
                 className="font-display italic"
-                style={{ fontSize: "clamp(20px, 2.4vw, 28px)", color: "var(--sage)", lineHeight: 1.35 }}
+                style={{
+                  fontSize: "clamp(23px, 2.4vw, 31px)",
+                  color: "var(--everest)",
+                  lineHeight: 1.35,
+                  textAlign: "center",
+                }}
               >
                 The venue will host another wedding next weekend. The flowers will be gone by
                 morning. The dress, folded away. The cake, a photograph on someone's phone.
@@ -50,8 +61,13 @@ export function Philosophy() {
 
               {/* Body 1 */}
               <p
-                className="font-sans font-light mt-8"
-                style={{ fontSize: "16px", color: "var(--sage)", lineHeight: 1.7 }}
+                className="font-display mt-8"
+                style={{
+                  fontSize: "20px",
+                  color: "var(--everest)",
+                  lineHeight: 1.7,
+                  textAlign: "center",
+                }}
               >
                 But there will be a moment — sometime in the years ahead — when you sit with the
                 person you married and you reach for that day. Not the highlight reel.
@@ -61,10 +77,12 @@ export function Philosophy() {
               <p
                 className="font-display italic"
                 style={{
-                  fontSize: "clamp(22px, 2.6vw, 30px)",
+                  fontSize: "clamp(25px, 2.6vw, 33px)",
                   color: "var(--everest)",
                   lineHeight: 1.15,
                   margin: "28px 0",
+                  textAlign: "center",
+                  fontWeight: 600,
                 }}
               >
                 The real version.
@@ -72,8 +90,13 @@ export function Philosophy() {
 
               {/* Body 2 */}
               <p
-                className="font-sans font-light"
-                style={{ fontSize: "16px", color: "var(--sage)", lineHeight: 1.7 }}
+                className="font-display"
+                style={{
+                  fontSize: "20px",
+                  color: "var(--everest)",
+                  lineHeight: 1.7,
+                  textAlign: "center",
+                }}
               >
                 The way he looked at you before you walked in. Your mother's face when she first
                 saw you ready. The cousin who flew across the world, finally in the same room. The
@@ -91,7 +114,10 @@ export function Philosophy() {
                 alt="A held breath, captured"
                 className="w-full aspect-square object-cover"
               />
-              <figcaption className="cover-line mt-3 opacity-70" style={{ color: "var(--sage)" }}>
+              <figcaption
+                className="cover-line font-display mt-3"
+                style={{ color: "var(--everest)" }}
+              >
                 Pl. 02 — A held breath
               </figcaption>
             </figure>
@@ -105,7 +131,10 @@ export function Philosophy() {
                 alt="Light, draped"
                 className="w-full aspect-[3/4] object-cover"
               />
-              <figcaption className="cover-line mt-3 opacity-70" style={{ color: "var(--sage)" }}>
+              <figcaption
+                className="cover-line font-display mt-3"
+                style={{ color: "var(--everest)" }}
+              >
                 Pl. 03 — Light, draped
               </figcaption>
             </figure>
@@ -113,58 +142,85 @@ export function Philosophy() {
         </div>
 
         {/* Urgency seed block */}
-        <div className="mt-24 md:mt-32 mx-auto max-w-2xl">
+        <div className="mt-24 md:mt-32 mx-auto max-w-xl">
           {/* Top rule — sand */}
-          <div className="rule-thin mb-10" style={{ borderColor: "var(--sand)", width: "40px" }} />
+          <div
+            className="rule-thin mb-10 mx-auto"
+            style={{ borderColor: "var(--sand)", width: "40px" }}
+          />
 
           {/* Three-line punch */}
           <div style={{ margin: "0 0 32px 0" }}>
             <p
               className="font-display"
-              style={{ fontSize: "clamp(22px, 2.6vw, 32px)", color: "var(--everest)", lineHeight: 1.15 }}
+              style={{
+                fontSize: "clamp(25px, 2.6vw, 35px)",
+                color: "var(--everest)",
+                lineHeight: 1.15,
+                textAlign: "center",
+                fontWeight: 500,
+              }}
             >
               These moments don't repeat.
             </p>
             <p
               className="font-display"
               style={{
-                fontSize: "clamp(22px, 2.6vw, 32px)",
+                fontSize: "clamp(25px, 2.6vw, 35px)",
                 color: "var(--everest)",
                 lineHeight: 1.15,
                 margin: "8px 0",
+                textAlign: "center",
+                fontWeight: 500,
               }}
             >
               They don't wait.
             </p>
             <p
               className="font-display"
-              style={{ fontSize: "clamp(22px, 2.6vw, 32px)", color: "var(--everest)", lineHeight: 1.15 }}
+              style={{
+                fontSize: "clamp(25px, 2.6vw, 35px)",
+                color: "var(--everest)",
+                lineHeight: 1.15,
+                textAlign: "center",
+                fontWeight: 500,
+              }}
             >
               And most of them happen when nobody is looking.
             </p>
           </div>
 
           {/* Bottom rule — sand */}
-          <div className="rule-thin mb-8 mt-12" style={{ borderColor: "var(--sand)", width: "40px" }} />
+          <div
+            className="rule-thin mb-8 mt-12 mx-auto"
+            style={{ borderColor: "var(--sand)", width: "40px" }}
+          />
 
           {/* Body */}
           <p
-            className="font-sans font-light"
-            style={{ fontSize: "16px", color: "var(--sage)", lineHeight: 1.7, marginBottom: "40px" }}
+            className="font-display"
+            style={{
+              fontSize: "20px",
+              color: "var(--everest)",
+              lineHeight: 1.7,
+              marginBottom: "40px",
+              textAlign: "center",
+            }}
           >
             We are not just here to document your wedding. We are here so that twenty years from
             now, when your daughter asks what it felt like —
           </p>
 
-          {/* Closing italic — everest at 75% opacity for softer register */}
+          {/* Closing italic */}
           <p
             className="font-display italic"
             style={{
-              fontSize: "clamp(21px, 2vw, 24px)",
+              fontSize: "clamp(20px, 2vw, 27px)",
               color: "var(--everest)",
-              opacity: 0.75,
               lineHeight: 1.4,
               marginBottom: "40px",
+              textAlign: "center",
+              fontWeight: 400,
             }}
           >
             So that when you reach for that feeling — every feeling is still there, unchanged,
@@ -173,12 +229,13 @@ export function Philosophy() {
 
           {/* Final sign-off */}
           <p
-            className="font-sans font-normal uppercase"
+            className="font-display uppercase"
             style={{
-              fontSize: "13px",
+              fontSize: "16px",
               color: "var(--everest)",
               letterSpacing: "0.18em",
               marginBottom: "32px",
+              textAlign: "center",
             }}
           >
             What remains after everything else fades — is what we create.
