@@ -38,16 +38,47 @@ export function Philosophy() {
               <em className="font-display italic normal-case tracking-normal">what remains?</em>
             </h2>
 
-            <div className="mt-10 max-w-xl space-y-6 editorial-body" style={{ color: "var(--sage)" }}>
-              <p>
-                The day will pass faster than any day before it. The mehendi will smudge. The garlands
-                will wilt. Your mother will cry and you will not see it. Your father will hold himself
-                together at the door and nobody will photograph the way his hand trembled.
+            <div className="mt-10 max-w-xl">
+              {/* Opening — large italic */}
+              <p
+                className="font-display italic"
+                style={{ fontSize: "clamp(20px, 2.4vw, 28px)", color: "var(--sage)", lineHeight: 1.35 }}
+              >
+                The venue will host another wedding next weekend. The flowers will be gone by
+                morning. The dress, folded away. The cake, a photograph on someone's phone.
               </p>
-              <p>
-                We are not here to <em>document</em> your wedding. We are here so that twenty years
-                from now, when your daughter asks <em>what did it feel like</em> — you have a frame
-                to point to, and not a feeling that has gone soft at the edges.
+
+              {/* Body 1 */}
+              <p
+                className="font-sans font-light mt-8"
+                style={{ fontSize: "16px", color: "var(--sage)", lineHeight: 1.7 }}
+              >
+                But there will be a moment — sometime in the years ahead — when you sit with the
+                person you married and you reach for that day. Not the highlight reel.
+              </p>
+
+              {/* Emphasis line — stands alone */}
+              <p
+                className="font-display italic"
+                style={{
+                  fontSize: "clamp(22px, 2.6vw, 30px)",
+                  color: "var(--everest)",
+                  lineHeight: 1.15,
+                  margin: "28px 0",
+                }}
+              >
+                The real version.
+              </p>
+
+              {/* Body 2 */}
+              <p
+                className="font-sans font-light"
+                style={{ fontSize: "16px", color: "var(--sage)", lineHeight: 1.7 }}
+              >
+                The way he looked at you before you walked in. Your mother's face when she first
+                saw you ready. The cousin who flew across the world, finally in the same room. The
+                kids on the dance floor who didn't care about anything except that moment. Your
+                grandmother, quietly watching everything, holding it all in.
               </p>
             </div>
           </div>
