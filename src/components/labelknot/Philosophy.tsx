@@ -9,7 +9,7 @@ export function Philosophy() {
     >
       <div className="mx-auto max-w-[1400px] px-6 md:px-12">
         <p className="eyebrow mb-16 md:mb-24" style={{ color: "var(--sage)" }}>
-          01 — The Philosophy
+          01 — Label Knot
         </p>
 
         <div className="grid grid-cols-12 gap-6 md:gap-10">
