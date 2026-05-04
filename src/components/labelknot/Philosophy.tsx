@@ -30,12 +30,12 @@ export function Philosophy() {
           {/* Copy block — right top */}
           <div className="col-span-12 md:col-span-7 md:pt-12 md:pl-8 lg:pl-16">
             <h2
-              className="editorial-headline text-4xl md:text-6xl lg:text-7xl"
-              style={{ color: "var(--everest)" }}
+              className="editorial-headline text-4xl md:text-6xl lg:text-7xl tracking-widest uppercase"
+              style={{ color: "var(--everest)", lineHeight: 1.06 }}
             >
-              You will <em className="font-display italic">forget</em> most of it.
+              After the last dance,
               <br />
-              That is the <em className="font-display italic">tragedy</em> we exist to undo.
+              <em className="font-display italic normal-case tracking-normal">what remains?</em>
             </h2>
 
             <div className="mt-10 max-w-xl space-y-6 editorial-body" style={{ color: "var(--sage)" }}>
