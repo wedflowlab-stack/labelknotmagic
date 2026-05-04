@@ -112,15 +112,76 @@ export function Philosophy() {
           </div>
         </div>
 
-        {/* Urgency seed — quiet, factual */}
-        <div className="mt-24 md:mt-32 max-w-3xl">
-          <div className="rule-thin mb-8" />
+        {/* Urgency seed block */}
+        <div className="mt-24 md:mt-32 mx-auto max-w-2xl">
+          {/* Top rule — sand */}
+          <div className="rule-thin mb-10" style={{ borderColor: "var(--sand)", width: "40px" }} />
+
+          {/* Three-line punch */}
+          <div style={{ margin: "0 0 32px 0" }}>
+            <p
+              className="font-display"
+              style={{ fontSize: "clamp(22px, 2.6vw, 32px)", color: "var(--everest)", lineHeight: 1.15 }}
+            >
+              These moments don't repeat.
+            </p>
+            <p
+              className="font-display"
+              style={{
+                fontSize: "clamp(22px, 2.6vw, 32px)",
+                color: "var(--everest)",
+                lineHeight: 1.15,
+                margin: "8px 0",
+              }}
+            >
+              They don't wait.
+            </p>
+            <p
+              className="font-display"
+              style={{ fontSize: "clamp(22px, 2.6vw, 32px)", color: "var(--everest)", lineHeight: 1.15 }}
+            >
+              And most of them happen when nobody is looking.
+            </p>
+          </div>
+
+          {/* Bottom rule — sand */}
+          <div className="rule-thin mb-8 mt-12" style={{ borderColor: "var(--sand)", width: "40px" }} />
+
+          {/* Body */}
           <p
-            className="font-display italic text-xl md:text-2xl leading-snug"
-            style={{ color: "var(--everest)" }}
+            className="font-sans font-light"
+            style={{ fontSize: "16px", color: "var(--sage)", lineHeight: 1.7, marginBottom: "40px" }}
           >
-            Most of our couples find us nine to fourteen months before their date. By the time you've
-            decided you want us, the calendar has usually decided for you.
+            We are not just here to document your wedding. We are here so that twenty years from
+            now, when your daughter asks what it felt like —
+          </p>
+
+          {/* Closing italic — everest at 75% opacity for softer register */}
+          <p
+            className="font-display italic"
+            style={{
+              fontSize: "clamp(21px, 2vw, 24px)",
+              color: "var(--everest)",
+              opacity: 0.75,
+              lineHeight: 1.4,
+              marginBottom: "40px",
+            }}
+          >
+            So that when you reach for that feeling — every feeling is still there, unchanged,
+            waiting for you.
+          </p>
+
+          {/* Final sign-off */}
+          <p
+            className="font-sans font-normal uppercase"
+            style={{
+              fontSize: "13px",
+              color: "var(--everest)",
+              letterSpacing: "0.18em",
+              marginBottom: "32px",
+            }}
+          >
+            What remains after everything else fades — is what we create.
           </p>
         </div>
       </div>
