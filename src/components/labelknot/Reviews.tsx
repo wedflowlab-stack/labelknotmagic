@@ -111,11 +111,13 @@ export function Reviews() {
       </div>
 
       <div
-        className="mx-auto grid grid-cols-1 md:grid-cols-2 px-6 md:px-12"
+        className="mx-auto grid grid-cols-1 md:grid-cols-2"
         style={{
           maxWidth: "1200px",
-          gap: "32px",
+          gap: "clamp(16px, 2.5vw, 32px)",
           marginTop: "clamp(48px, 6vw, 72px)",
+          paddingLeft: "clamp(4px, 1.5vw, 48px)",
+          paddingRight: "clamp(4px, 1.5vw, 48px)",
         }}
       >
         {CARDS.map((c, i) => (
@@ -126,6 +128,7 @@ export function Reviews() {
               backgroundSize: "cover",
               backgroundPosition: "center",
               padding: "clamp(20px, 4%, 40px)",
+              border: "1px solid #18442A",
             }}
           >
             {/* Inner white card */}
