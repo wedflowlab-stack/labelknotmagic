@@ -188,8 +188,9 @@ export function Reviews() {
                   loading={i === 0 ? "eager" : "lazy"}
                   style={{
                     width: "clamp(180px, 22vw, 240px)",
-                    height: "clamp(180px, 22vw, 240px)",
+                    height: "clamp(220px, 28vw, 300px)",
                     objectFit: "cover",
+                    objectPosition: "center top",
                     display: "block",
                   }}
                 />
