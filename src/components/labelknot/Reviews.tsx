@@ -120,13 +120,30 @@ export function Reviews() {
           <article
             key={i}
             style={{
-              backgroundImage: `url(${BG_TEXTURE})`,
-              backgroundSize: "cover",
-              backgroundPosition: "center",
+              position: "relative",
               padding: "clamp(20px, 4%, 40px)",
               border: "1px solid #18442A",
+              overflow: "hidden",
+              backgroundColor: "#000",
             }}
           >
+            {/* Background video */}
+            <video
+              src={`${BG_VIDEO}#t=0,4`}
+              autoPlay
+              loop
+              muted
+              playsInline
+              preload="auto"
+              style={{
+                position: "absolute",
+                inset: 0,
+                width: "100%",
+                height: "100%",
+                objectFit: "cover",
+                zIndex: 0,
+              }}
+            />
             {/* Inner white card */}
             <div
               style={{
