@@ -1,14 +1,10 @@
 const BG_TEXTURE =
   "https://res.cloudinary.com/dtembvivw/image/upload/v1778165415/Black_and_White_Minimalist_Aesthetic_Scrapbook_Motivational_Reminder_Quote_Instagram_Post_eqd0vd.png";
 
-const CORNER_TL =
-  "AFTER WITNESSING SO MANY WEDDINGS, ONE TRUTH REMAINS — LOVE ALWAYS REVEALS ITSELF IN THE SMALLEST, MOST HONEST MOMENTS.";
-const CORNER_TR =
-  "EVERY COUPLE TEACHES US SOMETHING NEW ABOUT LOVE. NO TWO STORIES ARE THE SAME, AND THAT'S WHAT MAKES EVERY WEDDING UNFORGETTABLE.";
-const CORNER_BL =
-  "BETWEEN LAUGHTER, TEARS, AND QUIET GLANCES, WE'RE REMINDED THAT THE MOST POWERFUL MOMENTS ARE RARELY PLANNED.";
-const CORNER_BR =
-  "EMBRACE WHERE YOU ARE, CHERISH THE LESSONS LEARNED ALONG THE WAY, AND LOOK FORWARD TO THE ADVENTURES THAT LIE AHEAD.";
+const CORNER_TL = "KEPT, NOT STAGED.";
+const CORNER_TR = "WRITTEN IN LIGHT.";
+const CORNER_BL = "FELT, THEN REMEMBERED.";
+const CORNER_BR = "HELD FOR A LIFETIME.";
 
 const CARDS = [
   {
@@ -116,8 +112,8 @@ export function Reviews() {
           maxWidth: "1200px",
           gap: "clamp(16px, 2.5vw, 32px)",
           marginTop: "clamp(48px, 6vw, 72px)",
-          paddingLeft: "clamp(4px, 1.5vw, 48px)",
-          paddingRight: "clamp(4px, 1.5vw, 48px)",
+          paddingLeft: "clamp(0px, 0.3vw, 32px)",
+          paddingRight: "clamp(0px, 0.3vw, 32px)",
         }}
       >
         {CARDS.map((c, i) => (
