@@ -26,8 +26,7 @@ const CARDS = [
   {
     name: "ANN & JOHNNY",
     year: "2022",
-    image:
-      "https://res.cloudinary.com/dtembvivw/image/upload/v1778166084/SaveClip.App_497818474_17988335572092634_8088562691265612361_n_lxetvs.jpg",
+    image: "/images/ann-johnny.jpg",
     review:
       "The wedding planning felt enormous at the time. Every decision, every vendor, every number. A year later, I cannot tell you what most of it cost. I can tell you exactly what Label Knot cost — because it is the only thing I would pay again without a second thought. Everything else from that day is a receipt. This is the only thing that is still real, and I still keep coming back to it.",
   },
