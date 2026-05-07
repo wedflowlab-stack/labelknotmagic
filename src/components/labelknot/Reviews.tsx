@@ -1,3 +1,15 @@
+const BG_TEXTURE =
+  "https://res.cloudinary.com/dtembvivw/image/upload/v1778165415/Black_and_White_Minimalist_Aesthetic_Scrapbook_Motivational_Reminder_Quote_Instagram_Post_eqd0vd.png";
+
+const CORNER_TL =
+  "AFTER WITNESSING SO MANY WEDDINGS, ONE TRUTH REMAINS — LOVE ALWAYS REVEALS ITSELF IN THE SMALLEST, MOST HONEST MOMENTS.";
+const CORNER_TR =
+  "EVERY COUPLE TEACHES US SOMETHING NEW ABOUT LOVE. NO TWO STORIES ARE THE SAME, AND THAT'S WHAT MAKES EVERY WEDDING UNFORGETTABLE.";
+const CORNER_BL =
+  "BETWEEN LAUGHTER, TEARS, AND QUIET GLANCES, WE'RE REMINDED THAT THE MOST POWERFUL MOMENTS ARE RARELY PLANNED.";
+const CORNER_BR =
+  "EMBRACE WHERE YOU ARE, CHERISH THE LESSONS LEARNED ALONG THE WAY, AND LOOK FORWARD TO THE ADVENTURES THAT LIE AHEAD.";
+
 const CARDS = [
   {
     name: "ALEN BABU & CHIPPY DEVASY",
@@ -21,7 +33,7 @@ const CARDS = [
     image:
       "https://res.cloudinary.com/dtembvivw/image/upload/v1778166084/SaveClip.App_497818474_17988335572092634_8088562691265612361_n_lxetvs.jpg",
     review:
-      "The wedding planning felt enormous at the time. Every decision, every venue, every number. If you came back a year later, I would tell you what most of it cost. I can tell you exactly what Label Knot cost — because it is the only thing I would pay again without a second thought. Everything else from that day is a receipt. This is the only thing that is still real, and I still keep coming back to it.",
+      "The wedding planning felt enormous at the time. Every decision, every vendor, every number. A year later, I cannot tell you what most of it cost. I can tell you exactly what Label Knot cost — because it is the only thing I would pay again without a second thought. Everything else from that day is a receipt. This is the only thing that is still real, and I still keep coming back to it.",
   },
   {
     name: "ANU & LOVELY COUSINS",
@@ -33,16 +45,40 @@ const CARDS = [
   },
 ];
 
+const cornerStyle: React.CSSProperties = {
+  fontFamily:
+    "ui-monospace, 'SF Mono', Menlo, Monaco, Consolas, 'Courier New', monospace",
+  fontSize: "9px",
+  letterSpacing: "0.15em",
+  color: "#1a1a1a",
+  lineHeight: 1.7,
+  textTransform: "uppercase",
+  margin: 0,
+};
+
 export function Reviews() {
   return (
     <section
       className="relative w-full"
-      style={{ backgroundColor: "var(--milk)", paddingTop: "clamp(64px, 8vw, 96px)", paddingBottom: "clamp(64px, 8vw, 96px)" }}
+      style={{
+        backgroundColor: "var(--milk)",
+        paddingTop: "clamp(64px, 8vw, 96px)",
+        paddingBottom: "clamp(64px, 8vw, 96px)",
+      }}
     >
-      <div className="mx-auto px-6" style={{ maxWidth: "640px", textAlign: "center" }}>
+      <div
+        className="mx-auto px-6"
+        style={{ maxWidth: "640px", textAlign: "center" }}
+      >
         <p
           className="font-display uppercase"
-          style={{ fontSize: "10px", letterSpacing: "4px", color: "var(--sage)", opacity: 0.6, marginBottom: "20px" }}
+          style={{
+            fontSize: "10px",
+            letterSpacing: "4px",
+            color: "var(--sage)",
+            opacity: 0.6,
+            marginBottom: "20px",
+          }}
         >
           03 — Letters Received
         </p>
@@ -68,154 +104,140 @@ export function Reviews() {
             margin: "0 auto",
           }}
         >
-          These are not reviews. They are the moments our couples wrote back to tell us about — long after the wedding was over, long after the flowers were gone.
+          These are not reviews. They are the moments our couples wrote back to
+          tell us about — long after the wedding was over, long after the
+          flowers were gone.
         </p>
       </div>
 
       <div
         className="mx-auto grid grid-cols-1 md:grid-cols-2 px-6 md:px-12"
-        style={{ maxWidth: "1200px", gap: "24px", marginTop: "clamp(48px, 6vw, 72px)" }}
+        style={{
+          maxWidth: "1200px",
+          gap: "32px",
+          marginTop: "clamp(48px, 6vw, 72px)",
+        }}
       >
         {CARDS.map((c, i) => (
           <article
             key={i}
             style={{
-              backgroundColor: "var(--sand)",
-              overflow: "hidden",
-              padding: "clamp(24px, 3vw, 40px) clamp(20px, 2.5vw, 32px)",
-              display: "flex",
-              flexDirection: "column",
+              backgroundImage: `url(${BG_TEXTURE})`,
+              backgroundSize: "cover",
+              backgroundPosition: "center",
+              padding: "clamp(20px, 4%, 40px)",
             }}
           >
-            {/* Top corner quotes row */}
+            {/* Inner white card */}
             <div
-              className="grid grid-cols-2"
-              style={{ gap: "16px", marginBottom: "16px" }}
+              style={{
+                backgroundColor: "#ffffff",
+                padding: "clamp(20px, 4%, 36px)",
+                display: "flex",
+                flexDirection: "column",
+                height: "100%",
+              }}
             >
-              <p
-                className="font-display uppercase"
-                style={{
-                  fontSize: "9px",
-                  letterSpacing: "2px",
-                  color: "var(--everest)",
-                  opacity: 0.45,
-                  lineHeight: 1.6,
-                  textAlign: "left",
-                }}
+              {/* Top corner texts */}
+              <div
+                className="grid grid-cols-2"
+                style={{ gap: "16px" }}
               >
-                After witnessing so many weddings, one truth remains — love always reveals itself in the smallest, most honest moments.
-              </p>
-              <p
-                className="font-display uppercase"
-                style={{
-                  fontSize: "9px",
-                  letterSpacing: "2px",
-                  color: "var(--everest)",
-                  opacity: 0.45,
-                  lineHeight: 1.6,
-                  textAlign: "right",
-                }}
-              >
-                Every couple teaches us something new about love. No two stories are the same, and that's what makes every wedding unforgettable.
-              </p>
-            </div>
+                <p style={{ ...cornerStyle, textAlign: "left" }}>{CORNER_TL}</p>
+                <p style={{ ...cornerStyle, textAlign: "right" }}>
+                  {CORNER_TR}
+                </p>
+              </div>
 
-            {/* Couple image */}
-            <div className="mx-auto" style={{ marginTop: "16px", marginBottom: "16px" }}>
-              <img
-                src={c.image}
-                alt={c.name}
-                loading={i === 0 ? "eager" : "lazy"}
-                className="w-48 h-48 md:w-56 md:h-56 object-cover"
-                style={{ display: "block" }}
+              {/* Centre photo */}
+              <div
+                className="mx-auto"
+                style={{
+                  marginTop: "clamp(20px, 3vw, 32px)",
+                  marginBottom: "16px",
+                }}
+              >
+                <img
+                  src={c.image}
+                  alt={c.name}
+                  loading={i === 0 ? "eager" : "lazy"}
+                  style={{
+                    width: "clamp(180px, 22vw, 240px)",
+                    height: "clamp(180px, 22vw, 240px)",
+                    objectFit: "cover",
+                    display: "block",
+                  }}
+                />
+              </div>
+
+              {/* Couple name */}
+              <p
+                style={{
+                  fontFamily:
+                    "ui-monospace, 'SF Mono', Menlo, Monaco, Consolas, 'Courier New', monospace",
+                  fontSize: "12px",
+                  letterSpacing: "0.25em",
+                  color: "#1a1a1a",
+                  textAlign: "center",
+                  textTransform: "uppercase",
+                  margin: 0,
+                }}
+              >
+                {c.name}
+              </p>
+              {/* Year */}
+              <p
+                style={{
+                  fontFamily:
+                    "ui-monospace, 'SF Mono', Menlo, Monaco, Consolas, 'Courier New', monospace",
+                  fontSize: "10px",
+                  letterSpacing: "0.2em",
+                  color: "#1a1a1a",
+                  opacity: 0.55,
+                  textAlign: "center",
+                  marginTop: "6px",
+                }}
+              >
+                {c.year}
+              </p>
+
+              {/* Divider */}
+              <div
+                style={{
+                  width: "40px",
+                  borderTop: "1px solid #1a1a1a",
+                  opacity: 0.35,
+                  margin: "16px auto",
+                }}
               />
-            </div>
 
-            {/* Name */}
-            <p
-              className="font-display uppercase"
-              style={{
-                fontWeight: 500,
-                fontSize: "13px",
-                letterSpacing: "3px",
-                color: "var(--everest)",
-                textAlign: "center",
-                marginBottom: "4px",
-              }}
-            >
-              {c.name}
-            </p>
-            {/* Year */}
-            <p
-              className="font-display"
-              style={{
-                fontSize: "13px",
-                color: "var(--sage)",
-                opacity: 0.6,
-                textAlign: "center",
-              }}
-            >
-              {c.year}
-            </p>
-
-            {/* Divider */}
-            <div
-              className="mx-auto"
-              style={{
-                width: "48px",
-                borderTop: "1px solid var(--everest)",
-                opacity: 0.15,
-                margin: "20px auto",
-              }}
-            />
-
-            {/* Review */}
-            <p
-              className="font-display italic"
-              style={{
-                fontSize: "clamp(15px, 1.5vw, 18px)",
-                color: "var(--everest)",
-                lineHeight: 1.85,
-                fontWeight: 400,
-                textAlign: "center",
-                padding: "0 clamp(8px, 1vw, 24px)",
-                marginBottom: "24px",
-              }}
-            >
-              {c.review}
-            </p>
-
-            {/* Bottom corner quotes */}
-            <div
-              className="grid grid-cols-2 mt-auto"
-              style={{ gap: "16px", paddingTop: "16px" }}
-            >
+              {/* Review */}
               <p
-                className="font-display uppercase"
                 style={{
-                  fontSize: "9px",
-                  letterSpacing: "2px",
-                  color: "var(--everest)",
-                  opacity: 0.45,
-                  lineHeight: 1.6,
-                  textAlign: "left",
+                  fontFamily:
+                    "Georgia, 'Cormorant Garamond', 'Times New Roman', serif",
+                  fontStyle: "italic",
+                  fontSize: "clamp(14px, 1.5vw, 17px)",
+                  color: "#1a1a1a",
+                  lineHeight: 1.7,
+                  textAlign: "center",
+                  padding: "0 clamp(4px, 1vw, 16px)",
+                  marginBottom: "clamp(24px, 3vw, 36px)",
                 }}
               >
-                Between laughter, tears, and quiet glances, we're reminded that the most powerful moments are rarely planned.
+                {c.review}
               </p>
-              <p
-                className="font-display uppercase"
-                style={{
-                  fontSize: "9px",
-                  letterSpacing: "2px",
-                  color: "var(--everest)",
-                  opacity: 0.45,
-                  lineHeight: 1.6,
-                  textAlign: "right",
-                }}
+
+              {/* Bottom corner texts */}
+              <div
+                className="grid grid-cols-2 mt-auto"
+                style={{ gap: "16px" }}
               >
-                Embrace where you are, cherish the lessons learned along the way, and look forward to the adventures that lie ahead.
-              </p>
+                <p style={{ ...cornerStyle, textAlign: "left" }}>{CORNER_BL}</p>
+                <p style={{ ...cornerStyle, textAlign: "right" }}>
+                  {CORNER_BR}
+                </p>
+              </div>
             </div>
           </article>
         ))}
@@ -224,7 +246,11 @@ export function Reviews() {
       <div className="text-center px-6" style={{ marginTop: "64px" }}>
         <p
           className="font-display italic"
-          style={{ fontSize: "clamp(16px, 1.8vw, 20px)", color: "var(--everest)", opacity: 0.7 }}
+          style={{
+            fontSize: "clamp(16px, 1.8vw, 20px)",
+            color: "var(--everest)",
+            opacity: 0.7,
+          }}
         >
           Every word above arrived without us asking.
         </p>
