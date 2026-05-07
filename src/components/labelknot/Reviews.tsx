@@ -12,8 +12,7 @@ const CARDS = [
   {
     name: "ALEN BABU & CHIPPY DEVASY",
     year: "2024",
-    image:
-      "https://res.cloudinary.com/dtembvivw/image/upload/v1778085155/SaveClip.App_512375775_1798032230755720_5837611108978617611_n_yorqhe.jpg",
+    image: "/images/alen-chippy.jpg",
     review:
       "We didn't realise how much we needed those photographs until we sat with them three weeks later. Every frame felt like we were back there in that beach — just the two of us, in that light, in that silence between everything happening around us. Label Knot didn't photograph our wedding. They photographed us. That difference is something I will never be able to fully explain.",
   },
@@ -189,8 +188,9 @@ export function Reviews() {
                   loading={i === 0 ? "eager" : "lazy"}
                   style={{
                     width: "clamp(180px, 22vw, 240px)",
-                    height: "clamp(180px, 22vw, 240px)",
+                    height: "clamp(220px, 28vw, 300px)",
                     objectFit: "cover",
+                    objectPosition: "center top",
                     display: "block",
                   }}
                 />
