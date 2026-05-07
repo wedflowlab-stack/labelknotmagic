@@ -17,10 +17,9 @@ const CARDS = [
       "We didn't realise how much we needed those photographs until we sat with them three weeks later. Every frame felt like we were back there in that beach — just the two of us, in that light, in that silence between everything happening around us. Label Knot didn't photograph our wedding. They photographed us. That difference is something I will never be able to fully explain.",
   },
   {
-    name: "ANU & VISHRIN",
+    name: "ANU & VISHBIN",
     year: "2025",
-    image:
-      "https://res.cloudinary.com/dtembvivw/image/upload/v1778166084/SaveClip.App_656403465_18019254551505842_3290936988859839699_n_skpv6t.jpg",
+    image: "/images/anu-vishbin.jpg",
     review:
       "There were a hundred people around us that day. But when I look at our photographs now, it feels like there was no one else in the world. Just him looking at me like that. Label Knot caught something I didn't even know was happening in real time. That is not photography. That is something I don't have a word for yet.",
   },
