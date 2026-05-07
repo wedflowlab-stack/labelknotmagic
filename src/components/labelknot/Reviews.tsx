@@ -149,6 +149,8 @@ export function Reviews() {
             {/* Inner white card */}
             <div
               style={{
+                position: "relative",
+                zIndex: 1,
                 backgroundColor: "#ffffff",
                 padding: "clamp(20px, 4%, 36px)",
                 display: "flex",
