@@ -131,12 +131,18 @@ export function Reviews() {
           >
             {/* Background video */}
             <video
-              src={`${BG_VIDEO}#t=0,4`}
+              src={BG_VIDEO}
               autoPlay
-              loop
               muted
               playsInline
               preload="auto"
+              onTimeUpdate={(event) => {
+                const video = event.currentTarget;
+                if (video.currentTime >= 3.95) {
+                  video.currentTime = 0;
+                  void video.play();
+                }
+              }}
               style={{
                 position: "absolute",
                 inset: 0,
