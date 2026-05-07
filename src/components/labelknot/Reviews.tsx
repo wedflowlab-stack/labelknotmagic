@@ -1,5 +1,7 @@
 const BG_TEXTURE =
   "https://res.cloudinary.com/dtembvivw/image/upload/v1778165415/Black_and_White_Minimalist_Aesthetic_Scrapbook_Motivational_Reminder_Quote_Instagram_Post_eqd0vd.png";
+const BG_VIDEO =
+  "https://res.cloudinary.com/dtembvivw/video/upload/q_auto/f_auto/v1778169387/From_KlickPin_CF_Fresh_real_talk_lines_with_timeless_style_with_charm_and_practical_value_for_meaningful_moments_-_Pin-59320920088049034_opf6od.mp4";
 
 const CORNER_TL = "KEPT, NOT STAGED.";
 const CORNER_TR = "WRITTEN IN LIGHT.";
