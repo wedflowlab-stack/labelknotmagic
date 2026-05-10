@@ -9,21 +9,21 @@ const AWARDS = [
 const EMBLEMS = [
   {
     image:
-      "https://res.cloudinary.com/dtembvivw/image/upload/v1778423523/ChatGPT_Image_May_10_2026_07_52_16.png",
+      "https://res.cloudinary.com/dtembvivw/image/upload/v1778423523/ChatGPT_Image_May_10_2026_07_52_16_PM_omlrmg.webp",
     year: "MMXXV",
     name: "Photographer of the Year",
     org: "Wedding Sutra Favourites",
   },
   {
     image:
-      "https://res.cloudinary.com/dtembvivw/image/upload/v1778423523/ChatGPT_Image_May_10_2026_07_54_41.png",
+      "https://res.cloudinary.com/dtembvivw/image/upload/v1778423527/ChatGPT_Image_May_10_2026_07_49_19_PM_sre9vk.webp",
     year: "MMXXIV",
     name: "Cinematic Storytelling Award",
     org: "The Wedding Filmmakers Guild",
   },
   {
     image:
-      "https://res.cloudinary.com/dtembvivw/image/upload/v1778423527/ChatGPT_Image_May_10_2026_07_49_19.png",
+      "https://res.cloudinary.com/dtembvivw/image/upload/v1778424369/ChatGPT_Image_May_8_2026_09_54_44_PM_py5wno.webp",
     year: "MMXXIII",
     name: "House of the Year",
     org: "The Wed · Asia Edition",
