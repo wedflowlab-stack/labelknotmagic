@@ -1,7 +1,9 @@
 import { useEffect, useState } from "react";
+import { Link } from "@tanstack/react-router";
 
 export function Nav() {
   const [scrolled, setScrolled] = useState(false);
+  const [open, setOpen] = useState(false);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 60);
@@ -10,22 +12,101 @@ export function Nav() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
+  useEffect(() => {
+    document.body.style.overflow = open ? "hidden" : "";
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [open]);
+
+  const inverted = scrolled || open;
+
   return (
-    <nav
-      className={`fixed top-0 inset-x-0 z-50 transition-colors duration-500 ${
-        scrolled ? "bg-[var(--sand)]/90 backdrop-blur-sm" : "bg-transparent"
-      }`}
-      style={{ color: scrolled ? "var(--everest)" : "var(--milk)" }}
-    >
-      <div className="mx-auto max-w-[1600px] px-6 md:px-12 h-16 flex items-center justify-between">
-        <a href="#top" className="masthead text-[13px]">Label&nbsp;Knot</a>
-        <div className="hidden md:flex items-center gap-10 cover-line">
-          <a href="#gallery" className="hover:opacity-60 transition-opacity">Work</a>
-          <a href="#philosophy" className="hover:opacity-60 transition-opacity">Philosophy</a>
-          <a href="#book" className="hover:opacity-60 transition-opacity">Book</a>
+    <>
+      <nav
+        className={`fixed top-0 inset-x-0 z-50 transition-colors duration-500 ${
+          inverted ? "bg-[var(--sand)]/90 backdrop-blur-sm" : "bg-transparent"
+        }`}
+        style={{ color: inverted ? "var(--everest)" : "var(--milk)" }}
+      >
+        <div className="mx-auto max-w-[1600px] px-6 md:px-12 h-16 flex items-center justify-between">
+          <Link to="/" className="masthead text-[13px]">
+            Label&nbsp;Knot
+          </Link>
+          <button
+            type="button"
+            aria-label="Open menu"
+            aria-expanded={open}
+            onClick={() => setOpen((v) => !v)}
+            className="flex flex-col items-center justify-center gap-[6px] p-2 -mr-2 group"
+          >
+            <span
+              className={`block h-[3px] w-8 rounded-full transition-all duration-300 ${
+                open ? "translate-y-[9px] rotate-45" : ""
+              }`}
+              style={{ background: "currentColor" }}
+            />
+            <span
+              className={`block h-[3px] w-8 rounded-full transition-all duration-300 ${
+                open ? "opacity-0" : ""
+              }`}
+              style={{ background: "currentColor" }}
+            />
+            <span
+              className={`block h-[3px] w-8 rounded-full transition-all duration-300 ${
+                open ? "-translate-y-[9px] -rotate-45" : ""
+              }`}
+              style={{ background: "currentColor" }}
+            />
+          </button>
         </div>
-        <a href="#book" className="md:hidden cover-line">Book</a>
+      </nav>
+
+      {/* Full-screen menu overlay */}
+      <div
+        className={`fixed inset-0 z-40 transition-all duration-500 ${
+          open ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
+        }`}
+        style={{ background: "var(--sand)", color: "var(--everest)" }}
+      >
+        <div className="h-full w-full flex flex-col items-center justify-center gap-8 px-6">
+          <Link
+            to="/"
+            onClick={() => setOpen(false)}
+            className="masthead text-3xl md:text-5xl hover:opacity-60 transition-opacity"
+          >
+            Home
+          </Link>
+          <Link
+            to="/services"
+            onClick={() => setOpen(false)}
+            className="masthead text-3xl md:text-5xl hover:opacity-60 transition-opacity"
+          >
+            Services
+          </Link>
+          <a
+            href="/#gallery"
+            onClick={() => setOpen(false)}
+            className="masthead text-3xl md:text-5xl hover:opacity-60 transition-opacity"
+          >
+            Work
+          </a>
+          <a
+            href="/#philosophy"
+            onClick={() => setOpen(false)}
+            className="masthead text-3xl md:text-5xl hover:opacity-60 transition-opacity"
+          >
+            Philosophy
+          </a>
+          <a
+            href="/#book"
+            onClick={() => setOpen(false)}
+            className="masthead text-3xl md:text-5xl hover:opacity-60 transition-opacity"
+          >
+            Book
+          </a>
+        </div>
       </div>
-    </nav>
+    </>
   );
 }
