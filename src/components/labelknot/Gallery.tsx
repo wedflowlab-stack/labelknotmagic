@@ -47,7 +47,7 @@ function buildCells(): Cell[] {
     cells[at] = { kind: "text", line };
   });
   const EXTRA_ORDER = [
-    EXTRA_POOL[0], GALLERY_POOL[3],  EXTRA_POOL[1],
+    "https://res.cloudinary.com/dtembvivw/image/upload/v1778166004/SaveClip.App_656403465_18019254551824133_1727390248362862999_n_kamcvk.jpg", GALLERY_POOL[3],  EXTRA_POOL[1],
     GALLERY_POOL[7], EXTRA_POOL[2],  GALLERY_POOL[11],
     EXTRA_POOL[3], GALLERY_POOL[1],  EXTRA_POOL[4],
     GALLERY_POOL[9], EXTRA_POOL[5],  GALLERY_POOL[5],
