@@ -51,7 +51,6 @@ function Index() {
       <Philosophy />
       <Gallery />
       <Reviews />
-      <Offerings />
       <Awards />
       <Interlude />
       <Founder />
