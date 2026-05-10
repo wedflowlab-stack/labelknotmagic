@@ -4,7 +4,7 @@ import { Hero } from "@/components/labelknot/Hero";
 import { Philosophy } from "@/components/labelknot/Philosophy";
 import { Gallery } from "@/components/labelknot/Gallery";
 import { Reviews } from "@/components/labelknot/Reviews";
-import { Offerings } from "@/components/labelknot/Offerings";
+
 import { Awards } from "@/components/labelknot/Awards";
 import { Interlude } from "@/components/labelknot/Interlude";
 import { Founder } from "@/components/labelknot/Founder";
