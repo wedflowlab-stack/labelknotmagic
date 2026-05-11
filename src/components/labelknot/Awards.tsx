@@ -28,6 +28,20 @@ const EMBLEMS = [
     name: "House of the Year",
     org: "The Wed · Asia Edition",
   },
+  {
+    image:
+      "https://res.cloudinary.com/dtembvivw/image/upload/v1778511581/ChatGPT_Image_May_8_2026_09_53_14_PM.webp",
+    year: "MMXXIV",
+    name: "Editor's Selection",
+    org: "Vogue India · Weddings",
+  },
+  {
+    image:
+      "https://res.cloudinary.com/dtembvivw/image/upload/v1778423523/ChatGPT_Image_May_10_2026_07_54_41_PM.webp",
+    year: "MMXXIII",
+    name: "Editorial Distinction",
+    org: "Elle India · Brides",
+  },
 ];
 
 export function Awards() {
@@ -56,7 +70,7 @@ export function Awards() {
             Award Recognition · Selected Honours
           </p>
           <div
-            className="grid grid-cols-1 md:grid-cols-3"
+            className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-5"
             style={{ gap: "1px", backgroundColor: "rgba(255,255,255,0.08)" }}
           >
             {EMBLEMS.map((e, i) => (
