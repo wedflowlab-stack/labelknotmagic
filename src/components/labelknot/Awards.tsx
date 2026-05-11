@@ -120,25 +120,6 @@ export function Awards() {
           </div>
         </div>
 
-        <div
-          style={{ height: "1px", backgroundColor: "rgba(228,219,196,0.2)" }}
-          className="w-full mb-16 md:mb-20"
-        />
-
-        <div className="grid md:grid-cols-3 gap-x-12 gap-y-10 border-y border-[var(--everest)]/25 py-12">
-          {AWARDS.map((a, i) => (
-            <div
-              key={i}
-              className={`pl-0 md:pl-6 ${
-                i % 3 !== 0 ? "md:border-l border-[var(--everest)]/20" : ""
-              }`}
-            >
-              <p className="cover-line mb-3 opacity-60">{a.year}</p>
-              <h3 className="font-display text-2xl md:text-3xl leading-tight">{a.name}</h3>
-              <p className="cover-line mt-3 opacity-80">{a.org}</p>
-            </div>
-          ))}
-        </div>
       </div>
     </section>
   );
