@@ -9,6 +9,7 @@ import { Awards } from "@/components/labelknot/Awards";
 import { Interlude } from "@/components/labelknot/Interlude";
 import { Founder } from "@/components/labelknot/Founder";
 import { ClosingCTA } from "@/components/labelknot/ClosingCTA";
+import { WhyLabelKnot } from "@/components/labelknot/WhyLabelKnot";
 import { InstagramFooter } from "@/components/labelknot/InstagramFooter";
 
 export const Route = createFileRoute("/")({
@@ -54,6 +55,7 @@ function Index() {
       <Awards />
       <Interlude />
       <Founder />
+      <WhyLabelKnot />
       <ClosingCTA />
       <InstagramFooter />
     </main>
