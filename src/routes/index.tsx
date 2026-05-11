@@ -55,6 +55,7 @@ function Index() {
       <Awards />
       <Interlude />
       <Founder />
+      <WhyLabelKnot />
       <ClosingCTA />
       <InstagramFooter />
     </main>
