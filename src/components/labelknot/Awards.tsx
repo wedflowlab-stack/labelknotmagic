@@ -30,14 +30,14 @@ const EMBLEMS = [
   },
   {
     image:
-      "https://res.cloudinary.com/dtembvivw/image/upload/v1778511581/ChatGPT_Image_May_8_2026_09_53_14_PM.webp",
+      "https://res.cloudinary.com/dtembvivw/image/upload/v1778423523/ChatGPT_Image_May_10_2026_07_54_41_PM_mywbk3.webp",
     year: "MMXXIV",
     name: "Editor's Selection",
     org: "Vogue India · Weddings",
   },
   {
     image:
-      "https://res.cloudinary.com/dtembvivw/image/upload/v1778423523/ChatGPT_Image_May_10_2026_07_54_41_PM.webp",
+      "https://res.cloudinary.com/dtembvivw/image/upload/v1778511581/ChatGPT_Image_May_8_2026_09_53_14_PM_qwzzsb.webp",
     year: "MMXXIII",
     name: "Editorial Distinction",
     org: "Elle India · Brides",
