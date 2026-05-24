@@ -17,9 +17,9 @@ const CARDS = [
       "We didn't realise how much we needed those photographs until we sat with them three weeks later. Every frame felt like we were back there in that beach — just the two of us, in that light, in that silence between everything happening around us. four fold pictures didn't photograph our wedding. They photographed us. That difference is something I will never be able to fully explain.",
   },
   {
-    name: "ANU & VISHBIN",
+    name: "PRACHETA & CARL",
     year: "2025",
-    image: "/images/anu-vishbin.jpg",
+    image: "https://res.cloudinary.com/dtembvivw/image/upload/v1777536014/SnapInsta.to_469357702_18065687548704263_2091319423728317775_n_gcb3on.jpg",
     review:
       "There were a hundred people around us that day. But when I look at our photographs now, it feels like there was no one else in the world. Just him looking at me like that. four fold pictures caught something I didn't even know was happening in real time. That is not photography. That is something I don't have a word for yet.",
   },
