@@ -36,7 +36,7 @@ export function WhyLabelKnot() {
           color: MILKY,
         }}
       >
-        Why Label Knot
+        Why Four Fold Pictures
       </h2>
 
       {/* Subheading */}
@@ -46,11 +46,11 @@ export function WhyLabelKnot() {
           fontWeight: 300,
           fontSize: "clamp(20px, 2.5vw, 28px)",
           lineHeight: 1.5,
-          color: "rgba(253,251,240,0.75)",
+          color: MUTED_75,
         }}
       >
-        Every wedding produces photographs. Very few produce something you will reach for twenty
-        years from now.
+        Every wedding produces photographs. Very few produce something you will
+        reach for twenty years from now.
       </p>
 
       {/* Opening line */}
@@ -76,36 +76,28 @@ export function WhyLabelKnot() {
           color: BODY,
         }}
       >
-        Every person in that room will walk out of that venue and return to their own life. The
-        flowers will be gone by morning. The lights will come down. The music will stop. And the
-        version of that day that existed — the real version, the breathing, laughing, falling-apart
-        version — will begin to blur the way all things do when time starts moving again.
+        Every person in that room will walk out of that venue and return to their
+        own life. The flowers will be gone by morning. The lights will come down.
+        The music will stop. And the version of that day that existed — the real
+        version, the breathing, laughing, falling-apart version — will begin to
+        blur the way all things do when time starts moving again.
       </p>
 
-      {/* Cousins paragraph */}
-      <p
-        className="font-display text-center max-w-2xl mx-auto mb-10"
-        style={{
-          fontWeight: 300,
-          fontSize: "clamp(20px, 2.2vw, 26px)",
-          lineHeight: 1.9,
-          color: BODY,
-        }}
-      >
-        Your cousins crowding around you in that stolen moment between rituals —
-      </p>
+      {/* Highlight line */}
       <p
         className="font-display italic text-center max-w-2xl mx-auto mb-12 md:mb-16"
         style={{
           fontStyle: "italic",
           fontWeight: 400,
-          fontSize: "clamp(24px, 2.8vw, 34px)",
-          lineHeight: 1.4,
-          color: MILKY,
+          fontSize: "clamp(28px, 3.4vw, 44px)",
+          lineHeight: 1.35,
+          color: SAND,
+          letterSpacing: "-0.005em",
         }}
       >
-        who only exist together on days like this
+        who only exist for days like this
       </p>
+
       <div
         className="font-display text-center max-w-2xl mx-auto mb-12 md:mb-16"
         style={{
@@ -114,7 +106,7 @@ export function WhyLabelKnot() {
           lineHeight: 1.9,
         }}
       >
-        <div>Label Knot sees that moment.</div>
+        <div>Four Fold sees that moment.</div>
         <div>We stay quiet.</div>
         <div>We catch it before it disappears.</div>
       </div>
@@ -151,8 +143,8 @@ export function WhyLabelKnot() {
           color: BODY,
         }}
       >
-        The man who held your hand crossing every road — the proudest and the most quietly
-        devastated he has ever been in his life
+        The man who held your hand crossing every road — the proudest and the
+        most quietly devastated he has ever been in his life.
       </p>
       <div
         className="font-display text-center max-w-2xl mx-auto mb-12 md:mb-16"
@@ -213,8 +205,8 @@ export function WhyLabelKnot() {
           color: MILKY,
         }}
       >
-        worries she never named, prayers she said when no one was listening, sacrifices so quiet you
-        never even knew to thank her for them
+        worries she never named, prayers she said when no one was listening,
+        sacrifices so quiet you never even knew to thank her for them.
       </p>
       <div
         className="font-display text-center max-w-2xl mx-auto mb-12 md:mb-16"
@@ -232,7 +224,7 @@ export function WhyLabelKnot() {
         </div>
       </div>
 
-      {/* Standalone pull line */}
+      {/* Standalone pull line — the gift for Mom & Dad */}
       <div
         className="font-display text-center max-w-2xl mx-auto py-20 my-10"
         style={{
@@ -242,8 +234,13 @@ export function WhyLabelKnot() {
           lineHeight: 1.5,
         }}
       >
-        <div>That frame is not a photograph.</div>
-        <div>It is the truest thing she has ever shown you.</div>
+        <div>The frame we make is not just a photograph.</div>
+        <div style={{ marginTop: "1rem", color: SAND }}>
+          It is the truest gift that lasts years — even for your Mom &amp; Dad.
+        </div>
+        <div style={{ marginTop: "1.25rem", color: MUTED_75, fontSize: "clamp(20px, 2.2vw, 28px)" }}>
+          It is the truest thing they will hold forever.
+        </div>
       </div>
 
       {/* Closing paragraph */}
@@ -268,7 +265,7 @@ export function WhyLabelKnot() {
             color: BODY,
           }}
         >
-          What we make is the one thing that will still be honest about that day —
+          What we make is the one thing you will keep forever —
         </p>
         <div
           className="font-display text-center"
@@ -298,7 +295,20 @@ export function WhyLabelKnot() {
             lineHeight: 1.6,
           }}
         >
-          The couples who don't choose Label Knot never know what they lost.
+          The couples who choose Four Fold Pictures never spend a single day
+          wondering what they lost.
+        </p>
+        <p
+          className="font-display"
+          style={{
+            fontWeight: 300,
+            fontSize: "clamp(20px, 2.2vw, 26px)",
+            color: BODY,
+            lineHeight: 1.7,
+            marginBottom: "2rem",
+          }}
+        >
+          Every part of that day stays with you, forever.
         </p>
         <p
           className="font-display italic"
@@ -310,7 +320,8 @@ export function WhyLabelKnot() {
             lineHeight: 1.6,
           }}
         >
-          That is the part that should stay with you.
+          And that is why we are not for everyone — and we don't shoot for
+          everyone.
         </p>
 
         <div style={{ height: "60px" }} />
