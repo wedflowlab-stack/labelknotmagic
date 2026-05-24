@@ -51,7 +51,7 @@ function buildCells(): Cell[] {
     GALLERY_POOL[7], EXTRA_POOL[2],  GALLERY_POOL[11],
     "https://res.cloudinary.com/dtembvivw/image/upload/v1777536017/MEAGAN_SHELDON_As_seen_in_vogueindia_Photographed_-_fourfoldpictures_Bride_stylist_by_amazi_1_tud8ye.jpg", "https://res.cloudinary.com/dtembvivw/image/upload/v1777536025/Can_t_get_over_this_beautiful_intimate_wedding_of_Anjana_-_Anish_-_Bahrain_%EF%B8%8F_vogue_voguewe_bwq9qt.jpg",  "https://res.cloudinary.com/dtembvivw/image/upload/v1777536015/SnapInsta.to_469140943_18065687320704263_1820009380109301005_n_oeicru.jpg",
     "https://res.cloudinary.com/dtembvivw/image/upload/v1777536023/SnapInsta.to_573576427_18097592563704263_398145204125775613_n_npdqjv.jpg", "https://res.cloudinary.com/dtembvivw/image/upload/v1777536010/SnapInsta.to_469278126_18065684848704263_7029483129411727534_n_loaayk.jpg",  "https://res.cloudinary.com/dtembvivw/image/upload/v1777536023/SnapInsta.to_571874902_18097592692704263_7967907277228602865_n_ouy709.jpg",
-    GALLERY_POOL[2], EXTRA_POOL[0],  GALLERY_POOL[8],
+    GALLERY_POOL[2], GALLERY_POOL[8],  GALLERY_POOL[8],
   ];
   EXTRA_ORDER.forEach((src) => {
     cells.push({ kind: "img" as const, src, idx: -1 });
@@ -137,6 +137,26 @@ export function Gallery() {
                   }}
                 >
                   Cherished forever.
+                </p>
+              </div>
+            ) : i === 42 || i === 44 ? (
+              <div
+                key={i}
+                className="aspect-[4/5] flex items-center justify-center"
+                style={{ backgroundColor: "var(--sand)" }}
+              >
+                <p
+                  style={{
+                    fontFamily: "'Pinyon Script', cursive",
+                    fontSize: "clamp(1.6rem, 5.2vw, 2.5rem)",
+                    lineHeight: 1.35,
+                    color: "var(--everest)",
+                    textAlign: "center",
+                    padding: "0 8%",
+                    opacity: 0.88,
+                  }}
+                >
+                  {i === 42 ? "Quiet Grace" : "Forever Yours"}
                 </p>
               </div>
             ) : (
