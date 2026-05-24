@@ -33,7 +33,7 @@ const CARDS = [
   {
     name: "ANU & LOVELY COUSINS",
     year: "2025",
-    image: "/images/anu-cousins.jpg",
+    image: "https://res.cloudinary.com/dtembvivw/image/upload/v1777536012/SnapInsta.to_469194601_18065686534704263_1903079251207290384_n_fey2pw.jpg",
     review:
       "My cousins haven't all been in the same place since we were children. Different cities, different lives, different versions of ourselves. That day they wore all theirs — and Label Knot caught a moment between us that none of us staged, none of us planned, none of us ever noticed happening. When I saw that frame I completely fell apart. Because I knew, without anyone saying it, that we will never all be in the same room like that again.",
   },
