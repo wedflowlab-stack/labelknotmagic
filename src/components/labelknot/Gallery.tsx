@@ -34,7 +34,7 @@ const INTERSTITIALS: { at: number; line: string }[] = [
   { at: 11, line: "Sacred Vows" },
   { at: 17, line: "Timeless in Soft Light" },
   { at: 22, line: "Stolen Glances" },
-  { at: 27, line: "Cherished Golden Hours Forever" },
+  { at: 27, line: "Golden Hours" },
 ];
 
 function buildCells(): Cell[] {
