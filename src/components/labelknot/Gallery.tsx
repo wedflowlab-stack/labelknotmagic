@@ -139,6 +139,26 @@ export function Gallery() {
                   Cherished forever.
                 </p>
               </div>
+            ) : i === 42 || i === 44 ? (
+              <div
+                key={i}
+                className="aspect-[4/5] flex items-center justify-center"
+                style={{ backgroundColor: "var(--sand)" }}
+              >
+                <p
+                  style={{
+                    fontFamily: "'Pinyon Script', cursive",
+                    fontSize: "clamp(1.6rem, 5.2vw, 2.5rem)",
+                    lineHeight: 1.35,
+                    color: "var(--everest)",
+                    textAlign: "center",
+                    padding: "0 8%",
+                    opacity: 0.88,
+                  }}
+                >
+                  {i === 42 ? "Quiet Grace" : "Forever Yours"}
+                </p>
+              </div>
             ) : (
               <figure key={i} className="relative overflow-hidden group bg-[var(--milk)] aspect-[4/5]">
                 <img
