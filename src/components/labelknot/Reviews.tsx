@@ -14,28 +14,28 @@ const CARDS = [
     year: "2024",
     image: "/images/alen-chippy.jpg",
     review:
-      "We didn't realise how much we needed those photographs until we sat with them three weeks later. Every frame felt like we were back there in that beach — just the two of us, in that light, in that silence between everything happening around us. Label Knot didn't photograph our wedding. They photographed us. That difference is something I will never be able to fully explain.",
+      "We didn't realise how much we needed those photographs until we sat with them three weeks later. Every frame felt like we were back there in that beach — just the two of us, in that light, in that silence between everything happening around us. four fold pictures didn't photograph our wedding. They photographed us. That difference is something I will never be able to fully explain.",
   },
   {
     name: "ANU & VISHBIN",
     year: "2025",
     image: "/images/anu-vishbin.jpg",
     review:
-      "There were a hundred people around us that day. But when I look at our photographs now, it feels like there was no one else in the world. Just him looking at me like that. Label Knot caught something I didn't even know was happening in real time. That is not photography. That is something I don't have a word for yet.",
+      "There were a hundred people around us that day. But when I look at our photographs now, it feels like there was no one else in the world. Just him looking at me like that. four fold pictures caught something I didn't even know was happening in real time. That is not photography. That is something I don't have a word for yet.",
   },
   {
     name: "ANN & JOHNNY",
     year: "2022",
     image: "/images/ann-johnny.jpg",
     review:
-      "The wedding planning felt enormous at the time. Every decision, every vendor, every number. A year later, I cannot tell you what most of it cost. I can tell you exactly what Label Knot cost — because it is the only thing I would pay again without a second thought. Everything else from that day is a receipt. This is the only thing that is still real, and I still keep coming back to it.",
+      "The wedding planning felt enormous at the time. Every decision, every vendor, every number. A year later, I cannot tell you what most of it cost. I can tell you exactly what four fold pictures cost — because it is the only thing I would pay again without a second thought. Everything else from that day is a receipt. This is the only thing that is still real, and I still keep coming back to it.",
   },
   {
     name: "ANU & LOVELY COUSINS",
     year: "2025",
     image: "https://res.cloudinary.com/dtembvivw/image/upload/v1777536012/SnapInsta.to_469194601_18065686534704263_1903079251207290384_n_fey2pw.jpg",
     review:
-      "My cousins haven't all been in the same place since we were children. Different cities, different lives, different versions of ourselves. That day they wore all theirs — and Label Knot caught a moment between us that none of us staged, none of us planned, none of us ever noticed happening. When I saw that frame I completely fell apart. Because I knew, without anyone saying it, that we will never all be in the same room like that again.",
+      "My cousins haven't all been in the same place since we were children. Different cities, different lives, different versions of ourselves. That day they wore all theirs — and four fold pictures caught a moment between us that none of us staged, none of us planned, none of us ever noticed happening. When I saw that frame I completely fell apart. Because I knew, without anyone saying it, that we will never all be in the same room like that again.",
   },
 ];
 
