@@ -270,7 +270,7 @@ export function Reviews() {
         <p
           className="font-display italic"
           style={{
-            fontSize: "clamp(16px, 1.8vw, 20px)",
+            fontSize: "clamp(18px, 1.8vw, 22px)",
             color: "var(--everest)",
             opacity: 0.7,
           }}

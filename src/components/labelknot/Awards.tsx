@@ -47,13 +47,11 @@ const EMBLEMS = [
 export function Awards() {
   return (
     <section
-      className="relative py-28 md:py-36"
+      className="relative pt-8 md:pt-12 pb-28 md:pb-36"
       style={{ backgroundColor: "var(--milk)", color: "var(--everest)" }}
     >
       <div className="mx-auto max-w-[1400px] px-6 md:px-12">
-        <p className="eyebrow mb-10" style={{ color: "var(--sage)" }}>
-          05 — Recognition
-        </p>
+
 
         <div
           className="py-16 md:py-20 px-6 md:px-12 mb-16 md:mb-20"
