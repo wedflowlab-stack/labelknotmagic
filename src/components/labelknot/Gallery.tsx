@@ -76,7 +76,7 @@ export function Gallery() {
   return (
     <section
       id="gallery"
-      className="relative py-32 md:py-44"
+      className="relative pt-32 md:pt-44 pb-[2px]"
       style={{ backgroundColor: "var(--sand)" }}
     >
       <div className="mx-auto max-w-[1400px] px-6 md:px-12 mb-14 md:mb-20 text-center">
