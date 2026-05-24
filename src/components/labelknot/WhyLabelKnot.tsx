@@ -3,7 +3,7 @@ const MILKY = "#FDFBF0";
 const SAND = "#E4DBC4";
 const BODY = "rgba(253,251,240,0.82)";
 const MUTED_4 = "rgba(253,251,240,0.4)";
-const MUTED_6 = "rgba(253,251,240,0.6)";
+const MUTED_75 = "rgba(253,251,240,0.75)";
 const RULE = "rgba(228,219,196,0.35)";
 
 export function WhyLabelKnot() {
@@ -12,79 +12,106 @@ export function WhyLabelKnot() {
       className="relative py-32 md:py-44 px-6 md:px-12"
       style={{ backgroundColor: EVEREST, color: MILKY }}
     >
-      {/* Element 1 — Eyebrow */}
+      {/* Eyebrow */}
       <p
-        className="font-sans uppercase text-center mb-16"
+        className="font-display text-center mb-6"
         style={{
-          fontSize: "9px",
-          letterSpacing: "6px",
+          fontSize: "11px",
+          letterSpacing: "5px",
           color: MUTED_4,
+          textTransform: "uppercase",
         }}
       >
-        WHAT WE CREATE FOR YOU · WHY LABEL KNOT
+        What We Create For You
       </p>
 
-      {/* Element 2 — Opening line */}
+      {/* Main heading */}
       <h2
-        className="font-display text-center mb-16 mx-auto max-w-3xl"
+        className="font-display text-center mb-8 mx-auto"
+        style={{
+          fontWeight: 400,
+          fontSize: "clamp(44px, 6vw, 80px)",
+          lineHeight: 1.05,
+          letterSpacing: "-0.01em",
+          color: MILKY,
+        }}
+      >
+        Why Label Knot
+      </h2>
+
+      {/* Subheading */}
+      <p
+        className="font-display text-center max-w-xl mx-auto mb-20"
         style={{
           fontWeight: 300,
-          fontSize: "clamp(42px, 6vw, 72px)",
+          fontSize: "clamp(20px, 2.5vw, 28px)",
+          lineHeight: 1.5,
+          color: "rgba(253,251,240,0.75)",
+        }}
+      >
+        Every wedding produces photographs. Very few produce something you will reach for twenty
+        years from now.
+      </p>
+
+      {/* Opening line */}
+      <h3
+        className="font-display text-center mb-16 md:mb-20 mx-auto max-w-3xl"
+        style={{
+          fontWeight: 300,
+          fontSize: "clamp(48px, 6.5vw, 88px)",
           lineHeight: 1.0,
           color: MILKY,
         }}
       >
         Your wedding will happen once.
-      </h2>
+      </h3>
 
-      {/* Element 3 — First body paragraph */}
+      {/* First body paragraph */}
       <p
-        className="font-sans max-w-2xl mx-auto mb-16"
+        className="font-display text-center max-w-2xl mx-auto mb-12 md:mb-16"
         style={{
           fontWeight: 300,
-          fontSize: "clamp(17px, 1.8vw, 20px)",
-          lineHeight: 1.85,
+          fontSize: "clamp(20px, 2.2vw, 26px)",
+          lineHeight: 1.9,
           color: BODY,
         }}
       >
         Every person in that room will walk out of that venue and return to their own life. The
         flowers will be gone by morning. The lights will come down. The music will stop. And the
-        version of that day that existed —
-        <span
-          className="font-display italic block text-center my-6"
-          style={{ fontSize: "21px", color: MILKY, fontStyle: "italic" }}
-        >
-          the real version, the breathing, laughing, falling-apart version
-        </span>
-        — will begin to blur the way all things do when time starts moving again.
+        version of that day that existed — the real version, the breathing, laughing, falling-apart
+        version — will begin to blur the way all things do when time starts moving again.
       </p>
 
-      {/* Element 4 — Cousins paragraph */}
+      {/* Cousins paragraph */}
       <p
-        className="font-sans max-w-2xl mx-auto mb-16"
+        className="font-display text-center max-w-2xl mx-auto mb-10"
         style={{
           fontWeight: 300,
-          fontSize: "clamp(17px, 1.8vw, 20px)",
-          lineHeight: 1.85,
+          fontSize: "clamp(20px, 2.2vw, 26px)",
+          lineHeight: 1.9,
           color: BODY,
         }}
       >
         Your cousins crowding around you in that stolen moment between rituals —
-        <span
-          className="font-display italic block text-center my-8"
-          style={{ fontSize: "24px", color: MILKY, fontStyle: "italic" }}
-        >
-          who only exist together on days like this
-        </span>
+      </p>
+      <p
+        className="font-display italic text-center max-w-2xl mx-auto mb-12 md:mb-16"
+        style={{
+          fontStyle: "italic",
+          fontWeight: 400,
+          fontSize: "clamp(24px, 2.8vw, 34px)",
+          lineHeight: 1.4,
+          color: MILKY,
+        }}
+      >
+        who only exist together on days like this
       </p>
       <div
-        className="font-display italic max-w-2xl mx-auto mb-16 text-right"
+        className="font-display text-center max-w-2xl mx-auto mb-12 md:mb-16"
         style={{
-          fontSize: "15px",
-          color: MUTED_6,
-          lineHeight: 2.0,
-          marginTop: "-2rem",
-          fontStyle: "italic",
+          fontSize: "clamp(20px, 2.2vw, 26px)",
+          color: MUTED_75,
+          lineHeight: 1.9,
         }}
       >
         <div>Label Knot sees that moment.</div>
@@ -92,8 +119,8 @@ export function WhyLabelKnot() {
         <div>We catch it before it disappears.</div>
       </div>
 
-      {/* Element 5 — Chapter break: Father */}
-      <div className="max-w-2xl mx-auto mt-20 mb-10">
+      {/* Chapter break: Father */}
+      <div className="max-w-2xl mx-auto mt-24 md:mt-32 mb-10">
         <div
           style={{
             width: "40px",
@@ -114,32 +141,26 @@ export function WhyLabelKnot() {
         </h3>
       </div>
 
-      {/* Element 6 — Father paragraph */}
+      {/* Father paragraph */}
       <p
-        className="font-sans max-w-2xl mx-auto mb-8"
+        className="font-display text-center max-w-2xl mx-auto mb-10"
         style={{
           fontWeight: 300,
-          fontSize: "clamp(17px, 1.8vw, 20px)",
-          lineHeight: 1.85,
+          fontSize: "clamp(20px, 2.2vw, 26px)",
+          lineHeight: 1.9,
           color: BODY,
         }}
       >
-        The man who held your hand crossing every road —
-        <span
-          className="font-display italic block text-center my-8"
-          style={{ fontSize: "22px", color: MILKY, fontStyle: "italic" }}
-        >
-          the proudest and the most quietly devastated he has ever been in his life
-        </span>
+        The man who held your hand crossing every road — the proudest and the most quietly
+        devastated he has ever been in his life
       </p>
       <div
-        className="font-display italic max-w-2xl mx-auto text-center mb-16"
+        className="font-display text-center max-w-2xl mx-auto mb-12 md:mb-16"
         style={{
-          fontSize: "18px",
+          fontSize: "clamp(28px, 3.2vw, 42px)",
+          fontWeight: 400,
           color: MILKY,
-          lineHeight: 2.0,
-          marginTop: "2.5rem",
-          fontStyle: "italic",
+          lineHeight: 1.45,
         }}
       >
         <div>That four seconds on his face —</div>
@@ -148,8 +169,8 @@ export function WhyLabelKnot() {
         <div style={{ color: SAND }}>we will be the only ones who catch it.</div>
       </div>
 
-      {/* Element 7 — Chapter break: Mother */}
-      <div className="max-w-2xl mx-auto mt-20 mb-10">
+      {/* Chapter break: Mother */}
+      <div className="max-w-2xl mx-auto mt-24 md:mt-32 mb-10">
         <div
           style={{
             width: "40px",
@@ -170,33 +191,38 @@ export function WhyLabelKnot() {
         </h3>
       </div>
 
-      {/* Element 8 — Mother paragraph */}
+      {/* Mother paragraph */}
       <p
-        className="font-sans max-w-2xl mx-auto mb-8"
+        className="font-display text-center max-w-2xl mx-auto mb-10"
         style={{
           fontWeight: 300,
-          fontSize: "clamp(17px, 1.8vw, 20px)",
-          lineHeight: 1.85,
+          fontSize: "clamp(20px, 2.2vw, 26px)",
+          lineHeight: 1.9,
           color: BODY,
         }}
       >
         There are things she has carried for you since the day you were born —
-        <span
-          className="font-display italic block text-center my-8 max-w-xl mx-auto"
-          style={{ fontSize: "22px", color: MILKY, fontStyle: "italic" }}
-        >
-          worries she never named, prayers she said when no one was listening, sacrifices so quiet
-          you never even knew to thank her for them
-        </span>
+      </p>
+      <p
+        className="font-display italic text-center max-w-2xl mx-auto mb-12 md:mb-16"
+        style={{
+          fontStyle: "italic",
+          fontWeight: 400,
+          fontSize: "clamp(22px, 2.6vw, 30px)",
+          lineHeight: 1.5,
+          color: MILKY,
+        }}
+      >
+        worries she never named, prayers she said when no one was listening, sacrifices so quiet you
+        never even knew to thank her for them
       </p>
       <div
-        className="font-display max-w-2xl mx-auto text-center mb-16"
+        className="font-display text-center max-w-2xl mx-auto mb-12 md:mb-16"
         style={{
-          fontSize: "24px",
-          fontWeight: 500,
+          fontSize: "clamp(28px, 3.2vw, 42px)",
+          fontWeight: 400,
           color: MILKY,
-          lineHeight: 1.8,
-          marginTop: "2.5rem",
+          lineHeight: 1.45,
         }}
       >
         <div>Not sadness.</div>
@@ -206,53 +232,51 @@ export function WhyLabelKnot() {
         </div>
       </div>
 
-      {/* Element 9 — Standalone pull line */}
+      {/* Standalone pull line */}
       <div
-        className="font-display italic max-w-2xl mx-auto py-20 my-10 text-center"
+        className="font-display text-center max-w-2xl mx-auto py-20 my-10"
         style={{
           fontWeight: 300,
-          fontSize: "clamp(22px, 2.8vw, 32px)",
+          fontSize: "clamp(28px, 3.2vw, 42px)",
           color: MILKY,
           lineHeight: 1.5,
-          fontStyle: "italic",
         }}
       >
         <div>That frame is not a photograph.</div>
         <div>It is the truest thing she has ever shown you.</div>
       </div>
 
-      {/* Element 10 — Closing paragraph */}
-      <div className="max-w-2xl mx-auto mb-16">
+      {/* Closing paragraph */}
+      <div className="max-w-2xl mx-auto mb-16 text-center">
         <p
           className="font-display"
           style={{
             fontWeight: 500,
-            fontSize: "20px",
+            fontSize: "clamp(22px, 2.4vw, 28px)",
             color: MILKY,
-            marginBottom: "1rem",
+            marginBottom: "1.25rem",
           }}
         >
           Not coverage. Not a package.
         </p>
         <p
-          className="font-sans"
+          className="font-display"
           style={{
             fontWeight: 300,
-            fontSize: "18px",
-            lineHeight: 1.85,
+            fontSize: "clamp(20px, 2.2vw, 26px)",
+            lineHeight: 1.9,
             color: BODY,
           }}
         >
           What we make is the one thing that will still be honest about that day —
         </p>
         <div
-          className="font-display italic text-center"
+          className="font-display text-center"
           style={{
-            fontSize: "17px",
-            color: MUTED_6,
-            lineHeight: 2.2,
+            fontSize: "clamp(20px, 2.2vw, 26px)",
+            color: MUTED_75,
+            lineHeight: 1.9,
             marginTop: "1.5rem",
-            fontStyle: "italic",
           }}
         >
           <div>when the venue has hosted a hundred other weddings,</div>
@@ -262,24 +286,28 @@ export function WhyLabelKnot() {
         </div>
       </div>
 
-      {/* Element 11 — Final closing lines + CTA */}
-      <div className="max-w-2xl mx-auto mt-20">
+      {/* Final closing lines + CTA */}
+      <div className="max-w-2xl mx-auto mt-20 text-center">
         <p
-          className="font-sans text-left mb-4"
+          className="font-display"
           style={{
             fontWeight: 400,
-            fontSize: "clamp(18px, 2vw, 22px)",
+            fontSize: "clamp(20px, 2.2vw, 26px)",
             color: MILKY,
+            marginBottom: "1rem",
+            lineHeight: 1.6,
           }}
         >
           The couples who don't choose Label Knot never know what they lost.
         </p>
         <p
-          className="font-display italic text-left"
+          className="font-display italic"
           style={{
-            fontSize: "17px",
-            color: "rgba(228,219,196,0.7)",
             fontStyle: "italic",
+            fontWeight: 400,
+            fontSize: "clamp(20px, 2.2vw, 26px)",
+            color: SAND,
+            lineHeight: 1.6,
           }}
         >
           That is the part that should stay with you.
@@ -287,13 +315,13 @@ export function WhyLabelKnot() {
 
         <div style={{ height: "60px" }} />
 
-        <div className="flex justify-center">
+        <div className="flex justify-center" style={{ marginTop: "20px" }}>
           <a
             href="#book"
-            className="font-sans uppercase transition-colors"
+            className="font-display uppercase transition-colors"
             style={{
-              fontWeight: 300,
-              fontSize: "11px",
+              fontWeight: 400,
+              fontSize: "13px",
               letterSpacing: "4px",
               color: MILKY,
               padding: "18px 52px",
