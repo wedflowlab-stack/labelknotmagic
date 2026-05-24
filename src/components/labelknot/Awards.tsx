@@ -57,16 +57,17 @@ export function Awards() {
           className="py-16 md:py-20 px-6 md:px-12 mb-16 md:mb-20"
           style={{ backgroundColor: "#18442A" }}
         >
-          <p
+          <h2
             className="font-display text-center uppercase mb-12"
             style={{
-              fontSize: "9px",
+              fontSize: "16px",
               letterSpacing: "4px",
-              color: "rgba(255,255,255,0.4)",
+              color: "rgba(255,255,255,0.85)",
+              fontWeight: 400,
             }}
           >
             Award Recognition · Selected Honours
-          </p>
+          </h2>
           <div
             className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-5"
             style={{ gap: "1px", backgroundColor: "rgba(255,255,255,0.08)" }}
