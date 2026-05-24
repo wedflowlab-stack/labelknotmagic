@@ -78,27 +78,21 @@ export function Gallery() {
       className="relative py-32 md:py-44"
       style={{ backgroundColor: "var(--sand)" }}
     >
-      <div className="mx-auto max-w-[1400px] px-6 md:px-12 mb-14 md:mb-20">
-        <div className="flex items-end justify-between">
-          <div>
-            <p className="eyebrow mb-6" style={{ color: "var(--everest)" }}>
-              02 — The Archive
-            </p>
-            <h2
-              className="editorial-headline text-4xl md:text-6xl max-w-3xl"
-              style={{ color: "var(--everest)" }}
-            >
-              Thirty frames. <em className="font-display italic">One world.</em>
-            </h2>
-          </div>
-          <p
-            className="hidden md:block font-display italic max-w-xs text-right"
-            style={{ color: "var(--everest)" }}
-          >
-            Squint. The colours have been arranged the way a painter would.
-          </p>
-        </div>
+      <div className="mx-auto max-w-[1400px] px-6 md:px-12 mb-14 md:mb-20 text-center">
+        <h2
+          className="editorial-headline text-4xl md:text-6xl mx-auto max-w-4xl uppercase tracking-tight"
+          style={{ color: "var(--everest)" }}
+        >
+          The Frames That Felt Like Breathing
+        </h2>
+        <p
+          className="font-display italic mt-6 mx-auto max-w-2xl text-lg md:text-2xl"
+          style={{ color: "var(--everest)" }}
+        >
+          Everything the eye almost missed — we were already watching before it happened.
+        </p>
       </div>
+
 
       {/* Full bleed 3 col grid */}
       <div className="grid grid-cols-3 gap-[2px]">
