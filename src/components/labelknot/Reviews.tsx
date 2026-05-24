@@ -10,9 +10,9 @@ const CORNER_BR = "HELD FOR A LIFETIME.";
 
 const CARDS = [
   {
-    name: "ALEN BABU & CHIPPY DEVASY",
+    name: "REEYAA NAIR & MR KHANJO",
     year: "2024",
-    image: "/images/alen-chippy.jpg",
+    image: "https://res.cloudinary.com/dtembvivw/image/upload/v1777536030/The_beginning_of_beautiful_forever_%EF%B8%8F_Reeyaa_Nair_MR_Khanijo_Designed_Photographed_-_f_2_axywtv.jpg",
     review:
       "We didn't realise how much we needed those photographs until we sat with them three weeks later. Every frame felt like we were back there in that beach — just the two of us, in that light, in that silence between everything happening around us. four fold pictures didn't photograph our wedding. They photographed us. That difference is something I will never be able to fully explain.",
   },
