@@ -292,7 +292,7 @@ export function WhyLabelKnot() {
           className="font-display"
           style={{
             fontWeight: 400,
-            fontSize: "clamp(20px, 2.2vw, 26px)",
+            fontSize: "clamp(24px, 2.4vw, 30px)",
             color: MILKY,
             marginBottom: "1rem",
             lineHeight: 1.6,
