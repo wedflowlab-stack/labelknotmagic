@@ -24,9 +24,9 @@ const CARDS = [
       "There were a hundred people around us that day. But when I look at our photographs now, it feels like there was no one else in the world. Just him looking at me like that. four fold pictures caught something I didn't even know was happening in real time. That is not photography. That is something I don't have a word for yet.",
   },
   {
-    name: "ANN & JOHNNY",
+    name: "SONALI & RONAK",
     year: "2022",
-    image: "/images/ann-johnny.jpg",
+    image: "https://res.cloudinary.com/dtembvivw/image/upload/v1777536018/SnapInsta.to_476996943_18072413347704263_2797024523165678757_n_kvq9gg.jpg",
     review:
       "The wedding planning felt enormous at the time. Every decision, every vendor, every number. A year later, I cannot tell you what most of it cost. I can tell you exactly what four fold pictures cost — because it is the only thing I would pay again without a second thought. Everything else from that day is a receipt. This is the only thing that is still real, and I still keep coming back to it.",
   },
