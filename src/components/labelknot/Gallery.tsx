@@ -49,8 +49,8 @@ function buildCells(): Cell[] {
   const EXTRA_ORDER = [
     "https://res.cloudinary.com/dtembvivw/image/upload/v1778166004/SaveClip.App_656403465_18019254551824133_1727390248362862999_n_kamcvk.jpg", GALLERY_POOL[3],  EXTRA_POOL[1],
     GALLERY_POOL[7], EXTRA_POOL[2],  GALLERY_POOL[11],
-    EXTRA_POOL[3], GALLERY_POOL[1],  EXTRA_POOL[4],
-    GALLERY_POOL[9], EXTRA_POOL[5],  GALLERY_POOL[5],
+    EXTRA_POOL[3], "https://res.cloudinary.com/dtembvivw/image/upload/v1777536025/Can_t_get_over_this_beautiful_intimate_wedding_of_Anjana_-_Anish_-_Bahrain_%EF%B8%8F_vogue_voguewe_bwq9qt.jpg",  EXTRA_POOL[4],
+    "https://res.cloudinary.com/dtembvivw/image/upload/v1777536023/SnapInsta.to_573576427_18097592563704263_398145204125775613_n_npdqjv.jpg", EXTRA_POOL[5],  "https://res.cloudinary.com/dtembvivw/image/upload/v1777536023/SnapInsta.to_571874902_18097592692704263_7967907277228602865_n_ouy709.jpg",
     GALLERY_POOL[2], EXTRA_POOL[0],  GALLERY_POOL[8],
   ];
   EXTRA_ORDER.forEach((src) => {
