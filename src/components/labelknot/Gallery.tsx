@@ -31,7 +31,7 @@ const ORDER = [
 
 const INTERSTITIALS: { at: number; line: string }[] = [
   { at: 4, line: "Frames of Pure Emotion" },
-  { at: 11, line: "Echoes of Sacred Vows" },
+  { at: 11, line: "Sacred Vows" },
   { at: 17, line: "Timeless in Soft Light" },
   { at: 22, line: "Unspoken Yet Deeply Felt" },
   { at: 27, line: "Cherished Golden Hours Forever" },
