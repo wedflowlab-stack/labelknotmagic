@@ -47,10 +47,10 @@ function buildCells(): Cell[] {
     cells[at] = { kind: "text", line };
   });
   const EXTRA_ORDER = [
-    "https://res.cloudinary.com/dtembvivw/image/upload/v1778166004/SaveClip.App_656403465_18019254551824133_1727390248362862999_n_kamcvk.jpg", GALLERY_POOL[3],  EXTRA_POOL[1],
+    "https://res.cloudinary.com/dtembvivw/image/upload/v1778166004/SaveClip.App_656403465_18019254551824133_1727390248362862999_n_kamcvk.jpg", GALLERY_POOL[3],  "https://res.cloudinary.com/dtembvivw/image/upload/v1777536017/SnapInsta.to_471588587_18067547047704263_893259353441750017_n_zy2zim.jpg",
     GALLERY_POOL[7], EXTRA_POOL[2],  GALLERY_POOL[11],
-    EXTRA_POOL[3], "https://res.cloudinary.com/dtembvivw/image/upload/v1777536025/Can_t_get_over_this_beautiful_intimate_wedding_of_Anjana_-_Anish_-_Bahrain_%EF%B8%8F_vogue_voguewe_bwq9qt.jpg",  EXTRA_POOL[4],
-    "https://res.cloudinary.com/dtembvivw/image/upload/v1777536023/SnapInsta.to_573576427_18097592563704263_398145204125775613_n_npdqjv.jpg", EXTRA_POOL[5],  "https://res.cloudinary.com/dtembvivw/image/upload/v1777536023/SnapInsta.to_571874902_18097592692704263_7967907277228602865_n_ouy709.jpg",
+    "https://res.cloudinary.com/dtembvivw/image/upload/v1777536017/MEAGAN_SHELDON_As_seen_in_vogueindia_Photographed_-_fourfoldpictures_Bride_stylist_by_amazi_1_tud8ye.jpg", "https://res.cloudinary.com/dtembvivw/image/upload/v1777536025/Can_t_get_over_this_beautiful_intimate_wedding_of_Anjana_-_Anish_-_Bahrain_%EF%B8%8F_vogue_voguewe_bwq9qt.jpg",  "https://res.cloudinary.com/dtembvivw/image/upload/v1777536015/SnapInsta.to_469140943_18065687320704263_1820009380109301005_n_oeicru.jpg",
+    "https://res.cloudinary.com/dtembvivw/image/upload/v1777536023/SnapInsta.to_573576427_18097592563704263_398145204125775613_n_npdqjv.jpg", "https://res.cloudinary.com/dtembvivw/image/upload/v1777536010/SnapInsta.to_469278126_18065684848704263_7029483129411727534_n_loaayk.jpg",  "https://res.cloudinary.com/dtembvivw/image/upload/v1777536023/SnapInsta.to_571874902_18097592692704263_7967907277228602865_n_ouy709.jpg",
     GALLERY_POOL[2], EXTRA_POOL[0],  GALLERY_POOL[8],
   ];
   EXTRA_ORDER.forEach((src) => {
