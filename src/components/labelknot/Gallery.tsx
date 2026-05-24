@@ -51,6 +51,7 @@ function buildCells(): Cell[] {
     GALLERY_POOL[7], EXTRA_POOL[2],  GALLERY_POOL[11],
     EXTRA_POOL[3], GALLERY_POOL[1],  EXTRA_POOL[4],
     GALLERY_POOL[9], EXTRA_POOL[5],  GALLERY_POOL[5],
+    GALLERY_POOL[2], EXTRA_POOL[0],  GALLERY_POOL[8],
   ];
   EXTRA_ORDER.forEach((src) => {
     cells.push({ kind: "img" as const, src, idx: -1 });
