@@ -1,18 +1,45 @@
+import { useEffect, useState } from "react";
 import { HERO_IMAGE } from "@/lib/labelknot-images";
 import emblem from "@/assets/labelknot-emblem.png";
 
+const SLIDES = [
+  HERO_IMAGE,
+  "https://res.cloudinary.com/dtembvivw/image/upload/v1777536015/SnapInsta.to_469140943_18065687326704263_5878676085571618783_n_yldd5o.jpg",
+  "https://res.cloudinary.com/dtembvivw/image/upload/v1777536012/SnapInsta.to_658813963_18576268351025068_8987836767423854437_n_nyfw6f.jpg",
+  "https://res.cloudinary.com/dtembvivw/image/upload/v1777536019/She_wore_the_wind_like_a_whisper_draped_in_sunlight_and_silence_a_fleeting_dream_by_the_water_s_fmyacn.jpg",
+  "https://res.cloudinary.com/dtembvivw/image/upload/v1777536024/SnapInsta.to_566520930_18096225913704263_3186290050904152969_n_sifgmv.jpg",
+];
+
 export function Hero() {
+  const [current, setCurrent] = useState(0);
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrent((prev) => (prev + 1) % SLIDES.length);
+    }, 3000);
+    return () => clearInterval(timer);
+  }, []);
+
   return (
     <section id="top" className="relative h-[100svh] min-h-[720px] w-full overflow-hidden">
-      {/* Image */}
-      <img
-        src={HERO_IMAGE}
-        alt="Label Knot — premium Indian wedding photography"
-        className="absolute inset-0 h-full w-full object-cover slow-zoom"
-      />
+      {/* Slideshow */}
+      {SLIDES.map((src, i) => (
+        <img
+          key={src}
+          src={src}
+          alt="Label Knot — premium Indian wedding photography"
+          className="absolute inset-0 h-full w-full object-cover object-center"
+          style={{
+            opacity: i === current ? 1 : 0,
+            transition: "opacity 1.2s ease-in-out",
+            zIndex: i === current ? 1 : 0,
+          }}
+          loading={i === 0 ? "eager" : "lazy"}
+        />
+      ))}
       {/* Editorial vignette */}
-      <div className="absolute inset-0 bg-gradient-to-b from-black/35 via-black/10 to-black/55" />
-      <div className="absolute inset-0 bg-gradient-to-r from-black/25 to-transparent" />
+      <div className="absolute inset-0 bg-gradient-to-b from-black/35 via-black/10 to-black/55 z-10" />
+      <div className="absolute inset-0 bg-gradient-to-r from-black/25 to-transparent z-10" />
 
       {/* Cover anatomy */}
       <div
