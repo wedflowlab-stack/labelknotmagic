@@ -1,5 +1,5 @@
 export const HERO_IMAGE =
-  "https://res.cloudinary.com/dtembvivw/image/upload/v1777608399/SnapInsta.to_590569291_18006699452824133_3848952403777069736_n_xseoti.jpg";
+  "https://res.cloudinary.com/dtembvivw/image/upload/v1779732042/SaveClip.App_518998457_18085834000704263_2487413177226220895_n_tfq7bv.jpg";
 
 export const FOUNDER_IMAGE =
   "https://res.cloudinary.com/dtembvivw/image/upload/v1777606623/The_Woman_Behind_SYC_Soft_CEO_Era_Inspiration_for_Women_Entrepreneurs_oqgfr4.jpg";
