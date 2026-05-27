@@ -14,11 +14,19 @@ export function Hero() {
   const [current, setCurrent] = useState(0);
 
   useEffect(() => {
+    SLIDES.forEach((src) => {
+      const img = new Image();
+      img.src = src;
+    });
+  }, []);
+
+  useEffect(() => {
     const timer = setInterval(() => {
       setCurrent((prev) => (prev + 1) % SLIDES.length);
     }, 3000);
     return () => clearInterval(timer);
   }, []);
+
 
   return (
     <section id="top" className="relative h-[100svh] min-h-[720px] w-full overflow-hidden">
