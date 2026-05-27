@@ -36,6 +36,7 @@ export function Hero() {
           key={src}
           src={src}
           alt="Label Knot — premium Indian wedding photography"
+          crossOrigin="anonymous"
           className="absolute inset-0 h-full w-full object-cover object-center"
           style={{
             opacity: i === current ? 1 : 0,
@@ -43,8 +44,10 @@ export function Hero() {
             zIndex: i === current ? 1 : 0,
           }}
           loading={i === 0 ? "eager" : "lazy"}
+          onError={() => setCurrent((prev) => (prev + 1) % SLIDES.length)}
         />
       ))}
+
       {/* Editorial vignette */}
       <div className="absolute inset-0 bg-gradient-to-b from-black/35 via-black/10 to-black/55 z-10" />
       <div className="absolute inset-0 bg-gradient-to-r from-black/25 to-transparent z-10" />
