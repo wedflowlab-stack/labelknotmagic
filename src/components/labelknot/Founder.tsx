@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import fourfoldLogo from "@/assets/fourfold-logo.png.asset.json";
+import fourfoldLogo from "@/assets/fourfold-logo-black.png.asset.json";
 
 const PRESS = [
   "Wedding Sutra",
