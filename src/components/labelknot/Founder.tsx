@@ -39,20 +39,28 @@ export function Founder() {
     >
       <div className="mx-auto max-w-[1400px] px-6 md:px-12 grid md:grid-cols-12 gap-12">
         <div className="md:col-span-6 lg:col-span-5 md:order-1">
-          <div className="relative w-full aspect-[4/5] overflow-hidden bg-black">
-            {FOUNDER_SLIDES.map((src, i) => (
-              <img
-                key={src}
-                src={src}
-                alt="Fourfold Pictures — founder & studio"
-                className="absolute inset-0 h-full w-full object-contain"
-                style={{
-                  opacity: i === current ? 1 : 0,
-                  transition: "opacity 1.2s ease-in-out",
-                }}
-                loading={i === 0 ? "eager" : "lazy"}
-              />
-            ))}
+          <div
+            className="relative w-full aspect-[4/5] overflow-hidden bg-black p-[6px]"
+            style={{
+              background:
+                "linear-gradient(135deg, #c9a84c 0%, #e8d28a 25%, #4a6741 75%, #87a878 100%)",
+            }}
+          >
+            <div className="relative w-full h-full bg-black overflow-hidden">
+              {FOUNDER_SLIDES.map((src, i) => (
+                <img
+                  key={src}
+                  src={src}
+                  alt="Fourfold Pictures — founder & studio"
+                  className="absolute inset-0 h-full w-full object-cover"
+                  style={{
+                    opacity: i === current ? 1 : 0,
+                    transition: "opacity 1.2s ease-in-out",
+                  }}
+                  loading={i === 0 ? "eager" : "lazy"}
+                />
+              ))}
+            </div>
           </div>
         </div>
 
