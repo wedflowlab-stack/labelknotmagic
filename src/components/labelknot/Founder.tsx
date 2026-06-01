@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import fourfoldLogo from "@/assets/fourfold-logo.png.asset.json";
+import fourfoldLogo from "@/assets/fourfold-logo-black.png.asset.json";
 
 const PRESS = [
   "Wedding Sutra",
@@ -56,9 +56,8 @@ export function Founder() {
           </div>
         </div>
 
-        <div className="md:col-span-6 lg:col-span-7 md:order-2 md:pt-12 md:pl-6 lg:pl-16">
-          <p className="eyebrow mb-6 text-center md:text-left">07 — Meet</p>
-          <div className="flex justify-center md:justify-start mb-8">
+        <div className="md:col-span-6 lg:col-span-7 md:order-2 md:pt-12 md:pl-6 lg:pl-16 text-center">
+          <div className="flex justify-center mb-8">
             <img
               src={fourfoldLogo.url}
               alt="Fourfold Pictures"
@@ -70,7 +69,7 @@ export function Founder() {
             A wedding is not a <br />
             <em className="font-display italic">single event.</em>
           </h2>
-          <div className="mt-10 max-w-xl space-y-5 editorial-body">
+          <div className="mt-10 mx-auto max-w-xl space-y-5 editorial-body">
             <p>
               It is ten events, forty relationships, and two hundred unrepeatable moments —
               assembled once, for one family, across a few extraordinary hours. And then it is
