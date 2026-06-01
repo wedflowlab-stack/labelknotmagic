@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { HERO_IMAGE } from "@/lib/labelknot-images";
-import emblem from "@/assets/labelknot-emblem.png";
+import fourfoldLogo from "@/assets/fourfold-logo.png.asset.json";
 
 const SLIDES = [
   HERO_IMAGE,
@@ -69,22 +69,13 @@ export function Hero() {
 
         {/* Masthead */}
         <div className="px-6 md:px-12 mt-[10vh] md:mt-10 fade-up text-center flex flex-col items-center">
-          {/* Emblem — interlocking knot */}
+          <h1 className="sr-only">Fourfold Pictures</h1>
           <img
-            src={emblem}
-            alt="Label Knot emblem"
-            className="w-[40vw] max-w-[320px] md:w-[260px] lg:w-[300px] mb-4 md:mb-6 select-none pointer-events-none"
+            src={fourfoldLogo.url}
+            alt="Fourfold Pictures"
+            className="w-[85vw] max-w-[640px] md:w-[60vw] lg:w-[52vw] select-none pointer-events-none"
             draggable={false}
           />
-
-          <h1
-            style={{ fontWeight: 300 }}
-            className="font-brand font-light uppercase leading-[0.95]
-                       tracking-[0.18em] md:tracking-[0.22em]
-                       text-[11.5vw] md:text-[8.5vw] lg:text-[6.8vw] whitespace-nowrap px-[3.8vw]"
-          >
-            Label&nbsp;Knot
-          </h1>
           <p className="mt-5 md:mt-6 font-display italic text-base md:text-xl tracking-wide opacity-90">
             Where stories become timeless art
           </p>
