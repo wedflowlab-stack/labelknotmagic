@@ -15,6 +15,8 @@ const FOUNDER_SLIDES = [
   "https://res.cloudinary.com/dtembvivw/image/upload/q_auto/f_auto/v1780301353/ChatGPT_Image_May_25_2026_11_33_59_PM_ze01as.png",
 ];
 
+const FOUNDER_SLIDE_STYLES = ["cover", "contain"] as const;
+
 export function Founder() {
   const [current, setCurrent] = useState(0);
 
@@ -40,22 +42,24 @@ export function Founder() {
       <div className="mx-auto max-w-[1400px] px-6 md:px-12 grid md:grid-cols-12 gap-12">
         <div className="md:col-span-6 lg:col-span-5 md:order-1">
           <div
-            className="relative w-full aspect-[4/5] overflow-hidden bg-black p-[6px]"
+            className="relative mx-auto w-full max-w-[540px] aspect-[5/6] md:max-w-[620px] md:aspect-[6/7] overflow-hidden p-[5px]"
             style={{
-              background:
-                "linear-gradient(135deg, #c9a84c 0%, #e8d28a 25%, #4a6741 75%, #87a878 100%)",
+              backgroundColor: "#E4DBC4",
+              boxShadow: "0 18px 40px rgba(70, 52, 19, 0.14)",
             }}
           >
-            <div className="relative w-full h-full bg-black overflow-hidden">
+            <div className="relative w-full h-full overflow-hidden bg-[#120f0a]">
               {FOUNDER_SLIDES.map((src, i) => (
                 <img
                   key={src}
                   src={src}
                   alt="Fourfold Pictures — founder & studio"
-                  className="absolute inset-0 h-full w-full object-cover"
+                  className="absolute inset-0 h-full w-full"
                   style={{
                     opacity: i === current ? 1 : 0,
                     transition: "opacity 1.2s ease-in-out",
+                    objectFit: FOUNDER_SLIDE_STYLES[i],
+                    objectPosition: "center center",
                   }}
                   loading={i === 0 ? "eager" : "lazy"}
                 />
