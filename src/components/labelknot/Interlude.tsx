@@ -1,27 +1,86 @@
+const BG_IMAGE =
+  "https://res.cloudinary.com/dtembvivw/image/upload/v1777536016/SnapInsta.to_471409298_18067546990704263_2281211428631011054_n_tatyih.jpg";
+
 export function Interlude() {
   return (
     <section
-      className="relative min-h-[100svh] flex items-center"
-      style={{ backgroundColor: "var(--milk)", color: "var(--everest)" }}
+      className="relative overflow-hidden flex items-center justify-center"
+      style={{ minHeight: "100vh" }}
     >
-      <div className="mx-auto max-w-[1500px] px-6 md:px-12 py-32">
-        <p className="eyebrow mb-10" style={{ color: "var(--sage)" }}>
-          06 — Interlude
+      <img
+        src={BG_IMAGE}
+        alt=""
+        className="absolute inset-0 w-full h-full object-cover object-center"
+        style={{ zIndex: 0 }}
+      />
+      <div
+        className="absolute inset-0"
+        style={{
+          background:
+            "linear-gradient(to bottom, rgba(0,0,0,0.45) 0%, rgba(0,0,0,0.2) 40%, rgba(0,0,0,0.55) 100%)",
+          zIndex: 1,
+        }}
+      />
+      <div
+        className="absolute inset-0"
+        style={{
+          background:
+            "radial-gradient(ellipse at center, rgba(0,0,0,0.35) 0%, transparent 70%)",
+          zIndex: 2,
+        }}
+      />
+
+      <div className="relative z-10 flex flex-col items-center justify-center text-center px-6 md:px-16 py-24 max-w-4xl mx-auto">
+        <p
+          className="font-display uppercase mb-10"
+          style={{
+            fontSize: "10px",
+            letterSpacing: "6px",
+            color: "rgba(253,251,240,0.45)",
+          }}
+        >
+          06 · Interlude
         </p>
-        <p className="font-display leading-[0.98] tracking-[-0.01em] text-[10vw] md:text-[7.2vw]">
-          A wedding is not a day
-          <br />
-          you <em className="italic">live through.</em>
-          <br />
-          It is a day that lives
-          <br />
-          <em className="italic">through</em> you —
-          <br />
-          and then is gone,
-          <br />
-          before you knew
-          <br />
-          you were inside it.
+
+        <div
+          className="mb-12 mx-auto"
+          style={{ width: "40px", height: "1px", backgroundColor: "#E4DBC4", opacity: 0.4 }}
+        />
+
+        <p
+          className="font-display text-center"
+          style={{
+            fontWeight: 300,
+            fontSize: "clamp(28px, 4vw, 56px)",
+            lineHeight: 1.25,
+            letterSpacing: "-0.01em",
+            color: "#FDFBF0",
+          }}
+        >
+          <span className="block">A wedding is not a day you live through.</span>
+          <span className="block mt-3">It is a day that lives through you —</span>
+          <span
+            className="block mt-3 italic"
+            style={{ color: "rgba(253,251,240,0.85)" }}
+          >
+            and then is gone, before you knew you were inside it.
+          </span>
+        </p>
+
+        <div
+          className="mt-12 mb-10 mx-auto"
+          style={{ width: "40px", height: "1px", backgroundColor: "#E4DBC4", opacity: 0.4 }}
+        />
+
+        <p
+          className="font-display uppercase mt-2"
+          style={{
+            fontSize: "10px",
+            letterSpacing: "5px",
+            color: "rgba(253,251,240,0.35)",
+          }}
+        >
+          Fourfold Pictures · Premium Wedding Photography &amp; Films
         </p>
       </div>
     </section>
