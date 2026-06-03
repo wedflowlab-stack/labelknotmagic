@@ -58,9 +58,9 @@ export function Interlude() {
           }}
         >
           <span className="block">A WEDDING IS NOT A DAY YOU LIVE THROUGH.</span>
-          <span className="block mt-3">IT IS A DAY THAT LIVES THROUGH YOU —</span>
+          <span className="block mt-10 md:mt-12">IT IS A DAY THAT LIVES THROUGH YOU —</span>
           <span
-            className="block mt-3 italic"
+            className="block mt-10 md:mt-12 italic"
             style={{ color: "rgba(253,251,240,0.85)" }}
           >
             AND THEN IS GONE, BEFORE YOU KNEW YOU WERE INSIDE IT.
