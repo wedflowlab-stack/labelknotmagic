@@ -110,7 +110,7 @@ export function Hero() {
           <div className="mt-[calc(2rem+2vh)] md:mt-10 text-center space-y-3">
             <p className="cover-line opacity-80">Premium Wedding House</p>
             <p className="font-display text-sm md:text-2xl leading-snug tracking-wide whitespace-nowrap">
-              Mumbai · Jaipur· Bangalore · Dubai
+              MUMBAIi · JAIPUR· BANGLORE · DUBAI · UK ·
             </p>
             <p className="font-display text-sm md:text-2xl leading-snug tracking-wide">
               Worldwide
