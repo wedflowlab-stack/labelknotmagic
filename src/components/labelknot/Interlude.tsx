@@ -1,5 +1,5 @@
 const BG_IMAGE =
-  "https://res.cloudinary.com/dtembvivw/image/upload/v1777536016/SnapInsta.to_471409298_18067546990704263_2281211428631011054_n_tatyih.jpg";
+  "https://res.cloudinary.com/dtembvivw/image/upload/v1777536016/SnapInsta.to_471409298_18067546990704263_8488551263776633218_n_qpnt0e.jpg";
 
 export function Interlude() {
   return (
