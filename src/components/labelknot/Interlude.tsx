@@ -5,7 +5,7 @@ export function Interlude() {
   return (
     <section
       className="relative overflow-hidden flex items-center justify-center"
-      style={{ minHeight: "100vh" }}
+      style={{ minHeight: "80vh" }}
     >
       <img
         src={BG_IMAGE}
@@ -48,7 +48,7 @@ export function Interlude() {
         />
 
         <p
-          className="font-display text-center"
+          className="font-display text-center uppercase"
           style={{
             fontWeight: 300,
             fontSize: "clamp(28px, 4vw, 56px)",
@@ -57,13 +57,13 @@ export function Interlude() {
             color: "#FDFBF0",
           }}
         >
-          <span className="block">A wedding is not a day you live through.</span>
-          <span className="block mt-3">It is a day that lives through you —</span>
+          <span className="block">A WEDDING IS NOT A DAY YOU LIVE THROUGH.</span>
+          <span className="block mt-3">IT IS A DAY THAT LIVES THROUGH YOU —</span>
           <span
             className="block mt-3 italic"
             style={{ color: "rgba(253,251,240,0.85)" }}
           >
-            and then is gone, before you knew you were inside it.
+            AND THEN IS GONE, BEFORE YOU KNEW YOU WERE INSIDE IT.
           </span>
         </p>
 
