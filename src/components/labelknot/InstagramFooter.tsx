@@ -53,7 +53,7 @@ export function InstagramFooter() {
 
         <div className="mt-20 pt-8 border-t border-[var(--everest)]/20 flex flex-col md:flex-row items-center justify-between gap-3 cover-line opacity-60">
           <span>© four-fold pictures · MMXXVI</span>
-          <span>Photographed across India &nbsp;·&nbsp; Available worldwide</span>
+          <span>Photographed across India &nbsp;·&nbsp; Worldwide</span>
         </div>
       </div>
     </footer>
