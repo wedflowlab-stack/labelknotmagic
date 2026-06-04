@@ -17,7 +17,7 @@ export function Interlude() {
         className="absolute inset-0"
         style={{
           background:
-            "linear-gradient(to bottom, rgba(0,0,0,0.45) 0%, rgba(0,0,0,0.2) 40%, rgba(0,0,0,0.55) 100%)",
+            "linear-gradient(to bottom, rgba(180,140,60,0.55) 0%, rgba(200,160,80,0.40) 40%, rgba(160,120,40,0.65) 100%)",
           zIndex: 1,
         }}
       />
@@ -25,7 +25,7 @@ export function Interlude() {
         className="absolute inset-0"
         style={{
           background:
-            "radial-gradient(ellipse at center, rgba(0,0,0,0.35) 0%, transparent 70%)",
+            "radial-gradient(ellipse at center, rgba(190,150,70,0.45) 0%, transparent 70%)",
           zIndex: 2,
         }}
       />
