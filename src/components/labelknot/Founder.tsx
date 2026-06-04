@@ -2,19 +2,19 @@ import { useEffect, useState } from "react";
 import fourfoldLogo from "@/assets/fourfold-logo-black.png.asset.json";
 
 const VOGUE_LOGO =
-  "https://res.cloudinary.com/dtembvivw/image/upload/v1776968855/VOGUE_2_-Photoroom_e8bsv3.png";
+  "https://res.cloudinary.com/drszur4wl/image/upload/v1776868855/VOGUE_2_-Photoroom_e0bxv3.png";
 const WEDDING_SUTRA_LOGO =
-  "https://res.cloudinary.com/dtembvivw/image/upload/v1776868845/Gemini_Generated_Image_21o7g121e7g-Photoroom_j2g4th.png";
+  "https://res.cloudinary.com/drszur4wl/image/upload/v1776868846/Gemini_Generated_Image_21e7g121e7g121e7-Photoroom_j2g4th.png";
 const HARPERS_LOGO =
-  "https://res.cloudinary.com/dtembvivw/image/upload/v1776818643/BAZZAR-Photoroom_winhel.png";
+  "https://res.cloudinary.com/drszur4wl/image/upload/v1776868843/BAZZAR-Photoroom_w4mhel.png";
 const ELLE_LOGO =
-  "https://res.cloudinary.com/dtembvivw/image/upload/v1758561032/ELLE_LG_tdgu1l.webp";
+  "https://res.cloudinary.com/drszur4wl/image/upload/v1780561632/ELLE_LG_tdgul1.webp";
 const THE_WED_LOGO =
-  "https://res.cloudinary.com/dtembvivw/image/upload/v1758561034/THE_WED__G_fw5z1c.webp";
+  "https://res.cloudinary.com/drszur4wl/image/upload/v1780561634/THE_WED_LG_fw8ziq.webp";
 const WEZOREE_LOGO =
-  "https://res.cloudinary.com/dtembvivw/image/upload/v1776868854/Wezore-Photoroom_qptpim.png";
+  "https://res.cloudinary.com/drszur4wl/image/upload/v1776868854/WEZORE-Photoroom_iptptm.png";
 const TIMES_LOGO =
-  "https://res.cloudinary.com/dtembvivw/image/upload/v1776868625/times_of_india-Photoroom_vtd8eu.png";
+  "https://res.cloudinary.com/drszur4wl/image/upload/v1776868875/times_of_india-Photoroom_wtd0eu.png";
 
 const FOUNDER_SLIDES = [
   "https://res.cloudinary.com/dtembvivw/image/upload/v1779731626/SaveClip.App_670986817_18579183334008962_886943027846087425_n_ypxhre.jpg",
