@@ -113,27 +113,217 @@ export function Founder() {
             </p>
           </div>
         </div>
+      </div>
 
-        {/* As seen in */}
-        <div className="md:col-span-12 mt-16 md:mt-24 border-t border-[var(--everest)]/25 pt-10">
-          <p className="cover-line mb-6 opacity-80">As Seen In</p>
-          <div className="flex flex-wrap items-baseline gap-x-10 gap-y-4">
-            {PRESS.map((p, i) => (
-              <span
-                key={i}
-                className="font-display uppercase tracking-[0.18em] text-xl md:text-2xl"
-              >
-                {p}
-                {i < PRESS.length - 1 && (
-                  <span className="ml-10 opacity-40" aria-hidden>
-                    ·
-                  </span>
-                )}
-              </span>
-            ))}
+      {/* As Seen In — Editorial Grid v8 */}
+      <div
+        className="relative w-full overflow-hidden mt-20 md:mt-28"
+        style={{ backgroundColor: "#18442A" }}
+      >
+        <div className="px-6 md:px-12 py-20 md:py-28">
+          {/* Header */}
+          <div className="text-center mb-10 md:mb-14">
+            <p
+              className="font-display uppercase mb-4"
+              style={{
+                fontSize: "9px",
+                letterSpacing: "5px",
+                color: "rgba(253,251,240,0.35)",
+              }}
+            >
+              Recognition · Publications
+            </p>
+            <h3
+              className="font-display mb-8"
+              style={{
+                fontWeight: 800,
+                fontSize: "clamp(38px, 4vw, 58px)",
+                color: "#FDFBF0",
+                lineHeight: 1.1,
+              }}
+            >
+              As Seen In
+            </h3>
+            <div
+              className="mx-auto"
+              style={{
+                width: "32px",
+                height: "1px",
+                backgroundColor: "#E4DBC4",
+                opacity: 0.35,
+              }}
+            />
           </div>
+
+          {/* Grid */}
+          <div
+            style={{
+              borderTop: "1px solid rgba(229,219,196,0.12)",
+              borderBottom: "1px solid rgba(229,219,196,0.12)",
+            }}
+          >
+            {/* ROW 1 — Vogue featured */}
+            <PressFeatured logo={VOGUE_LOGO} alt="Vogue India" num="N° 01" featured />
+
+            {/* ROW 2 — Wedding Sutra + Harpers Bazaar */}
+            <div
+              className="grid grid-cols-1 md:grid-cols-2"
+              style={{ borderBottom: "1px solid rgba(229,219,196,0.12)" }}
+            >
+              <PressCell logo={WEDDING_SUTRA_LOGO} alt="Wedding Sutra" num="N° 02" logoHeight={28} divider />
+              <PressCell logo={HARPERS_LOGO} alt="Harpers Bazaar" num="N° 03" logoHeight={28} />
+            </div>
+
+            {/* ROW 3 — Elle + The Wed + Wezoree */}
+            <div
+              className="grid grid-cols-1 md:grid-cols-3"
+              style={{ borderBottom: "1px solid rgba(229,219,196,0.12)" }}
+            >
+              <PressCell logo={ELLE_LOGO} alt="Elle India" num="N° 04" logoHeight={26} divider />
+              <PressCell logo={THE_WED_LOGO} alt="The Wed" num="N° 05" logoHeight={26} divider />
+              <PressCell logo={WEZOREE_LOGO} alt="Wezoree" num="N° 06" logoHeight={26} />
+            </div>
+
+            {/* ROW 4 — Times of India full width */}
+            <PressFeatured logo={TIMES_LOGO} alt="Times of India" num="N° 07" logoHeight={30} compact />
+          </div>
+
+          {/* Closing line */}
+          <p
+            className="text-center mt-10 md:mt-14 pb-2 font-display italic"
+            style={{
+              fontSize: "15px",
+              color: "rgba(253,251,240,0.35)",
+              letterSpacing: "0.5px",
+            }}
+          >
+            Seven publications. One studio.
+          </p>
         </div>
       </div>
     </section>
+  );
+}
+
+function PressFeatured({
+  logo,
+  alt,
+  num,
+  featured,
+  logoHeight,
+  compact,
+}: {
+  logo: string;
+  alt: string;
+  num: string;
+  featured?: boolean;
+  logoHeight?: number;
+  compact?: boolean;
+}) {
+  return (
+    <div
+      className="relative group flex items-center justify-center transition-colors duration-[400ms]"
+      style={{
+        padding: compact ? "32px 24px" : "36px 24px",
+        backgroundColor: "#18442A",
+        borderBottom: compact ? "none" : "1px solid rgba(229,219,196,0.12)",
+      }}
+      onMouseEnter={(e) =>
+        (e.currentTarget.style.backgroundColor = "rgba(253,251,240,0.04)")
+      }
+      onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = "#18442A")}
+    >
+      <span
+        className="absolute font-display uppercase"
+        style={{
+          top: "14px",
+          left: "20px",
+          fontSize: "9px",
+          letterSpacing: "3px",
+          color: "rgba(229,219,196,0.22)",
+        }}
+      >
+        {num}
+      </span>
+      {featured && (
+        <span
+          className="absolute font-display uppercase"
+          style={{
+            top: "14px",
+            right: "20px",
+            fontSize: "9px",
+            letterSpacing: "3px",
+            color: "rgba(229,219,196,0.35)",
+          }}
+        >
+          Featured
+        </span>
+      )}
+      <img
+        src={logo}
+        alt={alt}
+        className="object-contain transition-opacity duration-[400ms] group-hover:opacity-100"
+        style={{
+          height: `${logoHeight ?? 36}px`,
+          width: "auto",
+          filter: "brightness(0) invert(1)",
+          opacity: 0.55,
+        }}
+      />
+    </div>
+  );
+}
+
+function PressCell({
+  logo,
+  alt,
+  num,
+  logoHeight = 28,
+  divider,
+}: {
+  logo: string;
+  alt: string;
+  num: string;
+  logoHeight?: number;
+  divider?: boolean;
+}) {
+  return (
+    <div
+      className="relative group flex flex-col items-center justify-center transition-colors duration-[400ms]"
+      style={{
+        padding: "32px 20px",
+        gap: "12px",
+        backgroundColor: "#18442A",
+        borderRight: divider ? "1px solid rgba(229,219,196,0.12)" : "none",
+      }}
+      onMouseEnter={(e) =>
+        (e.currentTarget.style.backgroundColor = "rgba(253,251,240,0.04)")
+      }
+      onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = "#18442A")}
+    >
+      <span
+        className="absolute font-display uppercase"
+        style={{
+          top: "12px",
+          left: "16px",
+          fontSize: "9px",
+          letterSpacing: "3px",
+          color: "rgba(229,219,196,0.22)",
+        }}
+      >
+        {num}
+      </span>
+      <img
+        src={logo}
+        alt={alt}
+        className="object-contain transition-opacity duration-[400ms] group-hover:opacity-100"
+        style={{
+          height: `${logoHeight}px`,
+          width: "auto",
+          filter: "brightness(0) invert(1)",
+          opacity: 0.55,
+        }}
+      />
+    </div>
   );
 }
