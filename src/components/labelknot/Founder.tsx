@@ -1,14 +1,20 @@
 import { useEffect, useState } from "react";
 import fourfoldLogo from "@/assets/fourfold-logo-black.png.asset.json";
 
-const PRESS = [
-  "Wedding Sutra",
-  "Vogue India",
-  "The Wed",
-  "Wedding Bazaar",
-  "Wedding Wire",
-  "Elle India",
-];
+const VOGUE_LOGO =
+  "https://res.cloudinary.com/dtembvivw/image/upload/v1776968855/VOGUE_2_-Photoroom_e8bsv3.png";
+const WEDDING_SUTRA_LOGO =
+  "https://res.cloudinary.com/dtembvivw/image/upload/v1776868845/Gemini_Generated_Image_21o7g121e7g-Photoroom_j2g4th.png";
+const HARPERS_LOGO =
+  "https://res.cloudinary.com/dtembvivw/image/upload/v1776818643/BAZZAR-Photoroom_winhel.png";
+const ELLE_LOGO =
+  "https://res.cloudinary.com/dtembvivw/image/upload/v1758561032/ELLE_LG_tdgu1l.webp";
+const THE_WED_LOGO =
+  "https://res.cloudinary.com/dtembvivw/image/upload/v1758561034/THE_WED__G_fw5z1c.webp";
+const WEZOREE_LOGO =
+  "https://res.cloudinary.com/dtembvivw/image/upload/v1776868854/Wezore-Photoroom_qptpim.png";
+const TIMES_LOGO =
+  "https://res.cloudinary.com/dtembvivw/image/upload/v1776868625/times_of_india-Photoroom_vtd8eu.png";
 
 const FOUNDER_SLIDES = [
   "https://res.cloudinary.com/dtembvivw/image/upload/v1779731626/SaveClip.App_670986817_18579183334008962_886943027846087425_n_ypxhre.jpg",
