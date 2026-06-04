@@ -163,15 +163,15 @@ export function Founder() {
             }}
           >
             {/* ROW 1 — Vogue featured */}
-            <PressFeatured logo={VOGUE_LOGO} alt="Vogue India" num="N° 01" featured logoHeight="clamp(52px, 8vw, 80px)" />
+            <PressFeatured logo={VOGUE_LOGO} alt="Vogue India" num="N° 01" featured logoHeight="clamp(62px, 10vw, 104px)" />
 
             {/* ROW 2 — Wedding Sutra + Harpers Bazaar */}
             <div
               className="grid grid-cols-1 md:grid-cols-2"
               style={{ borderBottom: "1px solid rgba(229,219,196,0.12)" }}
             >
-              <PressCell logo={WEDDING_SUTRA_LOGO} alt="Wedding Sutra" num="N° 02" logoHeight="clamp(42px, 6vw, 60px)" divider />
-              <PressCell logo={HARPERS_LOGO} alt="Harpers Bazaar" num="N° 03" logoHeight="clamp(42px, 6vw, 60px)" />
+              <PressCell logo={WEDDING_SUTRA_LOGO} alt="Wedding Sutra" num="N° 02" logoHeight="clamp(50px, 7.5vw, 78px)" divider />
+              <PressCell logo={HARPERS_LOGO} alt="Harpers Bazaar" num="N° 03" logoHeight="clamp(50px, 7.5vw, 78px)" />
             </div>
 
             {/* ROW 3 — Elle + The Wed + Wezoree */}
@@ -179,13 +179,13 @@ export function Founder() {
               className="grid grid-cols-1 md:grid-cols-3"
               style={{ borderBottom: "1px solid rgba(229,219,196,0.12)" }}
             >
-              <PressCell logo={ELLE_LOGO} alt="Elle India" num="N° 04" logoHeight="clamp(38px, 5.5vw, 56px)" divider />
-              <PressCell logo={THE_WED_LOGO} alt="The Wed" num="N° 05" logoHeight="clamp(38px, 5.5vw, 56px)" divider />
-              <PressCell logo={WEZOREE_LOGO} alt="Wezoree" num="N° 06" logoHeight="clamp(38px, 5.5vw, 56px)" />
+              <PressCell logo={ELLE_LOGO} alt="Elle India" num="N° 04" logoHeight="clamp(46px, 6.9vw, 73px)" divider />
+              <PressCell logo={THE_WED_LOGO} alt="The Wed" num="N° 05" logoHeight="clamp(46px, 6.9vw, 73px)" divider />
+              <PressCell logo={WEZOREE_LOGO} alt="Wezoree" num="N° 06" logoHeight="clamp(46px, 6.9vw, 73px)" />
             </div>
 
             {/* ROW 4 — Times of India full width */}
-            <PressFeatured logo={TIMES_LOGO} alt="Times of India" num="N° 07" logoHeight="clamp(44px, 6.5vw, 64px)" compact />
+            <PressFeatured logo={TIMES_LOGO} alt="Times of India" num="N° 07" logoHeight="clamp(53px, 8.1vw, 83px)" compact />
           </div>
 
           {/* Closing line */}
