@@ -163,15 +163,15 @@ export function Founder() {
             }}
           >
             {/* ROW 1 — Vogue featured */}
-            <PressFeatured logo={VOGUE_LOGO} alt="Vogue India" num="N° 01" featured />
+            <PressFeatured logo={VOGUE_LOGO} alt="Vogue India" num="N° 01" featured logoHeight="clamp(52px, 8vw, 80px)" />
 
             {/* ROW 2 — Wedding Sutra + Harpers Bazaar */}
             <div
               className="grid grid-cols-1 md:grid-cols-2"
               style={{ borderBottom: "1px solid rgba(229,219,196,0.12)" }}
             >
-              <PressCell logo={WEDDING_SUTRA_LOGO} alt="Wedding Sutra" num="N° 02" logoHeight={28} divider />
-              <PressCell logo={HARPERS_LOGO} alt="Harpers Bazaar" num="N° 03" logoHeight={28} />
+              <PressCell logo={WEDDING_SUTRA_LOGO} alt="Wedding Sutra" num="N° 02" logoHeight="clamp(42px, 6vw, 60px)" divider />
+              <PressCell logo={HARPERS_LOGO} alt="Harpers Bazaar" num="N° 03" logoHeight="clamp(42px, 6vw, 60px)" />
             </div>
 
             {/* ROW 3 — Elle + The Wed + Wezoree */}
@@ -179,13 +179,13 @@ export function Founder() {
               className="grid grid-cols-1 md:grid-cols-3"
               style={{ borderBottom: "1px solid rgba(229,219,196,0.12)" }}
             >
-              <PressCell logo={ELLE_LOGO} alt="Elle India" num="N° 04" logoHeight={26} divider />
-              <PressCell logo={THE_WED_LOGO} alt="The Wed" num="N° 05" logoHeight={26} divider />
-              <PressCell logo={WEZOREE_LOGO} alt="Wezoree" num="N° 06" logoHeight={26} />
+              <PressCell logo={ELLE_LOGO} alt="Elle India" num="N° 04" logoHeight="clamp(38px, 5.5vw, 56px)" divider />
+              <PressCell logo={THE_WED_LOGO} alt="The Wed" num="N° 05" logoHeight="clamp(38px, 5.5vw, 56px)" divider />
+              <PressCell logo={WEZOREE_LOGO} alt="Wezoree" num="N° 06" logoHeight="clamp(38px, 5.5vw, 56px)" />
             </div>
 
             {/* ROW 4 — Times of India full width */}
-            <PressFeatured logo={TIMES_LOGO} alt="Times of India" num="N° 07" logoHeight={30} compact />
+            <PressFeatured logo={TIMES_LOGO} alt="Times of India" num="N° 07" logoHeight="clamp(44px, 6.5vw, 64px)" compact />
           </div>
 
           {/* Closing line */}
@@ -217,14 +217,14 @@ function PressFeatured({
   alt: string;
   num: string;
   featured?: boolean;
-  logoHeight?: number;
+  logoHeight?: string;
   compact?: boolean;
 }) {
   return (
     <div
       className="relative group flex items-center justify-center transition-colors duration-[400ms]"
       style={{
-        padding: compact ? "32px 24px" : "36px 24px",
+        padding: compact ? "24px 24px" : "28px 24px",
         backgroundColor: "#18442A",
         borderBottom: compact ? "none" : "1px solid rgba(229,219,196,0.12)",
       }}
@@ -264,7 +264,7 @@ function PressFeatured({
         alt={alt}
         className="object-contain transition-opacity duration-[400ms] group-hover:opacity-100"
         style={{
-          height: `${logoHeight ?? 36}px`,
+          height: logoHeight ?? "clamp(44px, 6.5vw, 64px)",
           width: "auto",
           filter: "brightness(0) invert(1)",
           opacity: 0.55,
@@ -278,20 +278,22 @@ function PressCell({
   logo,
   alt,
   num,
-  logoHeight = 28,
+  logoHeight = "clamp(38px, 5.5vw, 56px)",
   divider,
 }: {
   logo: string;
   alt: string;
   num: string;
-  logoHeight?: number;
+  logoHeight?: string;
   divider?: boolean;
 }) {
+  // Three-column rows get tighter padding than two-column rows
+  const isThreeCol = num === "N° 04" || num === "N° 05" || num === "N° 06";
   return (
     <div
       className="relative group flex flex-col items-center justify-center transition-colors duration-[400ms]"
       style={{
-        padding: "32px 20px",
+        padding: isThreeCol ? "20px 16px" : "24px 20px",
         gap: "12px",
         backgroundColor: "#18442A",
         borderRight: divider ? "1px solid rgba(229,219,196,0.12)" : "none",
@@ -318,7 +320,7 @@ function PressCell({
         alt={alt}
         className="object-contain transition-opacity duration-[400ms] group-hover:opacity-100"
         style={{
-          height: `${logoHeight}px`,
+          height: logoHeight,
           width: "auto",
           filter: "brightness(0) invert(1)",
           opacity: 0.55,
@@ -327,3 +329,4 @@ function PressCell({
     </div>
   );
 }
+
