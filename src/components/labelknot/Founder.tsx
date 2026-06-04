@@ -278,20 +278,22 @@ function PressCell({
   logo,
   alt,
   num,
-  logoHeight = 28,
+  logoHeight = "clamp(38px, 5.5vw, 56px)",
   divider,
 }: {
   logo: string;
   alt: string;
   num: string;
-  logoHeight?: number;
+  logoHeight?: string;
   divider?: boolean;
 }) {
+  // Three-column rows get tighter padding than two-column rows
+  const isThreeCol = num === "N° 04" || num === "N° 05" || num === "N° 06";
   return (
     <div
       className="relative group flex flex-col items-center justify-center transition-colors duration-[400ms]"
       style={{
-        padding: "32px 20px",
+        padding: isThreeCol ? "20px 16px" : "24px 20px",
         gap: "12px",
         backgroundColor: "#18442A",
         borderRight: divider ? "1px solid rgba(229,219,196,0.12)" : "none",
@@ -318,7 +320,7 @@ function PressCell({
         alt={alt}
         className="object-contain transition-opacity duration-[400ms] group-hover:opacity-100"
         style={{
-          height: `${logoHeight}px`,
+          height: logoHeight,
           width: "auto",
           filter: "brightness(0) invert(1)",
           opacity: 0.55,
@@ -327,3 +329,4 @@ function PressCell({
     </div>
   );
 }
+
