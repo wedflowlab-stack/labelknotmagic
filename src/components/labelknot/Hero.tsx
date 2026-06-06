@@ -85,7 +85,7 @@ export function Hero() {
         <div className="flex-1" />
 
         {/* Cover lines — short, editorial, magazine-rhythm */}
-        <div className="px-6 md:px-12 pb-4 md:pb-6 fade-up">
+        <div className="px-6 md:px-12 pb-10 md:pb-16 fade-up">
           {/* Editorial row: N°01 left · N°02 right (mirrored) */}
           <div className="grid grid-cols-2 gap-6 md:gap-8 items-start">
             <div>
@@ -107,7 +107,7 @@ export function Hero() {
           </div>
 
           {/* Centered: Premium Wedding House + locations */}
-          <div className="mt-[calc(2rem+2vh)] md:mt-10 text-center space-y-3 translate-y-[4vh]">
+          <div className="mt-6 md:mt-8 text-center space-y-2 md:space-y-3">
             <p className="cover-line opacity-80">Premium Wedding House</p>
             <p className="font-display text-sm md:text-2xl leading-snug tracking-wide whitespace-nowrap">
               MUMBAI · JAIPUR· BANGLORE · DUBAI · UK ·
@@ -117,6 +117,7 @@ export function Hero() {
             </p>
           </div>
         </div>
+
       </div>
     </section>
   );
