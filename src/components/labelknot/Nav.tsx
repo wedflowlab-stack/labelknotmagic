@@ -98,13 +98,13 @@ export function Nav() {
           >
             Philosophy
           </a>
-          <a
-            href="/#book"
+          <Link
+            to="/contact"
             onClick={() => setOpen(false)}
             className="masthead text-3xl md:text-5xl hover:opacity-60 transition-opacity"
           >
             Book
-          </a>
+          </Link>
         </div>
       </div>
     </>
