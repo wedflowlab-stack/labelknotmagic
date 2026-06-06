@@ -87,7 +87,7 @@ export function Hero() {
         {/* Cover lines — short, editorial, magazine-rhythm */}
         <div className="px-6 md:px-12 pb-10 md:pb-16 fade-up">
           {/* Editorial row: N°01 left · N°02 right (mirrored) */}
-          <div className="grid grid-cols-2 gap-6 md:gap-8 items-start">
+          <div className="grid grid-cols-2 gap-6 md:gap-8 items-start -translate-y-[3vh]">
             <div>
               <p className="cover-line opacity-80 mb-2">N° 01</p>
               <p className="font-display italic text-xl md:text-3xl leading-tight">
