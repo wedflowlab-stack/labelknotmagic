@@ -85,7 +85,7 @@ export function Hero() {
         <div className="flex-1" />
 
         {/* Cover lines — short, editorial, magazine-rhythm */}
-        <div className="px-6 md:px-12 pb-10 md:pb-16 fade-up">
+        <div className="px-6 md:px-12 pb-16 md:pb-24 fade-up">
           {/* Editorial row: N°01 left · N°02 right (mirrored) */}
           <div className="grid grid-cols-2 gap-6 md:gap-8 items-start -translate-y-[3vh]">
             <div>
