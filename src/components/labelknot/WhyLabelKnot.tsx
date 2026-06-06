@@ -328,7 +328,7 @@ export function WhyLabelKnot() {
 
         <div className="flex justify-center" style={{ marginTop: "20px" }}>
           <a
-            href="#book"
+            href="/contact"
             className="font-display uppercase transition-colors"
             style={{
               fontWeight: 400,
