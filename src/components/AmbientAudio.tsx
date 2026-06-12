@@ -1,29 +1,25 @@
 import { useEffect, useRef, useState } from "react";
-import { Volume2, VolumeX } from "lucide-react";
 import audioAsset from "@/assets/under-your-spell.mp3.asset.json";
 
 const MAX_VOLUME = 0.4;
 
 export function AmbientAudio() {
   const audioRef = useRef<HTMLAudioElement | null>(null);
-  const [muted, setMuted] = useState(false);
+  const [playing, setPlaying] = useState(false);
   const [visible, setVisible] = useState(false);
+  const [animKey, setAnimKey] = useState(0);
 
-  // Init mute from sessionStorage
   useEffect(() => {
-    const stored = sessionStorage.getItem("ambient-muted");
-    if (stored === "1") setMuted(true);
-    const t = setTimeout(() => setVisible(true), 1000);
+    const t = setTimeout(() => setVisible(true), 800);
     return () => clearTimeout(t);
   }, []);
 
-  // Sync mute state to element + storage
+  // Sync state -> re-trigger reveal animation
   useEffect(() => {
-    if (audioRef.current) audioRef.current.muted = muted;
-    sessionStorage.setItem("ambient-muted", muted ? "1" : "0");
-  }, [muted]);
+    setAnimKey((k) => k + 1);
+  }, [playing]);
 
-  // Start on first interaction
+  // Autoplay on first interaction
   useEffect(() => {
     const startAudio = () => {
       const el = audioRef.current;
@@ -31,6 +27,7 @@ export function AmbientAudio() {
         el.volume = 0;
         el.play()
           .then(() => {
+            setPlaying(true);
             let vol = 0;
             const fade = setInterval(() => {
               vol += 0.05;
@@ -58,6 +55,20 @@ export function AmbientAudio() {
     return cleanup;
   }, []);
 
+  const toggle = () => {
+    const el = audioRef.current;
+    if (!el) return;
+    if (el.paused) {
+      el.volume = MAX_VOLUME;
+      el.play().then(() => setPlaying(true)).catch(() => {});
+    } else {
+      el.pause();
+      setPlaying(false);
+    }
+  };
+
+  const label = playing ? ["Stop", "the", "Music"] : ["Play", "the", "Music"];
+
   return (
     <>
       <audio
@@ -67,18 +78,99 @@ export function AmbientAudio() {
         preload="auto"
         style={{ display: "none" }}
       />
+      <style>{`
+        @keyframes lk-pulse-glow {
+          0% { box-shadow: 0 0 0 0 rgba(253,251,240,0.5); }
+          70% { box-shadow: 0 0 0 14px rgba(253,251,240,0); }
+          100% { box-shadow: 0 0 0 0 rgba(253,251,240,0); }
+        }
+        @keyframes lk-word-in {
+          from { opacity: 0; transform: translateY(8px); }
+          to { opacity: 1; transform: translateY(0); }
+        }
+        .lk-audio-pill {
+          position: fixed;
+          bottom: 24px;
+          left: 24px;
+          z-index: 50;
+          display: flex;
+          align-items: center;
+          gap: 12px;
+          background: rgba(253,251,240,0.85);
+          backdrop-filter: blur(8px);
+          -webkit-backdrop-filter: blur(8px);
+          border-radius: 999px;
+          padding: 6px 20px 6px 6px;
+          box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+          border: none;
+          cursor: pointer;
+          transition: opacity 0.7s ease;
+        }
+        .lk-audio-circle {
+          width: 44px;
+          height: 44px;
+          border-radius: 50%;
+          background: #18442A;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          flex-shrink: 0;
+        }
+        .lk-audio-circle.is-playing {
+          animation: lk-pulse-glow 2.5s ease-out infinite;
+        }
+        .lk-audio-text {
+          font-family: "Cormorant Garamond", ui-serif, Georgia, serif;
+          font-weight: 400;
+          font-size: clamp(13px, 1.5vw, 16px);
+          letter-spacing: 2px;
+          text-transform: uppercase;
+          color: #18442A;
+          display: inline-flex;
+          gap: 0.35em;
+          white-space: nowrap;
+        }
+        .lk-audio-text span {
+          display: inline-block;
+          opacity: 0;
+          transform: translateY(8px);
+          animation: lk-word-in 0.5s ease-out forwards;
+        }
+        @media (max-width: 768px) {
+          .lk-audio-pill {
+            bottom: 16px;
+            left: 16px;
+            gap: 8px;
+            padding: 5px 14px 5px 5px;
+          }
+          .lk-audio-circle { width: 38px; height: 38px; }
+          .lk-audio-text { font-size: 13px; }
+        }
+      `}</style>
       <button
         type="button"
-        aria-label={muted ? "Unmute background music" : "Mute background music"}
-        onClick={() => setMuted((m) => !m)}
-        className="fixed top-4 right-4 z-50 h-10 w-10 rounded-full flex items-center justify-center backdrop-blur-md transition-opacity duration-700"
-        style={{
-          background: "rgba(0,0,0,0.25)",
-          color: "#FDFBF0",
-          opacity: visible ? 1 : 0,
-        }}
+        aria-label={playing ? "Stop the music" : "Play the music"}
+        onClick={toggle}
+        className="lk-audio-pill"
+        style={{ opacity: visible ? 1 : 0 }}
       >
-        {muted ? <VolumeX size={16} /> : <Volume2 size={16} />}
+        <span className={`lk-audio-circle ${playing ? "is-playing" : ""}`}>
+          {playing ? (
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="#FDFBF0">
+              <rect x="3" y="2" width="3.5" height="12" rx="0.5" />
+              <rect x="9.5" y="2" width="3.5" height="12" rx="0.5" />
+            </svg>
+          ) : (
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="#FDFBF0">
+              <path d="M3.5 2.2v11.6c0 .5.55.8.98.54l9.3-5.8a.64.64 0 0 0 0-1.08L4.48 1.66A.64.64 0 0 0 3.5 2.2z" />
+            </svg>
+          )}
+        </span>
+        <span className="lk-audio-text" key={animKey}>
+          {label.map((w, i) => (
+            <span key={i} style={{ animationDelay: `${i * 120}ms` }}>{w}</span>
+          ))}
+        </span>
       </button>
     </>
   );
