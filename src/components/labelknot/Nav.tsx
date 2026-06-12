@@ -1,5 +1,7 @@
 import { useEffect, useState } from "react";
 import { Link } from "@tanstack/react-router";
+import logoLight from "@/assets/fourfold-logo.png.asset.json";
+import logoDark from "@/assets/fourfold-logo-black.png.asset.json";
 
 export function Nav() {
   const [scrolled, setScrolled] = useState(false);
