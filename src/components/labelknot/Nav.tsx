@@ -36,7 +36,7 @@ export function Nav() {
             <img
               src={(inverted ? logoDark : logoLight).url}
               alt="Fourfold Pictures"
-              className="h-7 md:h-9 w-auto object-contain"
+              className="h-[30px] md:h-[39px] w-auto object-contain"
             />
           </Link>
           <button
