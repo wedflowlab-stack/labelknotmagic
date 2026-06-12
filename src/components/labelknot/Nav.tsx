@@ -1,5 +1,7 @@
 import { useEffect, useState } from "react";
 import { Link } from "@tanstack/react-router";
+import logoLight from "@/assets/fourfold-logo.png.asset.json";
+import logoDark from "@/assets/fourfold-logo-black.png.asset.json";
 
 export function Nav() {
   const [scrolled, setScrolled] = useState(false);
@@ -30,8 +32,12 @@ export function Nav() {
         style={{ color: inverted ? "var(--everest)" : "var(--milk)" }}
       >
         <div className="mx-auto max-w-[1600px] px-6 md:px-12 h-16 flex items-center justify-between">
-          <Link to="/" className="masthead text-[13px]">
-            Label&nbsp;Knot
+          <Link to="/" aria-label="Fourfold Pictures" className="flex items-center">
+            <img
+              src={(inverted ? logoDark : logoLight).url}
+              alt="Fourfold Pictures"
+              className="h-7 md:h-9 w-auto object-contain"
+            />
           </Link>
           <button
             type="button"
