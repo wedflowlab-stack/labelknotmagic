@@ -2,22 +2,52 @@ import { useEffect, useRef, useState } from "react";
 import audioAsset from "@/assets/under-your-spell.mp3.asset.json";
 
 const MAX_VOLUME = 0.4;
+const SEQUENCE = [5000, 10000, 60000]; // show durations in ms
+const GAP = 2000; // 2s hidden gap between each appearance
 
 export function AmbientAudio() {
   const audioRef = useRef<HTMLAudioElement | null>(null);
   const [playing, setPlaying] = useState(false);
   const [visible, setVisible] = useState(false);
   const [animKey, setAnimKey] = useState(0);
-
-  useEffect(() => {
-    const t = setTimeout(() => setVisible(true), 800);
-    return () => clearTimeout(t);
-  }, []);
+  const sequenceTimersRef = useRef<{
+    startTimer: ReturnType<typeof setTimeout> | null;
+    showTimer: ReturnType<typeof setTimeout> | null;
+    hideTimer: ReturnType<typeof setTimeout> | null;
+    sequenceIndex: number;
+  }>({ startTimer: null, showTimer: null, hideTimer: null, sequenceIndex: 0 });
 
   // Sync state -> re-trigger reveal animation
   useEffect(() => {
     setAnimKey((k) => k + 1);
   }, [playing]);
+
+  // Auto-hide repeating sequence: show 5s → hide 2s → show 10s → hide 2s → show 60s → hide 2s → repeat
+  useEffect(() => {
+    const timers = sequenceTimersRef.current;
+
+    const clearSequenceTimers = () => {
+      if (timers.startTimer) clearTimeout(timers.startTimer);
+      if (timers.showTimer) clearTimeout(timers.showTimer);
+      if (timers.hideTimer) clearTimeout(timers.hideTimer);
+    };
+
+    const runSequence = () => {
+      setVisible(true);
+
+      timers.hideTimer = setTimeout(() => {
+        setVisible(false);
+        timers.sequenceIndex = (timers.sequenceIndex + 1) % SEQUENCE.length;
+        timers.showTimer = setTimeout(runSequence, GAP);
+      }, SEQUENCE[timers.sequenceIndex]);
+    };
+
+    clearSequenceTimers();
+    timers.sequenceIndex = 0;
+    timers.startTimer = setTimeout(runSequence, 1500);
+
+    return clearSequenceTimers;
+  }, []);
 
   // Autoplay on first interaction
   useEffect(() => {
@@ -55,6 +85,25 @@ export function AmbientAudio() {
     return cleanup;
   }, []);
 
+  const startSequenceFromBeginning = () => {
+    const timers = sequenceTimersRef.current;
+    if (timers.startTimer) clearTimeout(timers.startTimer);
+    if (timers.showTimer) clearTimeout(timers.showTimer);
+    if (timers.hideTimer) clearTimeout(timers.hideTimer);
+    timers.sequenceIndex = 0;
+
+    const runSequence = () => {
+      setVisible(true);
+      timers.hideTimer = setTimeout(() => {
+        setVisible(false);
+        timers.sequenceIndex = (timers.sequenceIndex + 1) % SEQUENCE.length;
+        timers.showTimer = setTimeout(runSequence, GAP);
+      }, SEQUENCE[timers.sequenceIndex]);
+    };
+
+    runSequence();
+  };
+
   const toggle = () => {
     const el = audioRef.current;
     if (!el) return;
@@ -65,6 +114,7 @@ export function AmbientAudio() {
       el.pause();
       setPlaying(false);
     }
+    startSequenceFromBeginning();
   };
 
   const label = playing ? ["Stop", "the", "Music"] : ["Play", "the", "Music"];
@@ -95,20 +145,16 @@ export function AmbientAudio() {
           z-index: 50;
           display: flex;
           align-items: center;
-          gap: 12px;
-          background: rgba(253,251,240,0.85);
-          backdrop-filter: blur(8px);
-          -webkit-backdrop-filter: blur(8px);
+          gap: 8px;
+          background: rgba(253,251,240,0.0);
           border-radius: 999px;
-          padding: 6px 20px 6px 6px;
-          box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+          padding: 4px 14px 4px 4px;
           border: none;
           cursor: pointer;
-          transition: opacity 0.7s ease;
         }
         .lk-audio-circle {
-          width: 44px;
-          height: 44px;
+          width: 30px;
+          height: 30px;
           border-radius: 50%;
           background: #18442A;
           display: flex;
@@ -122,8 +168,8 @@ export function AmbientAudio() {
         .lk-audio-text {
           font-family: "Cormorant Garamond", ui-serif, Georgia, serif;
           font-weight: 400;
-          font-size: clamp(13px, 1.5vw, 16px);
-          letter-spacing: 2px;
+          font-size: clamp(9px, 1.1vw, 11px);
+          letter-spacing: 1.5px;
           text-transform: uppercase;
           color: #18442A;
           display: inline-flex;
@@ -141,10 +187,10 @@ export function AmbientAudio() {
             bottom: 16px;
             left: 16px;
             gap: 8px;
-            padding: 5px 14px 5px 5px;
+            padding: 3px 10px 3px 3px;
           }
-          .lk-audio-circle { width: 38px; height: 38px; }
-          .lk-audio-text { font-size: 13px; }
+          .lk-audio-circle { width: 26px; height: 26px; }
+          .lk-audio-text { font-size: 9px; }
         }
       `}</style>
       <button
@@ -152,16 +198,21 @@ export function AmbientAudio() {
         aria-label={playing ? "Stop the music" : "Play the music"}
         onClick={toggle}
         className="lk-audio-pill"
-        style={{ opacity: visible ? 1 : 0 }}
+        style={{
+          opacity: visible ? 1 : 0,
+          transform: visible ? "translateY(0)" : "translateY(8px)",
+          transition: "opacity 0.4s ease, transform 0.4s ease",
+          pointerEvents: visible ? "auto" : "none",
+        }}
       >
         <span className={`lk-audio-circle ${playing ? "is-playing" : ""}`}>
           {playing ? (
-            <svg width="16" height="16" viewBox="0 0 16 16" fill="#FDFBF0">
+            <svg width="11" height="11" viewBox="0 0 16 16" fill="#FDFBF0">
               <rect x="3" y="2" width="3.5" height="12" rx="0.5" />
               <rect x="9.5" y="2" width="3.5" height="12" rx="0.5" />
             </svg>
           ) : (
-            <svg width="16" height="16" viewBox="0 0 16 16" fill="#FDFBF0">
+            <svg width="11" height="11" viewBox="0 0 16 16" fill="#FDFBF0">
               <path d="M3.5 2.2v11.6c0 .5.55.8.98.54l9.3-5.8a.64.64 0 0 0 0-1.08L4.48 1.66A.64.64 0 0 0 3.5 2.2z" />
             </svg>
           )}
