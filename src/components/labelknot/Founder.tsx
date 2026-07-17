@@ -79,7 +79,7 @@ export function Founder() {
         <div className="md:col-span-6 lg:col-span-7 md:order-2 md:pt-12 md:pl-6 lg:pl-16 text-center">
           <div className="flex justify-center mb-8">
             <img
-              src={fourfoldLogo.url}
+              src={FOURFOLD_LOGO_BLACK}
               alt="Fourfold Pictures"
               className="w-[70vw] max-w-[360px] md:max-w-[420px] select-none pointer-events-none"
               draggable={false}
