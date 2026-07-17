@@ -1,7 +1,8 @@
 import { useEffect, useState } from "react";
 import { Link } from "@tanstack/react-router";
-import logoLight from "@/assets/fourfold-logo.png.asset.json";
-import logoDark from "@/assets/fourfold-logo-black.png.asset.json";
+
+const LOGO_LIGHT = "https://res.cloudinary.com/dtembvivw/image/upload/v1784292567/fourfold-logo_med8k8.png";
+const LOGO_DARK = "https://res.cloudinary.com/dtembvivw/image/upload/v1784292556/fourfold-logo-black_reywle.png";
 
 export function Nav() {
   const [scrolled, setScrolled] = useState(false);
@@ -34,7 +35,7 @@ export function Nav() {
         <div className="mx-auto max-w-[1600px] px-6 md:px-12 h-16 flex items-center justify-between">
           <Link to="/" aria-label="Fourfold Pictures" className="flex items-center">
             <img
-              src={(inverted ? logoDark : logoLight).url}
+              src={inverted ? LOGO_DARK : LOGO_LIGHT}
               alt="Fourfold Pictures"
               className="h-[30px] md:h-[39px] w-auto object-contain"
             />

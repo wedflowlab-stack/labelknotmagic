@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { HERO_IMAGE } from "@/lib/labelknot-images";
-import fourfoldLogo from "@/assets/fourfold-logo.png.asset.json";
+
+const HERO_LOGO = "https://res.cloudinary.com/dtembvivw/image/upload/v1784292567/fourfold-logo_med8k8.png";
 
 const SLIDES = [
   HERO_IMAGE,
@@ -71,7 +72,7 @@ export function Hero() {
         <div className="px-6 md:px-12 mt-[10vh] md:mt-10 fade-up text-center flex flex-col items-center">
           <h1 className="sr-only">Fourfold Pictures</h1>
           <img
-            src={fourfoldLogo.url}
+            src={HERO_LOGO}
             alt="Fourfold Pictures"
             className="w-[85vw] max-w-[640px] md:w-[60vw] lg:w-[52vw] select-none pointer-events-none"
             draggable={false}
