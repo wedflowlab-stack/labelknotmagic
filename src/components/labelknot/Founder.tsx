@@ -1,5 +1,7 @@
 import { useEffect, useState } from "react";
-import fourfoldLogo from "@/assets/fourfold-logo-black.png.asset.json";
+
+const FOURFOLD_LOGO_BLACK =
+  "https://res.cloudinary.com/dtembvivw/image/upload/v1784292556/fourfold-logo-black_reywle.png";
 
 const VOGUE_LOGO =
   "https://res.cloudinary.com/drszur4wl/image/upload/v1776868855/VOGUE_2_-Photoroom_e0bxv3.png";
@@ -77,7 +79,7 @@ export function Founder() {
         <div className="md:col-span-6 lg:col-span-7 md:order-2 md:pt-12 md:pl-6 lg:pl-16 text-center">
           <div className="flex justify-center mb-8">
             <img
-              src={fourfoldLogo.url}
+              src={FOURFOLD_LOGO_BLACK}
               alt="Fourfold Pictures"
               className="w-[70vw] max-w-[360px] md:max-w-[420px] select-none pointer-events-none"
               draggable={false}
