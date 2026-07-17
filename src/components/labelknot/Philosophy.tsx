@@ -8,12 +8,20 @@ export function Philosophy() {
       style={{ backgroundColor: "var(--milk)" }}
     >
       <div className="mx-auto max-w-[1400px] px-6 md:px-12">
-        <p
-          className="eyebrow font-display mb-16 md:mb-24"
-          style={{ color: "var(--everest)", textAlign: "center", fontSize: "16px" }}
-        >
-          01 — Label Knot
-        </p>
+        <div className="mb-16 md:mb-24 text-center">
+          <p
+            className="eyebrow font-display"
+            style={{ color: "var(--everest)", fontSize: "16px" }}
+          >
+            our philosophy
+          </p>
+          <p
+            className="font-display italic mt-3"
+            style={{ color: "var(--everest)", fontSize: "clamp(16px, 1.8vw, 22px)" }}
+          >
+            don't skip what's coming if you want the best from Four Fold
+          </p>
+        </div>
 
         <div className="grid grid-cols-12 gap-6 md:gap-10 items-start">
           {/* Large offset image — left */}
