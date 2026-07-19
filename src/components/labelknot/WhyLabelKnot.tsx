@@ -49,8 +49,11 @@ export function WhyLabelKnot() {
           color: MUTED_75,
         }}
       >
-        Every wedding produces photographs. Very few produce something you will
-        reach for twenty years from now.
+        There are wedding photographs.
+        <br />
+        And then there are Fourfold photographs.
+        <br />
+        The difference is visible the moment you see one.
       </p>
 
       {/* Opening line */}
@@ -63,7 +66,7 @@ export function WhyLabelKnot() {
           color: MILKY,
         }}
       >
-        Your wedding will happen once.
+        We began in fashion.
       </h3>
 
       {/* First body paragraph */}
@@ -76,11 +79,7 @@ export function WhyLabelKnot() {
           color: BODY,
         }}
       >
-        Every person in that room will walk out of that venue and return to their
-        own life. The flowers will be gone by morning. The lights will come down.
-        The music will stop. And the version of that day that existed — the real
-        version, the breathing, laughing, falling-apart version — will begin to
-        blur the way all things do when time starts moving again.
+        The discipline of controlled light, intentional composition, and the kind of frame that stops you mid-scroll and makes you ask: where is that from? That language never left us. We brought it into weddings. Every portrait we make of you carries that same editorial precision — the kind of image that belongs in Vogue, in Elle, in Condé Nast — except it is not a model in the frame.
       </p>
 
       {/* Highlight line */}
@@ -95,7 +94,7 @@ export function WhyLabelKnot() {
           letterSpacing: "-0.005em",
         }}
       >
-        who only exist for days like this
+        It is you. On your wedding day. Looking exactly like you always hoped you would.
       </p>
 
       <div
@@ -106,12 +105,11 @@ export function WhyLabelKnot() {
           lineHeight: 1.9,
         }}
       >
-        <div>Four Fold sees that moment.</div>
-        <div>We stay quiet.</div>
-        <div>We catch it before it disappears.</div>
+        <div>That is the first thing we give you.</div>
+        <div>Then comes everything else.</div>
       </div>
 
-      {/* Chapter break: Father */}
+      {/* Chapter break: Pre-wedding */}
       <div className="max-w-2xl mx-auto mt-24 md:mt-32 mb-10">
         <div
           style={{
@@ -129,11 +127,11 @@ export function WhyLabelKnot() {
             color: MILKY,
           }}
         >
-          Then your father.
+          The pre-wedding shoot.
         </h3>
       </div>
 
-      {/* Father paragraph */}
+      {/* Pre-wedding paragraph */}
       <p
         className="font-display text-center max-w-2xl mx-auto mb-10"
         style={{
@@ -143,8 +141,7 @@ export function WhyLabelKnot() {
           color: BODY,
         }}
       >
-        The man who held your hand crossing every road — the proudest and the
-        most quietly devastated he has ever been in his life.
+        A location that belongs to your story. Light that we chase and bend and wait for. And the two of you — not performing for a camera, but simply existing together while we work around you with the same precision a fashion director brings to a magazine cover.
       </p>
       <div
         className="font-display text-center max-w-2xl mx-auto mb-12 md:mb-16"
@@ -155,13 +152,11 @@ export function WhyLabelKnot() {
           lineHeight: 1.45,
         }}
       >
-        <div>That four seconds on his face —</div>
-        <div>before he composes himself,</div>
-        <div>before he smiles for the room —</div>
-        <div style={{ color: SAND }}>we will be the only ones who catch it.</div>
+        <div>People will see those images and feel something they can't name.</div>
+        <div style={{ color: SAND }}>That is the point.</div>
       </div>
 
-      {/* Chapter break: Mother */}
+      {/* Chapter break: The greatest frames */}
       <div className="max-w-2xl mx-auto mt-24 md:mt-32 mb-10">
         <div
           style={{
@@ -179,11 +174,11 @@ export function WhyLabelKnot() {
             color: MILKY,
           }}
         >
-          And your mother.
+          The greatest Fourfold frames.
         </h3>
       </div>
 
-      {/* Mother paragraph */}
+      {/* Greatest frames paragraph */}
       <p
         className="font-display text-center max-w-2xl mx-auto mb-10"
         style={{
@@ -193,7 +188,7 @@ export function WhyLabelKnot() {
           color: BODY,
         }}
       >
-        There are things she has carried for you since the day you were born —
+        They are never just beautiful. They are true. The romance underneath the artistry. The glance that no art director could have scripted. The split second where fashion and feeling collide into something that belongs to nobody else on earth.
       </p>
       <p
         className="font-display italic text-center max-w-2xl mx-auto mb-12 md:mb-16"
@@ -205,8 +200,7 @@ export function WhyLabelKnot() {
           color: MILKY,
         }}
       >
-        worries she never named, prayers she said when no one was listening,
-        sacrifices so quiet you never even knew to thank her for them.
+        That image will outlast everything from your wedding day.
       </p>
       <div
         className="font-display text-center max-w-2xl mx-auto mb-12 md:mb-16"
@@ -217,14 +211,15 @@ export function WhyLabelKnot() {
           lineHeight: 1.45,
         }}
       >
-        <div>Not sadness.</div>
-        <div>Not happiness.</div>
+        <div>The venue will host another wedding next weekend.</div>
+        <div>The flowers will be gone.</div>
         <div style={{ color: SAND }}>
-          Something that sits between the two and has no word in any language.
+          The version of you that existed in that light, on that day, feeling exactly what you felt —
         </div>
+        <div style={{ color: SAND }}>gone. Unless we were there.</div>
       </div>
 
-      {/* Standalone pull line — the gift for Mom & Dad */}
+      {/* Standalone pull line — what we keep forever */}
       <div
         className="font-display text-center max-w-2xl mx-auto py-20 my-10"
         style={{
@@ -234,12 +229,9 @@ export function WhyLabelKnot() {
           lineHeight: 1.5,
         }}
       >
-        <div>The frame we make is not just a photograph.</div>
+        <div>What we make is the one thing you keep forever —</div>
         <div style={{ marginTop: "1rem", color: SAND }}>
-          It is the truest gift that lasts years — even for your Mom &amp; Dad.
-        </div>
-        <div style={{ marginTop: "1.25rem", color: MUTED_75, fontSize: "clamp(20px, 2.2vw, 28px)" }}>
-          It is the truest thing they will hold forever.
+          when everything else fades, when the people you love are older, when that moment only exists in what we created.
         </div>
       </div>
 
@@ -254,7 +246,7 @@ export function WhyLabelKnot() {
             marginBottom: "1.25rem",
           }}
         >
-          Not coverage. Not a package.
+          The couples who choose Fourfold never wonder what they lost.
         </p>
         <p
           className="font-display"
@@ -265,67 +257,25 @@ export function WhyLabelKnot() {
             color: BODY,
           }}
         >
-          What we make is the one thing you will keep forever —
+          We are not for everyone. We don't shoot for everyone.
         </p>
         <div
-          className="font-display text-center"
-          style={{
-            fontSize: "clamp(20px, 2.2vw, 26px)",
-            color: MUTED_75,
-            lineHeight: 1.9,
-            marginTop: "1.5rem",
-          }}
-        >
-          <div>when the venue has hosted a hundred other weddings,</div>
-          <div>when the dress is folded away,</div>
-          <div>when the people you love are older</div>
-          <div>and the moment is gone.</div>
-        </div>
-      </div>
-
-      {/* Final closing lines + CTA */}
-      <div className="max-w-2xl mx-auto mt-20 text-center">
-        <p
-          className="font-display"
-          style={{
-            fontWeight: 400,
-            fontSize: "clamp(24px, 2.4vw, 30px)",
-            color: MILKY,
-            marginBottom: "1rem",
-            lineHeight: 1.6,
-          }}
-        >
-          The couples who choose Four Fold Pictures never spend a single day
-          wondering what they lost.
-        </p>
-        <p
-          className="font-display"
-          style={{
-            fontWeight: 300,
-            fontSize: "clamp(20px, 2.2vw, 26px)",
-            color: BODY,
-            lineHeight: 1.7,
-            marginBottom: "2rem",
-          }}
-        >
-          Every part of that day stays with you, forever.
-        </p>
-        <p
-          className="font-display italic"
+          className="font-display italic text-center"
           style={{
             fontStyle: "italic",
             fontWeight: 400,
             fontSize: "clamp(20px, 2.2vw, 26px)",
             color: SAND,
             lineHeight: 1.6,
+            marginTop: "1.5rem",
           }}
         >
-          And that is why we are not for everyone — and we don't shoot for
-          everyone.
-        </p>
+          The ones who find us — always say they found us just in time.
+        </div>
+      </div>
 
-        <div style={{ height: "60px" }} />
-
+      {/* Final CTA */}
+      <div className="max-w-2xl mx-auto mt-20 text-center">
         <div className="flex justify-center" style={{ marginTop: "20px" }}>
           <a
             href="/contact"
