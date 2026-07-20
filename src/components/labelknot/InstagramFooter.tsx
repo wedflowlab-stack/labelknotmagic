@@ -22,7 +22,7 @@ export function InstagramFooter() {
           {FEED.map((src, i) => (
             <a
               key={i}
-              href="https://instagram.com/labelknot"
+              href="https://www.instagram.com/fourfoldpictures?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
               target="_blank"
               rel="noreferrer"
               className="block overflow-hidden group"
@@ -39,12 +39,12 @@ export function InstagramFooter() {
 
         <div className="mt-16 text-center">
           <a
-            href="https://instagram.com/labelknot"
+            href="https://www.instagram.com/fourfoldpictures?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
             target="_blank"
             rel="noreferrer"
             className="font-display tracking-[0.32em] text-3xl md:text-5xl uppercase hover:opacity-70 transition-opacity"
           >
-            @labelknot
+            @fourfoldpictures
           </a>
           <p className="cover-line mt-6 opacity-70">
             The door stays open. Walk in when you're ready.
