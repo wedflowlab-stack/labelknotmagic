@@ -8,14 +8,13 @@ const GAP = 2000; // 2s hidden gap between each appearance
 export function AmbientAudio() {
   const audioRef = useRef<HTMLAudioElement | null>(null);
   const [playing, setPlaying] = useState(false);
-  const [visible, setVisible] = useState(false);
+  const [visible, setVisible] = useState(true);
   const [animKey, setAnimKey] = useState(0);
   const sequenceTimersRef = useRef<{
-    startTimer: ReturnType<typeof setTimeout> | null;
     showTimer: ReturnType<typeof setTimeout> | null;
     hideTimer: ReturnType<typeof setTimeout> | null;
     sequenceIndex: number;
-  }>({ startTimer: null, showTimer: null, hideTimer: null, sequenceIndex: 0 });
+  }>({ showTimer: null, hideTimer: null, sequenceIndex: 0 });
 
   // Sync state -> re-trigger reveal animation
   useEffect(() => {
@@ -23,18 +22,17 @@ export function AmbientAudio() {
   }, [playing]);
 
   // Auto-hide repeating sequence: show 5s → hide 2s → show 10s → hide 2s → show 60s → hide 2s → repeat
+  // Starts visible so the user can manually toggle the music on.
   useEffect(() => {
     const timers = sequenceTimersRef.current;
 
     const clearSequenceTimers = () => {
-      if (timers.startTimer) clearTimeout(timers.startTimer);
       if (timers.showTimer) clearTimeout(timers.showTimer);
       if (timers.hideTimer) clearTimeout(timers.hideTimer);
     };
 
     const runSequence = () => {
       setVisible(true);
-
       timers.hideTimer = setTimeout(() => {
         setVisible(false);
         timers.sequenceIndex = (timers.sequenceIndex + 1) % SEQUENCE.length;
@@ -44,50 +42,13 @@ export function AmbientAudio() {
 
     clearSequenceTimers();
     timers.sequenceIndex = 0;
-    timers.startTimer = setTimeout(runSequence, 1500);
+    runSequence();
 
     return clearSequenceTimers;
   }, []);
 
-  // Autoplay on first interaction
-  useEffect(() => {
-    const startAudio = () => {
-      const el = audioRef.current;
-      if (el && el.paused) {
-        el.volume = 0;
-        el.play()
-          .then(() => {
-            setPlaying(true);
-            let vol = 0;
-            const fade = setInterval(() => {
-              vol += 0.05;
-              if (audioRef.current) audioRef.current.volume = Math.min(vol, MAX_VOLUME);
-              if (vol >= MAX_VOLUME) clearInterval(fade);
-            }, 40);
-          })
-          .catch(() => {});
-      }
-      cleanup();
-    };
-
-    const cleanup = () => {
-      window.removeEventListener("click", startAudio);
-      window.removeEventListener("touchstart", startAudio);
-      window.removeEventListener("scroll", startAudio);
-      window.removeEventListener("keydown", startAudio);
-    };
-
-    window.addEventListener("click", startAudio, { once: true });
-    window.addEventListener("touchstart", startAudio, { once: true });
-    window.addEventListener("scroll", startAudio, { once: true });
-    window.addEventListener("keydown", startAudio, { once: true });
-
-    return cleanup;
-  }, []);
-
   const startSequenceFromBeginning = () => {
     const timers = sequenceTimersRef.current;
-    if (timers.startTimer) clearTimeout(timers.startTimer);
     if (timers.showTimer) clearTimeout(timers.showTimer);
     if (timers.hideTimer) clearTimeout(timers.hideTimer);
     timers.sequenceIndex = 0;
