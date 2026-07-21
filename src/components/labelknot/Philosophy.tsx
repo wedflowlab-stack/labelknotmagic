@@ -251,3 +251,87 @@ export function Philosophy() {
     </section>
   );
 }
+
+function VideoPlayer() {
+  const videoRef = useRef<HTMLVideoElement>(null);
+  const [isPlaying, setIsPlaying] = useState(false);
+  const [showButton, setShowButton] = useState(true);
+  const inactivityTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+
+  const togglePlay = () => {
+    if (!videoRef.current) return;
+    if (videoRef.current.paused) {
+      videoRef.current.play();
+      setIsPlaying(true);
+    } else {
+      videoRef.current.pause();
+      setIsPlaying(false);
+    }
+  };
+
+  const handleMouseMove = () => {
+    setShowButton(true);
+    if (inactivityTimeoutRef.current) clearTimeout(inactivityTimeoutRef.current);
+    if (isPlaying) {
+      inactivityTimeoutRef.current = setTimeout(() => {
+        setShowButton(false);
+      }, 2000);
+    }
+  };
+
+  useEffect(() => {
+    return () => {
+      if (inactivityTimeoutRef.current) clearTimeout(inactivityTimeoutRef.current);
+    };
+  }, []);
+
+  useEffect(() => {
+    handleMouseMove();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [isPlaying]);
+
+  return (
+    <div
+      className="relative w-full overflow-hidden"
+      style={{ aspectRatio: "16 / 9" }}
+      onMouseMove={handleMouseMove}
+      onMouseEnter={handleMouseMove}
+      onTouchStart={handleMouseMove}
+    >
+      <video
+        ref={videoRef}
+        src="https://res.cloudinary.com/cbi5mcab/video/upload/v1784644343/FOURFOLD_dcxuwk.mp4"
+        muted
+        loop
+        playsInline
+        controls={false}
+        onPlay={() => setIsPlaying(true)}
+        onPause={() => setIsPlaying(false)}
+        className="w-full h-full object-cover"
+      />
+      <button
+        onClick={togglePlay}
+        className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 grid place-items-center cursor-pointer transition-colors duration-300"
+        style={{
+          width: "clamp(52px, 8vw, 64px)",
+          height: "clamp(52px, 8vw, 64px)",
+          borderRadius: "50%",
+          backgroundColor: "rgba(255, 255, 255, 0.15)",
+          backdropFilter: "blur(12px)",
+          WebkitBackdropFilter: "blur(12px)",
+          border: "1px solid rgba(255, 255, 255, 0.3)",
+          opacity: showButton ? 1 : 0,
+          transition: "opacity 0.3s ease, background-color 0.3s ease",
+        }}
+        onMouseEnter={() => setShowButton(true)}
+        aria-label={isPlaying ? "Pause video" : "Play video"}
+      >
+        {isPlaying ? (
+          <Pause size={20} color="#ffffff" fill="#ffffff" />
+        ) : (
+          <Play size={20} color="#ffffff" fill="#ffffff" className="ml-1" />
+        )}
+      </button>
+    </div>
+  );
+}
