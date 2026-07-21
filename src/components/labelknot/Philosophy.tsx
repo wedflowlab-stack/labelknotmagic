@@ -301,7 +301,6 @@ function VideoPlayer() {
       <video
         ref={videoRef}
         src="https://res.cloudinary.com/cbi5mcab/video/upload/v1784644343/FOURFOLD_dcxuwk.mp4"
-        muted
         loop
         playsInline
         controls={false}
