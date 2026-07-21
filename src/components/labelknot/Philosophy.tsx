@@ -29,11 +29,7 @@ export function Philosophy() {
           {/* Large offset image — left */}
           <div className="col-span-12 md:col-span-5 md:row-span-2">
             <figure>
-              <img
-                src={GALLERY_POOL[2]}
-                alt="The bride, the moment before"
-                className="w-full aspect-[4/5] object-cover"
-              />
+              <VideoPlayer />
               <figcaption
                 className="cover-line font-display mt-3"
                 style={{ color: "var(--everest)" }}
