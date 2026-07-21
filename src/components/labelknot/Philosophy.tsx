@@ -1,4 +1,6 @@
 import { GALLERY_POOL } from "@/lib/labelknot-images";
+import { useRef, useState, useEffect } from "react";
+import { Play, Pause } from "lucide-react";
 
 export function Philosophy() {
   return (
