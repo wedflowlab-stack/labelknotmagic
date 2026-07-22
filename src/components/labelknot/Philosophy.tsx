@@ -255,7 +255,13 @@ export function Philosophy() {
 function VideoPlayer() {
   const videoRef = useRef<HTMLVideoElement>(null);
   const [isPlaying, setIsPlaying] = useState(false);
-  const [showButton, setShowButton] = useState(true);
+  const [showBar, setShowBar] = useState(true);
+  const [currentTime, setCurrentTime] = useState(0);
+  const [duration, setDuration] = useState(0);
+  const [muted, setMuted] = useState(false);
+  const [volume, setVolume] = useState(1);
+  const [showVolume, setShowVolume] = useState(false);
+  const lastUpdateRef = useRef(0);
   const inactivityTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   const togglePlay = () => {
@@ -269,13 +275,13 @@ function VideoPlayer() {
     }
   };
 
-  const handleMouseMove = () => {
-    setShowButton(true);
+  const bumpActivity = () => {
+    setShowBar(true);
     if (inactivityTimeoutRef.current) clearTimeout(inactivityTimeoutRef.current);
     if (isPlaying) {
       inactivityTimeoutRef.current = setTimeout(() => {
-        setShowButton(false);
-      }, 2000);
+        setShowBar(false);
+      }, 2500);
     }
   };
 
@@ -286,51 +292,309 @@ function VideoPlayer() {
   }, []);
 
   useEffect(() => {
-    handleMouseMove();
+    bumpActivity();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [isPlaying]);
 
+  const handleTimeUpdate = () => {
+    const now = Date.now();
+    if (now - lastUpdateRef.current < 250) return;
+    lastUpdateRef.current = now;
+    if (videoRef.current) setCurrentTime(videoRef.current.currentTime);
+  };
+
+  const handleLoadedMetadata = () => {
+    if (videoRef.current) setDuration(videoRef.current.duration || 0);
+  };
+
+  const handleSeek = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const value = parseFloat(e.target.value);
+    if (videoRef.current) {
+      videoRef.current.currentTime = value;
+      setCurrentTime(value);
+    }
+  };
+
+  const toggleMute = () => {
+    if (!videoRef.current) return;
+    const next = !muted;
+    videoRef.current.muted = next;
+    setMuted(next);
+  };
+
+  const handleVolume = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const v = parseFloat(e.target.value);
+    setVolume(v);
+    if (videoRef.current) {
+      videoRef.current.volume = v;
+      if (v === 0 && !muted) {
+        videoRef.current.muted = true;
+        setMuted(true);
+      } else if (v > 0 && muted) {
+        videoRef.current.muted = false;
+        setMuted(false);
+      }
+    }
+  };
+
+  const formatTime = (t: number) => {
+    if (!isFinite(t)) return "0:00";
+    const m = Math.floor(t / 60);
+    const s = Math.floor(t % 60);
+    return `${m}:${s.toString().padStart(2, "0")}`;
+  };
+
+  const progressPct = duration > 0 ? (currentTime / duration) * 100 : 0;
+
   return (
     <div
-      className="relative w-full overflow-hidden"
+      className="video-player relative w-full overflow-hidden"
       style={{ aspectRatio: "16 / 9" }}
-      onMouseMove={handleMouseMove}
-      onMouseEnter={handleMouseMove}
-      onTouchStart={handleMouseMove}
+      onMouseMove={bumpActivity}
+      onMouseEnter={bumpActivity}
+      onMouseLeave={() => {
+        if (isPlaying) setShowBar(false);
+      }}
+      onTouchStart={bumpActivity}
     >
+      <style>{`
+        .video-player input[type="range"].vp-range {
+          -webkit-appearance: none;
+          appearance: none;
+          background: transparent;
+          width: 100%;
+          height: 3px;
+          margin: 0;
+          padding: 0;
+          cursor: pointer;
+        }
+        .video-player input[type="range"].vp-range::-webkit-slider-runnable-track {
+          height: 3px;
+          border-radius: 2px;
+          background: transparent;
+        }
+        .video-player input[type="range"].vp-range::-moz-range-track {
+          height: 3px;
+          border-radius: 2px;
+          background: transparent;
+        }
+        .video-player input[type="range"].vp-range::-webkit-slider-thumb {
+          -webkit-appearance: none;
+          appearance: none;
+          width: 10px;
+          height: 10px;
+          border-radius: 50%;
+          background: #ffffff;
+          border: none;
+          margin-top: -3.5px;
+          opacity: 0;
+          transition: opacity 0.2s ease;
+        }
+        .video-player input[type="range"].vp-range::-moz-range-thumb {
+          width: 10px;
+          height: 10px;
+          border-radius: 50%;
+          background: #ffffff;
+          border: none;
+          opacity: 0;
+          transition: opacity 0.2s ease;
+        }
+        .video-player .vp-progress-wrap:hover input[type="range"].vp-range::-webkit-slider-thumb,
+        .video-player .vp-volume-wrap:hover input[type="range"].vp-range::-webkit-slider-thumb {
+          opacity: 1;
+        }
+        .video-player .vp-progress-wrap:hover input[type="range"].vp-range::-moz-range-thumb,
+        .video-player .vp-volume-wrap:hover input[type="range"].vp-range::-moz-range-thumb {
+          opacity: 1;
+        }
+      `}</style>
       <video
         ref={videoRef}
-        src="https://res.cloudinary.com/cbi5mcab/video/upload/v1784644343/FOURFOLD_dcxuwk.mp4"
+        src="https://res.cloudinary.com/cbi5mcab/video/upload/v1784690929/FOURFOLD_cbmpnp.mp4"
         loop
         playsInline
         controls={false}
         onPlay={() => setIsPlaying(true)}
         onPause={() => setIsPlaying(false)}
+        onClick={togglePlay}
+        onTimeUpdate={handleTimeUpdate}
+        onLoadedMetadata={handleLoadedMetadata}
         className="w-full h-full object-cover"
       />
-      <button
-        onClick={togglePlay}
-        className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 grid place-items-center cursor-pointer transition-colors duration-300"
+
+      {/* Glass control bar */}
+      <div
         style={{
-          width: "clamp(52px, 8vw, 64px)",
-          height: "clamp(52px, 8vw, 64px)",
-          borderRadius: "50%",
-          backgroundColor: "rgba(255, 255, 255, 0.15)",
-          backdropFilter: "blur(12px)",
-          WebkitBackdropFilter: "blur(12px)",
-          border: "1px solid rgba(255, 255, 255, 0.3)",
-          opacity: showButton ? 1 : 0,
-          transition: "opacity 0.3s ease, background-color 0.3s ease",
+          position: "absolute",
+          bottom: 0,
+          left: 0,
+          right: 0,
+          padding: "10px 16px",
+          display: "flex",
+          alignItems: "center",
+          gap: "12px",
+          background: "rgba(0, 0, 0, 0.35)",
+          backdropFilter: "blur(10px)",
+          WebkitBackdropFilter: "blur(10px)",
+          opacity: showBar ? 1 : 0,
+          pointerEvents: showBar ? "auto" : "none",
+          transition: "opacity 0.3s ease",
         }}
-        onMouseEnter={() => setShowButton(true)}
-        aria-label={isPlaying ? "Pause video" : "Play video"}
       >
-        {isPlaying ? (
-          <Pause size={20} color="#ffffff" fill="#ffffff" />
-        ) : (
-          <Play size={20} color="#ffffff" fill="#ffffff" className="ml-1" />
-        )}
-      </button>
+        <button
+          onClick={togglePlay}
+          aria-label={isPlaying ? "Pause video" : "Play video"}
+          style={{
+            width: "28px",
+            height: "28px",
+            background: "transparent",
+            border: "none",
+            padding: 0,
+            display: "grid",
+            placeItems: "center",
+            cursor: "pointer",
+            flexShrink: 0,
+          }}
+        >
+          {isPlaying ? (
+            <Pause size={14} color="#ffffff" fill="#ffffff" />
+          ) : (
+            <Play size={14} color="#ffffff" fill="#ffffff" />
+          )}
+        </button>
+
+        {/* Progress */}
+        <div
+          className="vp-progress-wrap"
+          style={{
+            flex: 1,
+            position: "relative",
+            height: "3px",
+            display: "flex",
+            alignItems: "center",
+          }}
+        >
+          <div
+            style={{
+              position: "absolute",
+              inset: 0,
+              background: "rgba(255,255,255,0.25)",
+              borderRadius: "2px",
+            }}
+          />
+          <div
+            style={{
+              position: "absolute",
+              top: 0,
+              left: 0,
+              height: "100%",
+              width: `${progressPct}%`,
+              background: "rgba(255,255,255,0.9)",
+              borderRadius: "2px",
+            }}
+          />
+          <input
+            type="range"
+            className="vp-range"
+            min={0}
+            max={duration || 0}
+            step={0.01}
+            value={currentTime}
+            onChange={handleSeek}
+            style={{ position: "absolute", inset: 0, height: "3px" }}
+          />
+        </div>
+
+        {/* Time */}
+        <div
+          className="font-display"
+          style={{
+            fontSize: "11px",
+            color: "rgba(255,255,255,0.7)",
+            letterSpacing: "1px",
+            flexShrink: 0,
+            fontVariantNumeric: "tabular-nums",
+          }}
+        >
+          {formatTime(currentTime)} / {formatTime(duration)}
+        </div>
+
+        {/* Volume */}
+        <div
+          className="vp-volume-wrap"
+          onMouseEnter={() => setShowVolume(true)}
+          onMouseLeave={() => setShowVolume(false)}
+          style={{
+            display: "flex",
+            alignItems: "center",
+            gap: "8px",
+            flexShrink: 0,
+          }}
+        >
+          <button
+            onClick={toggleMute}
+            aria-label={muted ? "Unmute" : "Mute"}
+            style={{
+              background: "transparent",
+              border: "none",
+              padding: 0,
+              display: "grid",
+              placeItems: "center",
+              cursor: "pointer",
+              width: "18px",
+              height: "18px",
+            }}
+          >
+            {muted ? (
+              <VolumeX size={14} color="#ffffff" />
+            ) : (
+              <Volume2 size={14} color="#ffffff" />
+            )}
+          </button>
+          <div
+            style={{
+              width: "60px",
+              height: "3px",
+              position: "relative",
+              display: "flex",
+              alignItems: "center",
+              opacity: showVolume ? 1 : 0,
+              transition: "opacity 0.3s ease",
+              pointerEvents: showVolume ? "auto" : "none",
+            }}
+          >
+            <div
+              style={{
+                position: "absolute",
+                inset: 0,
+                background: "rgba(255,255,255,0.25)",
+                borderRadius: "2px",
+              }}
+            />
+            <div
+              style={{
+                position: "absolute",
+                top: 0,
+                left: 0,
+                height: "100%",
+                width: `${(muted ? 0 : volume) * 100}%`,
+                background: "rgba(255,255,255,0.9)",
+                borderRadius: "2px",
+              }}
+            />
+            <input
+              type="range"
+              className="vp-range"
+              min={0}
+              max={1}
+              step={0.01}
+              value={muted ? 0 : volume}
+              onChange={handleVolume}
+              style={{ position: "absolute", inset: 0, height: "3px" }}
+            />
+          </div>
+        </div>
+      </div>
     </div>
   );
 }
