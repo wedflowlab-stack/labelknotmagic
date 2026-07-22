@@ -29,12 +29,6 @@ export function Philosophy() {
           {/* Video frame — responsive width, centred */}
           <figure className="w-[92vw] md:w-[80vw] lg:w-[40vw] mx-auto max-w-full">
             <VideoPlayer />
-            <figcaption
-              className="cover-line font-display mt-3"
-              style={{ color: "var(--everest)" }}
-            >
-              Pl. 01 — The minute before she walks
-            </figcaption>
           </figure>
 
           {/* Heading + copy — stacked below video */}
