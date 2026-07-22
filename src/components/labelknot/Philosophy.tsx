@@ -25,12 +25,9 @@ export function Philosophy() {
           </p>
         </div>
 
-        <div className="flex flex-col items-center gap-10 md:gap-14">
+        <div className="flex flex-col items-center">
           {/* Video frame — responsive width, centred */}
-          <figure
-            className="w-[92vw] md:w-[80vw] lg:w-[40vw] mx-auto max-w-full"
-            style={{ aspectRatio: "16 / 9" }}
-          >
+          <figure className="w-[92vw] md:w-[80vw] lg:w-[40vw] mx-auto max-w-full">
             <VideoPlayer />
             <figcaption
               className="cover-line font-display mt-3"
