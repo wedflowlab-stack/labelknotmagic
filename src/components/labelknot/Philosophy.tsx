@@ -25,22 +25,23 @@ export function Philosophy() {
           </p>
         </div>
 
-        <div className="grid grid-cols-12 gap-6 md:gap-10 items-start">
-          {/* Large offset image — left */}
-          <div className="col-span-12 md:col-span-5 md:row-span-2">
-            <figure>
-              <VideoPlayer />
-              <figcaption
-                className="cover-line font-display mt-3"
-                style={{ color: "var(--everest)" }}
-              >
-                Pl. 01 — The minute before she walks
-              </figcaption>
-            </figure>
-          </div>
+        <div className="flex flex-col items-center gap-10 md:gap-14">
+          {/* Video frame — responsive width, centred */}
+          <figure
+            className="w-[92vw] md:w-[80vw] lg:w-[40vw] mx-auto max-w-full"
+            style={{ aspectRatio: "16 / 9" }}
+          >
+            <VideoPlayer />
+            <figcaption
+              className="cover-line font-display mt-3"
+              style={{ color: "var(--everest)" }}
+            >
+              Pl. 01 — The minute before she walks
+            </figcaption>
+          </figure>
 
-          {/* Copy block — right top */}
-          <div className="col-span-12 md:col-span-7 md:pt-12 md:px-4">
+          {/* Heading + copy — stacked below video */}
+          <div className="w-full text-center" style={{ marginTop: "48px" }}>
             <h2
               className="editorial-headline text-4xl md:text-6xl lg:text-7xl tracking-widest uppercase"
               style={{ color: "var(--everest)", lineHeight: 1.06, textAlign: "center" }}
@@ -50,7 +51,7 @@ export function Philosophy() {
               <em className="font-display italic normal-case tracking-normal">what remains?</em>
             </h2>
 
-            <div className="mt-10 max-w-xl mx-auto">
+            <div className="mt-10 max-w-[680px] mx-auto">
               {/* Opening — large italic */}
               <p
                 className="font-display italic"
@@ -112,38 +113,41 @@ export function Philosophy() {
             </div>
           </div>
 
-          {/* Square — right middle */}
-          <div className="col-span-6 md:col-span-4 md:col-start-6 md:mt-0 self-start">
-            <figure>
-              <img
-                src={GALLERY_POOL[5]}
-                alt="A held breath, captured"
-                className="w-full aspect-square object-cover"
-              />
-              <figcaption
-                className="cover-line font-display mt-3"
-                style={{ color: "var(--everest)" }}
-              >
-                Pl. 02 — A held breath
-              </figcaption>
-            </figure>
-          </div>
+          {/* Secondary images */}
+          <div className="grid grid-cols-12 gap-6 md:gap-10 items-start w-full mt-10 md:mt-14">
+            {/* Square — right middle */}
+            <div className="col-span-6 md:col-span-4 md:col-start-6 md:mt-0 self-start">
+              <figure>
+                <img
+                  src={GALLERY_POOL[5]}
+                  alt="A held breath, captured"
+                  className="w-full aspect-square object-cover"
+                />
+                <figcaption
+                  className="cover-line font-display mt-3"
+                  style={{ color: "var(--everest)" }}
+                >
+                  Pl. 02 — A held breath
+                </figcaption>
+              </figure>
+            </div>
 
-          {/* Portrait — right end */}
-          <div className="col-span-6 md:col-span-3 md:mt-0 self-start">
-            <figure>
-              <img
-                src={GALLERY_POOL[6]}
-                alt="Light, draped"
-                className="w-full aspect-[3/4] object-cover"
-              />
-              <figcaption
-                className="cover-line font-display mt-3"
-                style={{ color: "var(--everest)" }}
-              >
-                Pl. 03 — Light, draped
-              </figcaption>
-            </figure>
+            {/* Portrait — right end */}
+            <div className="col-span-6 md:col-span-3 md:mt-0 self-start">
+              <figure>
+                <img
+                  src={GALLERY_POOL[6]}
+                  alt="Light, draped"
+                  className="w-full aspect-[3/4] object-cover"
+                />
+                <figcaption
+                  className="cover-line font-display mt-3"
+                  style={{ color: "var(--everest)" }}
+                >
+                  Pl. 03 — Light, draped
+                </figcaption>
+              </figure>
+            </div>
           </div>
         </div>
 
