@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from "react";
+import { Link } from "@tanstack/react-router";
 import { Pause, Play, Volume2, VolumeX } from "lucide-react";
 
 const EVEREST = "#18442A";
@@ -63,6 +64,17 @@ export function WhyLabelKnot() {
       >
         <VideoPlayer />
       </figure>
+
+      {/* CTA */}
+      <div className="text-center" style={{ marginTop: "48px" }}>
+        <Link
+          to="/contact"
+          className="inline-block font-display tracking-widest uppercase border border-current rounded-full px-8 py-4 transition-opacity hover:opacity-70"
+          style={{ color: MILKY, fontSize: "11px", letterSpacing: "4px" }}
+        >
+          Check Availability
+        </Link>
+      </div>
     </section>
   );
 }
