@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from "react";
+import { Link } from "@tanstack/react-router";
 import { Pause, Play, Volume2, VolumeX } from "lucide-react";
 
 const EVEREST = "#18442A";
