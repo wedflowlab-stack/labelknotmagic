@@ -1,10 +1,10 @@
+import { useEffect, useRef, useState } from "react";
+import { Pause, Play, Volume2, VolumeX } from "lucide-react";
+
 const EVEREST = "#18442A";
 const MILKY = "#FDFBF0";
-const SAND = "#E4DBC4";
-const BODY = "rgba(253,251,240,0.82)";
 const MUTED_4 = "rgba(253,251,240,0.4)";
 const MUTED_75 = "rgba(253,251,240,0.75)";
-const RULE = "rgba(228,219,196,0.35)";
 
 export function WhyLabelKnot() {
   return (
@@ -41,7 +41,7 @@ export function WhyLabelKnot() {
 
       {/* Subheading */}
       <p
-        className="font-display text-center max-w-xl mx-auto mb-20"
+        className="font-display text-center max-w-xl mx-auto"
         style={{
           fontWeight: 300,
           fontSize: "clamp(20px, 2.5vw, 28px)",
@@ -56,252 +56,334 @@ export function WhyLabelKnot() {
         The difference is visible the moment you see one.
       </p>
 
-      {/* Opening line */}
-      <h3
-        className="font-display text-center mb-16 md:mb-20 mx-auto max-w-3xl"
+      {/* Video */}
+      <figure
+        className="w-[92vw] md:w-[80vw] lg:w-[40vw] mx-auto max-w-full"
+        style={{ marginTop: "48px" }}
+      >
+        <VideoPlayer />
+      </figure>
+    </section>
+  );
+}
+
+function VideoPlayer() {
+  const videoRef = useRef<HTMLVideoElement>(null);
+  const [isPlaying, setIsPlaying] = useState(false);
+  const [showControls, setShowControls] = useState(true);
+  const [currentTime, setCurrentTime] = useState(0);
+  const [duration, setDuration] = useState(0);
+  const [progress, setProgress] = useState(0);
+  const [muted, setMuted] = useState(true);
+  const [volume, setVolume] = useState(1);
+  const [showVolume, setShowVolume] = useState(false);
+  const inactivityTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+
+  const togglePlay = () => {
+    if (!videoRef.current) return;
+    if (videoRef.current.paused) {
+      videoRef.current.play();
+      setIsPlaying(true);
+    } else {
+      videoRef.current.pause();
+      setIsPlaying(false);
+    }
+  };
+
+  const bumpActivity = () => {
+    setShowControls(true);
+    if (inactivityTimeoutRef.current) clearTimeout(inactivityTimeoutRef.current);
+    if (isPlaying) {
+      inactivityTimeoutRef.current = setTimeout(() => {
+        setShowControls(false);
+      }, 2500);
+    }
+  };
+
+  useEffect(() => {
+    return () => {
+      if (inactivityTimeoutRef.current) clearTimeout(inactivityTimeoutRef.current);
+    };
+  }, []);
+
+  useEffect(() => {
+    bumpActivity();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [isPlaying]);
+
+  const handleTimeUpdate = () => {
+    if (!videoRef.current) return;
+    const t = videoRef.current.currentTime;
+    const d = videoRef.current.duration || 0;
+    setCurrentTime(t);
+    if (d > 0) setProgress((t / d) * 100);
+  };
+
+  const handleLoadedMetadata = () => {
+    if (videoRef.current) setDuration(videoRef.current.duration || 0);
+  };
+
+  const handleSeek = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const val = parseFloat(e.target.value);
+    if (videoRef.current && videoRef.current.duration) {
+      const newTime = (val / 100) * videoRef.current.duration;
+      videoRef.current.currentTime = newTime;
+      setProgress(val);
+      setCurrentTime(newTime);
+    }
+  };
+
+  const toggleMute = () => {
+    if (!videoRef.current) return;
+    const next = !muted;
+    videoRef.current.muted = next;
+    setMuted(next);
+  };
+
+  const handleVolume = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const v = parseFloat(e.target.value);
+    setVolume(v);
+    if (videoRef.current) {
+      videoRef.current.volume = v;
+      if (v === 0 && !muted) {
+        videoRef.current.muted = true;
+        setMuted(true);
+      } else if (v > 0 && muted) {
+        videoRef.current.muted = false;
+        setMuted(false);
+      }
+    }
+  };
+
+  const formatTime = (secs: number) => {
+    if (!secs || isNaN(secs) || !isFinite(secs)) return "0:00";
+    const m = Math.floor(secs / 60);
+    const s = Math.floor(secs % 60).toString().padStart(2, "0");
+    return `${m}:${s}`;
+  };
+
+  return (
+    <div
+      className="video-player relative w-full overflow-hidden"
+      style={{ aspectRatio: "16 / 9" }}
+      onMouseMove={bumpActivity}
+      onMouseEnter={bumpActivity}
+      onMouseLeave={() => {
+        if (isPlaying) setShowControls(false);
+      }}
+      onTouchStart={bumpActivity}
+    >
+      <style>{`
+        .video-player input[type="range"].vp-range {
+          -webkit-appearance: none;
+          appearance: none;
+          background: transparent;
+          margin: 0;
+          padding: 0;
+          cursor: pointer;
+          outline: none;
+        }
+        .video-player input[type="range"].vp-range::-webkit-slider-thumb {
+          -webkit-appearance: none;
+          appearance: none;
+          width: 12px;
+          height: 12px;
+          border-radius: 50%;
+          background: #ffffff;
+          border: none;
+          cursor: pointer;
+          margin-top: -4.5px;
+        }
+        .video-player input[type="range"].vp-range::-moz-range-thumb {
+          width: 12px;
+          height: 12px;
+          border-radius: 50%;
+          background: #ffffff;
+          border: none;
+          cursor: pointer;
+        }
+        .video-player input[type="range"].vp-range::-webkit-slider-runnable-track {
+          height: 3px;
+          border-radius: 2px;
+          background: transparent;
+        }
+        .video-player input[type="range"].vp-range::-moz-range-track {
+          height: 3px;
+          border-radius: 2px;
+          background: transparent;
+        }
+      `}</style>
+      <video
+        ref={videoRef}
+        src="https://res.cloudinary.com/pcodbmuo/video/upload/v1784896883/four_fold_call_bimumf.mp4"
+        loop
+        muted
+        playsInline
+        controls={false}
+        preload="metadata"
+        onPlay={() => setIsPlaying(true)}
+        onPause={() => setIsPlaying(false)}
+        onTimeUpdate={handleTimeUpdate}
+        onLoadedMetadata={handleLoadedMetadata}
+        className="w-full h-full object-cover"
+      />
+
+      {/* Centre glass play/pause button */}
+      <button
+        onClick={togglePlay}
+        aria-label={isPlaying ? "Pause video" : "Play video"}
+        className="w-[52px] h-[52px] md:w-16 md:h-16"
         style={{
-          fontWeight: 300,
-          fontSize: "clamp(48px, 6.5vw, 88px)",
-          lineHeight: 1.0,
-          color: MILKY,
+          position: "absolute",
+          top: "50%",
+          left: "50%",
+          transform: "translate(-50%, -50%)",
+          zIndex: 10,
+          borderRadius: "50%",
+          background: "rgba(255,255,255,0.15)",
+          backdropFilter: "blur(12px)",
+          WebkitBackdropFilter: "blur(12px)",
+          border: "1px solid rgba(255,255,255,0.3)",
+          display: "grid",
+          placeItems: "center",
+          cursor: "pointer",
+          opacity: showControls ? 1 : 0,
+          transition: "opacity 0.3s ease",
+          pointerEvents: showControls ? "auto" : "none",
         }}
       >
-        We began in fashion.
-      </h3>
+        {isPlaying ? (
+          <Pause size={22} color="#ffffff" fill="#ffffff" />
+        ) : (
+          <Play size={22} color="#ffffff" fill="#ffffff" />
+        )}
+      </button>
 
-      {/* First body paragraph */}
-      <p
-        className="font-display text-center max-w-2xl mx-auto mb-12 md:mb-16"
-        style={{
-          fontWeight: 300,
-          fontSize: "clamp(20px, 2.2vw, 26px)",
-          lineHeight: 1.9,
-          color: BODY,
-        }}
-      >
-        The discipline of controlled light, intentional composition, and the kind of frame that stops you mid-scroll and makes you ask: where is that from? That language never left us. We brought it into weddings. Every portrait we make of you carries that same editorial precision — the kind of image that belongs in Vogue, in Elle, in Condé Nast — except it is not a model in the frame.
-      </p>
-
-      {/* Highlight line */}
-      <p
-        className="font-display italic text-center max-w-2xl mx-auto mb-12 md:mb-16"
-        style={{
-          fontStyle: "italic",
-          fontWeight: 400,
-          fontSize: "clamp(28px, 3.4vw, 44px)",
-          lineHeight: 1.35,
-          color: SAND,
-          letterSpacing: "-0.005em",
-        }}
-      >
-        It is you. On your wedding day. Looking exactly like you always hoped you would.
-      </p>
-
+      {/* Glass control bar */}
       <div
-        className="font-display text-center max-w-2xl mx-auto mb-12 md:mb-16"
         style={{
-          fontSize: "clamp(20px, 2.2vw, 26px)",
-          color: MUTED_75,
-          lineHeight: 1.9,
+          position: "absolute",
+          bottom: 0,
+          left: 0,
+          right: 0,
+          padding: "10px 16px",
+          display: "flex",
+          alignItems: "center",
+          gap: "8px",
+          background: "rgba(0, 0, 0, 0.35)",
+          backdropFilter: "blur(10px)",
+          WebkitBackdropFilter: "blur(10px)",
+          opacity: showControls ? 1 : 0,
+          pointerEvents: showControls ? "auto" : "none",
+          transition: "opacity 0.3s ease",
         }}
       >
-        <div>That is the first thing we give you.</div>
-        <div>Then comes everything else.</div>
-      </div>
-
-      {/* Chapter break: Pre-wedding */}
-      <div className="max-w-2xl mx-auto mt-24 md:mt-32 mb-10">
-        <div
+        <button
+          onClick={togglePlay}
+          aria-label={isPlaying ? "Pause video" : "Play video"}
           style={{
-            width: "40px",
-            height: "1px",
-            backgroundColor: RULE,
-            marginBottom: "2rem",
+            width: "28px",
+            height: "28px",
+            background: "transparent",
+            border: "none",
+            padding: 0,
+            display: "grid",
+            placeItems: "center",
+            cursor: "pointer",
+            flexShrink: 0,
+          }}
+        >
+          {isPlaying ? (
+            <Pause size={14} color="#ffffff" fill="#ffffff" />
+          ) : (
+            <Play size={14} color="#ffffff" fill="#ffffff" />
+          )}
+        </button>
+
+        <input
+          type="range"
+          className="vp-range"
+          min="0"
+          max="100"
+          step="0.1"
+          value={progress}
+          onChange={handleSeek}
+          style={{
+            flex: 1,
+            width: "100%",
+            minWidth: 0,
+            height: "3px",
+            background: `linear-gradient(to right, rgba(255,255,255,0.9) ${progress}%, rgba(255,255,255,0.25) ${progress}%)`,
+            borderRadius: "2px",
+            margin: "0 8px",
           }}
         />
-        <h3
-          className="font-display text-left"
-          style={{
-            fontWeight: 400,
-            fontSize: "clamp(32px, 3.5vw, 42px)",
-            color: MILKY,
-          }}
-        >
-          The pre-wedding shoot.
-        </h3>
-      </div>
 
-      {/* Pre-wedding paragraph */}
-      <p
-        className="font-display text-center max-w-2xl mx-auto mb-10"
-        style={{
-          fontWeight: 300,
-          fontSize: "clamp(20px, 2.2vw, 26px)",
-          lineHeight: 1.9,
-          color: BODY,
-        }}
-      >
-        A location that belongs to your story. Light that we chase and bend and wait for. And the two of you — not performing for a camera, but simply existing together while we work around you with the same precision a fashion director brings to a magazine cover.
-      </p>
-      <div
-        className="font-display text-center max-w-2xl mx-auto mb-12 md:mb-16"
-        style={{
-          fontSize: "clamp(28px, 3.2vw, 42px)",
-          fontWeight: 400,
-          color: MILKY,
-          lineHeight: 1.45,
-        }}
-      >
-        <div>People will see those images and feel something they can't name.</div>
-        <div style={{ color: SAND }}>That is the point.</div>
-      </div>
-
-      {/* Chapter break: The greatest frames */}
-      <div className="max-w-2xl mx-auto mt-24 md:mt-32 mb-10">
         <div
-          style={{
-            width: "40px",
-            height: "1px",
-            backgroundColor: RULE,
-            marginBottom: "2rem",
-          }}
-        />
-        <h3
-          className="font-display text-left"
-          style={{
-            fontWeight: 400,
-            fontSize: "clamp(32px, 3.5vw, 42px)",
-            color: MILKY,
-          }}
-        >
-          The greatest Fourfold frames.
-        </h3>
-      </div>
-
-      {/* Greatest frames paragraph */}
-      <p
-        className="font-display text-center max-w-2xl mx-auto mb-10"
-        style={{
-          fontWeight: 300,
-          fontSize: "clamp(20px, 2.2vw, 26px)",
-          lineHeight: 1.9,
-          color: BODY,
-        }}
-      >
-        They are never just beautiful. They are true. The romance underneath the artistry. The glance that no art director could have scripted. The split second where fashion and feeling collide into something that belongs to nobody else on earth.
-      </p>
-      <p
-        className="font-display italic text-center max-w-2xl mx-auto mb-12 md:mb-16"
-        style={{
-          fontStyle: "italic",
-          fontWeight: 400,
-          fontSize: "clamp(22px, 2.6vw, 30px)",
-          lineHeight: 1.5,
-          color: MILKY,
-        }}
-      >
-        That image will outlast everything from your wedding day.
-      </p>
-      <div
-        className="font-display text-center max-w-2xl mx-auto mb-12 md:mb-16"
-        style={{
-          fontSize: "clamp(28px, 3.2vw, 42px)",
-          fontWeight: 400,
-          color: MILKY,
-          lineHeight: 1.45,
-        }}
-      >
-        <div>The venue will host another wedding next weekend.</div>
-        <div>The flowers will be gone.</div>
-        <div style={{ color: SAND }}>
-          The version of you that existed in that light, on that day, feeling exactly what you felt —
-        </div>
-        <div style={{ color: SAND }}>gone. Unless we were there.</div>
-      </div>
-
-      {/* Standalone pull line — what we keep forever */}
-      <div
-        className="font-display text-center max-w-2xl mx-auto py-20 my-10"
-        style={{
-          fontWeight: 300,
-          fontSize: "clamp(28px, 3.2vw, 42px)",
-          color: MILKY,
-          lineHeight: 1.5,
-        }}
-      >
-        <div>What we make is the one thing you keep forever —</div>
-        <div style={{ marginTop: "1rem", color: SAND }}>
-          when everything else fades, when the people you love are older, when that moment only exists in what we created.
-        </div>
-      </div>
-
-      {/* Closing paragraph */}
-      <div className="max-w-2xl mx-auto mb-16 text-center">
-        <p
           className="font-display"
           style={{
-            fontWeight: 500,
-            fontSize: "clamp(22px, 2.4vw, 28px)",
-            color: MILKY,
-            marginBottom: "1.25rem",
+            fontSize: "11px",
+            color: "rgba(255,255,255,0.7)",
+            letterSpacing: "1px",
+            flexShrink: 0,
+            fontVariantNumeric: "tabular-nums",
           }}
         >
-          The couples who choose Fourfold never wonder what they lost.
-        </p>
-        <p
-          className="font-display"
-          style={{
-            fontWeight: 300,
-            fontSize: "clamp(20px, 2.2vw, 26px)",
-            lineHeight: 1.9,
-            color: BODY,
-          }}
-        >
-          We are not for everyone. We don't shoot for everyone.
-        </p>
-        <div
-          className="font-display italic text-center"
-          style={{
-            fontStyle: "italic",
-            fontWeight: 400,
-            fontSize: "clamp(20px, 2.2vw, 26px)",
-            color: SAND,
-            lineHeight: 1.6,
-            marginTop: "1.5rem",
-          }}
-        >
-          The ones who find us — always say they found us just in time.
+          {formatTime(currentTime)} / {formatTime(duration)}
         </div>
-      </div>
 
-      {/* Final CTA */}
-      <div className="max-w-2xl mx-auto mt-20 text-center">
-        <div className="flex justify-center" style={{ marginTop: "20px" }}>
-          <a
-            href="/contact"
-            className="font-display uppercase transition-colors"
+        <div
+          className="vp-volume-wrap"
+          onMouseEnter={() => setShowVolume(true)}
+          onMouseLeave={() => setShowVolume(false)}
+          style={{
+            display: "flex",
+            alignItems: "center",
+            gap: "8px",
+            flexShrink: 0,
+            marginLeft: "8px",
+          }}
+        >
+          <button
+            onClick={toggleMute}
+            aria-label={muted ? "Unmute" : "Mute"}
             style={{
-              fontWeight: 400,
-              fontSize: "13px",
-              letterSpacing: "4px",
-              color: MILKY,
-              padding: "18px 52px",
-              border: "1px solid rgba(253,251,240,0.45)",
-              backgroundColor: "transparent",
-            }}
-            onMouseEnter={(e) => {
-              e.currentTarget.style.borderColor = MILKY;
-              e.currentTarget.style.backgroundColor = "rgba(253,251,240,0.06)";
-            }}
-            onMouseLeave={(e) => {
-              e.currentTarget.style.borderColor = "rgba(253,251,240,0.45)";
-              e.currentTarget.style.backgroundColor = "transparent";
+              background: "transparent",
+              border: "none",
+              padding: 0,
+              display: "grid",
+              placeItems: "center",
+              cursor: "pointer",
+              width: "18px",
+              height: "18px",
             }}
           >
-            CHECK AVAILABILITY
-          </a>
+            {muted ? (
+              <VolumeX size={14} color="#ffffff" />
+            ) : (
+              <Volume2 size={14} color="#ffffff" />
+            )}
+          </button>
+          <input
+            type="range"
+            className="vp-range"
+            min={0}
+            max={1}
+            step={0.01}
+            value={muted ? 0 : volume}
+            onChange={handleVolume}
+            style={{
+              width: "60px",
+              height: "3px",
+              background: `linear-gradient(to right, rgba(255,255,255,0.9) ${(muted ? 0 : volume) * 100}%, rgba(255,255,255,0.25) ${(muted ? 0 : volume) * 100}%)`,
+              borderRadius: "2px",
+              opacity: showVolume ? 1 : 0,
+              transition: "opacity 0.3s ease",
+              pointerEvents: showVolume ? "auto" : "none",
+            }}
+          />
         </div>
       </div>
-    </section>
+    </div>
   );
 }
